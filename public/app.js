@@ -16,6 +16,9 @@
         var span = document.createElement('span'); span.className = 'tag'; span.textContent = t; tags.appendChild(span);
       });
       grid.appendChild(node);
+      node.querySelector('.card').addEventListener('click', function(){
+      openDetail(r);
+      });
     });
   }
 
@@ -66,6 +69,41 @@
       box.appendChild(wrap);
     });
   }
+
+function openDetail(r){
+  var dlg = document.getElementById('detail');
+  if (!dlg) return;
+  document.getElementById('d-title').textContent = r.nombre || '(Sin título)';
+  document.getElementById('d-desc').textContent  = r.descripcion || '';
+
+  var ings = document.getElementById('d-ings'); ings.innerHTML = '';
+  (r.ingredientes || []).forEach(function(x){
+    var li = document.createElement('li'); li.textContent = x; ings.appendChild(li);
+  });
+
+  var steps = document.getElementById('d-steps'); steps.innerHTML = '';
+  (r.instrucciones || []).forEach(function(p, i){
+    var li = document.createElement('li'); li.textContent = (p.texto || p.name || '').trim(); steps.appendChild(li);
+  });
+
+  var meta = [];
+  if (r.porciones) meta.push('Porciones: ' + r.porciones);
+  if (r.tiempos && (r.tiempos.total || r.tiempos.preparacion || r.tiempos.coccion)) {
+    var t = r.tiempos.total || r.tiempos.preparacion || r.tiempos.coccion;
+    if (t) meta.push('Tiempo (min): ' + t);
+  }
+  document.getElementById('d-meta').textContent = meta.join(' · ');
+
+  var origin = document.getElementById('d-origin');
+  origin.innerHTML = r.origen && r.origen.url && r.origen.url !== 'local'
+    ? 'Fuente: <a href="'+r.origen.url+'" target="_blank" rel="noopener">'+(r.origen.sitio || r.origen.url)+'</a>'
+    : '';
+
+  dlg.style.display = 'flex';
+  document.getElementById('d-close').onclick = function(){ dlg.style.display = 'none'; };
+  dlg.onclick = function(e){ if (e.target === dlg) dlg.style.display = 'none'; };
+}
+
 
   function importFromURL(url){
     fetch('/api/import?url=' + encodeURIComponent(url))

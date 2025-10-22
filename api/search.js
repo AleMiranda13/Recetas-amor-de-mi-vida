@@ -1,4 +1,6 @@
-// /api/search.js — búsqueda robusta con variantes del término
+// /api/search.js — búsqueda general robusta con SerpAPI + sinónimos comunes
+// Requiere: SERPAPI_KEY en env (Vercel)
+
 const ALLOWED = [
   "recetasgratis.net",
   "pequerecetas.com",
@@ -7,38 +9,98 @@ const ALLOWED = [
   "cookpad.com",
   "recetasderechupete.com",
   "kiwilimon.com",
-  "bonviveur.es"
+  "bonviveur.es",
+  "javirecetas.com",
+  "lacocinadelila.com",
+  "deliciosi.com"
 ];
 
+// sinónimos comunes (ES/AR/MX/CL/PE…)
+const SYN = {
+  // ingredientes
+  "papa": ["papas", "patata", "patatas"],
+  "papas": ["papa", "patata", "patatas"],
+  "patata": ["patatas", "papa", "papas"],
+  "patatas": ["patata", "papa", "papas"],
+  "maiz": ["maíz", "choclo", "elote"],
+  "choclo": ["maíz", "maiz", "elote"],
+  "elote": ["maíz", "maiz", "choclo"],
+  "poroto": ["frijol", "alubia", "habichuela"],
+  "frijol": ["poroto", "alubia", "habichuela"],
+  "alubia": ["poroto", "frijol", "habichuela"],
+  "arveja": ["guisante", "chícharo"],
+  "guisante": ["arveja", "chícharo"],
+  "chícharo": ["arveja", "guisante"],
+  "camote": ["batata", "boniato"],
+  "batata": ["camote", "boniato"],
+  "boniato": ["batata", "camote"],
+  "aguacate": ["palta"],
+  "palta": ["aguacate"],
+  "zucchini": ["calabacín"],
+  "calabacin": ["zucchini", "calabacín"],
+  "calabacín": ["zucchini", "calabacin"],
+  "remolacha": ["betabel"],
+  "betabel": ["remolacha"],
 
-// genera variantes útiles para ES/AR/MX
-function queryVariants(q) {
-  const s = q.toLowerCase().trim();
-  const vars = new Set([s]);
+  // tipos de preparaciones
+  "torta": ["pastel", "bizcocho", "queque", "tarta"],
+  "pastel": ["torta", "bizcocho", "queque", "tarta"],
+  "bizcocho": ["pastel", "torta", "queque", "tarta"],
+  "queque": ["bizcocho", "pastel", "torta", "tarta"],
+  "tarta": ["pastel", "torta", "bizcocho", "queque"],
+};
 
-  // plurales y sinónimos de "papa"
-  if (/\bpapa\b/.test(s)) vars.add(s.replace(/\bpapa\b/g, "papas"));
-  if (/\bpapas\b/.test(s)) vars.add(s.replace(/\bpapas\b/g, "papa"));
-  if (/\bpapa(s)?\b/.test(s)) {
-    vars.add(s.replace(/\bpapa(s)?\b/g, "patata"));
-    vars.add(s.replace(/\bpapa(s)?\b/g, "patatas"));
-  }
-  // combinaciones típicas
-  if (s.includes("pastel")) {
-    vars.add(s + " de carne");
-    vars.add(s + " al horno");
-  }
-  // dedupe a array
-  return Array.from(vars);
+function normalize(s) {
+  return (s || "")
+    .toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // sin tildes
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
-function parseDDG(html) {
+// genera variantes combinando sinónimos token a token (acotado)
+function queryVariants(q) {
+  const base = normalize(q);
+  const tokens = base.split(" ");
+  const variants = new Set([base]);
+
+  // para cada token, si hay sinónimos, crea variantes reemplazando ese token
+  tokens.forEach((tk, idx) => {
+    const syns = SYN[tk];
+    if (syns && syns.length) {
+      syns.forEach(s => {
+        const v = tokens.slice();
+        v[idx] = s;
+        variants.add(v.join(" "));
+      });
+    }
+  });
+
+  // agrega versión entre comillas exactas (mejora coincidencias de frase)
+  variants.add(`"${base}"`);
+
+  // limita para no explotar (máx 10 variantes)
+  return Array.from(variants).slice(0, 10);
+}
+
+async function serpapiSearch(query, key) {
+  const url = new URL("https://serpapi.com/search.json");
+  url.searchParams.set("engine", "google");
+  url.searchParams.set("hl", "es");
+  url.searchParams.set("num", "10");
+  url.searchParams.set("q", query);
+  url.searchParams.set("api_key", key);
+
+  const r = await fetch(url, { headers: { "User-Agent": "RecetasES/1.0" } });
+  if (!r.ok) return [];
+
+  const j = await r.json();
+  const list = Array.isArray(j.organic_results) ? j.organic_results : [];
   const out = [];
-  const re = /<a[^>]+class="[^"]*(result__a|result-link)[^"]*"[^>]+href="([^"]+)"[^>]*>(.*?)<\/a>/gi;
-  let m;
-  while ((m = re.exec(html)) !== null) {
-    const url = m[2];
-    const title = (m[3] || "").replace(/<[^>]+>/g, "").trim();
+  for (const it of list) {
+    const url = it.link || it.formattedUrl;
+    const title = it.title || url;
+    if (!url) continue;
     try {
       const u = new URL(url);
       if (ALLOWED.some(d => u.hostname === d || u.hostname.endsWith("." + d))) {
@@ -49,62 +111,49 @@ function parseDDG(html) {
   return out;
 }
 
-async function fetchText(url) {
-  const controller = new AbortController();
-  const t = setTimeout(() => controller.abort(), 8000);
-  try {
-    const res = await fetch(url, {
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36",
-        Accept: "text/html",
-      },
-      signal: controller.signal,
-    });
-    return await res.text();
-  } finally {
-    clearTimeout(t);
-  }
-}
+// cache en memoria para no gastar cuota (60s)
+const CACHE = new Map();
+const TTL_MS = 60_000;
 
 module.exports = async (req, res) => {
   const q = (req.query.q || "").toString().trim();
   if (!q) return res.status(400).json({ error: "Falta parámetro 'q'." });
 
+  const key = process.env.SERPAPI_KEY;
+  if (!key) {
+    return res.status(200).json({ ok: true, results: [], warn: "Falta SERPAPI_KEY" });
+  }
+
+  const cacheKey = normalize(q);
+  const cached = CACHE.get(cacheKey);
+  if (cached && Date.now() - cached.t < TTL_MS) {
+    return res.status(200).json({ ok: true, results: cached.data, cached: true });
+  }
+
   try {
-    const variants = queryVariants(q);         // ← variantes del término
-    const domains = ALLOWED.slice(0, 5);       // limita por seguridad
+    const vars = queryVariants(q);
     const all = [];
 
-    for (const v of variants) {
-      for (const d of domains) {
-        // 1) primario
-        try {
-          const url1 = `https://duckduckgo.com/html/?kp=-1&kl=es-es&q=site:${encodeURIComponent(d)}+${encodeURIComponent(v)}`;
-          const html1 = await fetchText(url1);
-          all.push(...parseDDG(html1).slice(0, 3));
-          continue; // si ya anduvo, evitamos fallback
-        } catch {}
-
-        // 2) fallback lite
-        try {
-          const url2 = `https://lite.duckduckgo.com/lite/?q=site:${encodeURIComponent(d)}+${encodeURIComponent(v)}`;
-          const html2 = await fetchText(url2);
-          all.push(...parseDDG(html2).slice(0, 3));
-        } catch {}
+    // Para cada dominio y variante, usa "site:dominio variante"
+    for (const d of ALLOWED) {
+      for (const v of vars) {
+        const q2 = `site:${d} ${v}`;
+        const items = await serpapiSearch(q2, key);
+        all.push(...items.slice(0, 3)); // tope por dominio/variante
       }
     }
 
     // dedupe por URL
     const map = new Map();
     for (const it of all) if (!map.has(it.url)) map.set(it.url, it);
+    const results = Array.from(map.values());
 
-    return res.status(200).json({ ok: true, results: Array.from(map.values()) });
+    CACHE.set(cacheKey, { t: Date.now(), data: results });
+    return res.status(200).json({ ok: true, results });
   } catch (e) {
-    // nunca romper el frontend
     return res.status(200).json({ ok: true, results: [], warn: "fallback", detail: String(e) });
   }
 };
 
-// Fuerza NodeJS (no edge)
+// Fuerza Node (no Edge)
 module.exports.config = { runtime: "nodejs" };
