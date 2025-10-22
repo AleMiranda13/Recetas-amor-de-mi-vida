@@ -4,23 +4,59 @@
   function $(sel){ return document.querySelector(sel); }
   function log(){ try { console.log.apply(console, arguments); } catch(_){} }
 
-  function render(recipes){
-    var grid = $('#grid'); var tpl = document.querySelector('#card-tpl');
-    grid.innerHTML = '';
-    recipes.forEach(function(r){
-      var node = document.importNode(tpl.content, true);
-      node.querySelector('.title').textContent = r.nombre || '(Sin título)';
-      node.querySelector('.desc').textContent = r.descripcion || '';
-      var tags = node.querySelector('.tags');
+ function render(recipes){
+  var grid = document.querySelector('#grid');
+  var tpl  = document.querySelector('#card-tpl');
+  if (!grid) return;
+
+  grid.innerHTML = '';
+
+  if (!tpl || !tpl.content) {
+    // fallback si no hay template cargado
+    (recipes || []).forEach(function(r){
+      var art = document.createElement('article');
+      art.className = 'card';
+      var h = document.createElement('h3'); h.className = 'title'; h.textContent = r.nombre || '(Sin título)'; art.appendChild(h);
+      var p = document.createElement('p'); p.className = 'muted desc'; p.textContent = r.descripcion || ''; art.appendChild(p);
+      var tags = document.createElement('div'); tags.className = 'tags';
       (r.palabras_clave || []).slice(0,6).forEach(function(t){
-        var span = document.createElement('span'); span.className = 'tag'; span.textContent = t; tags.appendChild(span);
+        var s = document.createElement('span'); s.className = 'tag'; s.textContent = t; tags.appendChild(s);
       });
-      grid.appendChild(node);
-      node.querySelector('.card').addEventListener('click', function(){
-      openDetail(r);
-      });
+      art.appendChild(tags);
+      art.tabIndex = 0;
+      art.addEventListener('click', function(){ if (typeof openDetail === 'function') openDetail(r); });
+      art.addEventListener('keydown', function(e){ if (e.key === 'Enter' && typeof openDetail === 'function') openDetail(r); });
+      grid.appendChild(art);
     });
+    return;
   }
+
+  // camino normal con template
+  (recipes || []).forEach(function(r){
+    var node = document.importNode(tpl.content, true);
+
+    // intenta encontrar .card, o usa el primer elemento del fragmento
+    var card = node.querySelector('.card') || node.firstElementChild;
+    if (card) {
+      card.tabIndex = 0;
+      card.addEventListener('click', function(){ if (typeof openDetail === 'function') openDetail(r); });
+      card.addEventListener('keydown', function(e){ if (e.key === 'Enter' && typeof openDetail === 'function') openDetail(r); });
+    }
+
+    // completar campos
+    var t = node.querySelector('.title'); if (t) t.textContent = r.nombre || '(Sin título)';
+    var d = node.querySelector('.desc');  if (d) d.textContent = r.descripcion || '';
+    var tags = node.querySelector('.tags');
+    if (tags) {
+      (r.palabras_clave || []).slice(0,6).forEach(function(tag){
+        var s = document.createElement('span'); s.className = 'tag'; s.textContent = tag; tags.appendChild(s);
+      });
+    }
+
+    grid.appendChild(node);
+  });
+}
+
 
   function localSearch(q){
     q = (q || '').toLowerCase().trim();
