@@ -1,5 +1,7 @@
 {
   "name": "recetas-es",
   "private": true,
-  "engines": { "node": "20.x" }
+  "engines": {
+    "node": "20.x"
+  }
 }
