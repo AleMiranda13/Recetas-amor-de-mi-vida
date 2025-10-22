@@ -1,147 +1,27 @@
 [
   {
-    "id": "tortilla-de-patatas-clasica",
-    "nombre": "Tortilla de patatas clásica",
-    "descripcion": "La tortilla española tradicional: huevos, patata y cebolla (opcional).",
+    "nombre": "Tortilla de patatas",
+    "descripcion": "Clásica tortilla española",
     "ingredientes": [
-      "6 huevos",
-      "600 g de patatas",
-      "1 cebolla (opcional)",
-      "Aceite de oliva",
-      "Sal"
+      "Huevos",
+      "Patatas",
+      "Aceite"
     ],
-    "instrucciones": [
-      {
-        "tipo": "texto",
-        "texto": "Pelar y cortar las patatas en láminas finas; picar la cebolla."
-      },
-      {
-        "tipo": "texto",
-        "texto": "Freír patatas y cebolla en aceite hasta que estén tiernas; escurrir."
-      },
-      {
-        "tipo": "texto",
-        "texto": "Batir los huevos con sal, mezclar con las patatas."
-      },
-      {
-        "tipo": "texto",
-        "texto": "Cuajar en sartén por ambos lados al punto deseado."
-      }
-    ],
-    "porciones": null,
-    "tiempos": {
-      "preparacion": null,
-      "coccion": null,
-      "total": null
-    },
-    "imagen": null,
-    "autor": null,
     "palabras_clave": [
       "tortilla",
-      "huevo",
-      "patata",
-      "clásico"
-    ],
-    "origen": {
-      "url": "local",
-      "sitio": null
-    }
+      "patata"
+    ]
   },
   {
-    "id": "gazpacho-andaluz",
-    "nombre": "Gazpacho andaluz",
-    "descripcion": "Sopa fría de tomate y verduras, perfecta para el verano.",
+    "nombre": "Gazpacho",
+    "descripcion": "Sopa fría de tomate",
     "ingredientes": [
-      "1 kg de tomates maduros",
-      "1 pepino",
-      "1 pimiento verde",
-      "1 diente de ajo",
-      "50 ml de aceite de oliva",
-      "30 ml de vinagre",
-      "Sal",
-      "Agua fría (opcional)"
+      "Tomate",
+      "Pepino"
     ],
-    "instrucciones": [
-      {
-        "tipo": "texto",
-        "texto": "Lavar y trocear verduras; pelar el pepino si se prefiere."
-      },
-      {
-        "tipo": "texto",
-        "texto": "Triturar con aceite, vinagre y sal hasta crema fina."
-      },
-      {
-        "tipo": "texto",
-        "texto": "Ajustar con agua fría y enfriar en la nevera."
-      }
-    ],
-    "porciones": null,
-    "tiempos": {
-      "preparacion": null,
-      "coccion": null,
-      "total": null
-    },
-    "imagen": null,
-    "autor": null,
     "palabras_clave": [
-      "sopa fría",
-      "verano",
-      "andalucía"
-    ],
-    "origen": {
-      "url": "local",
-      "sitio": null
-    }
-  },
-  {
-    "id": "alfajores-de-maicena",
-    "nombre": "Alfajores de maicena",
-    "descripcion": "Clásicos alfajores con dulce de leche y coco rallado.",
-    "ingredientes": [
-      "200 g de manteca",
-      "150 g de azúcar",
-      "3 yemas",
-      "1 cdita de esencia de vainilla",
-      "200 g de harina 0000",
-      "300 g de maicena",
-      "1 cdita de polvo de hornear",
-      "Dulce de leche repostero c/n",
-      "Coco rallado c/n"
-    ],
-    "instrucciones": [
-      {
-        "tipo": "texto",
-        "texto": "Batir manteca con azúcar; agregar yemas y vainilla."
-      },
-      {
-        "tipo": "texto",
-        "texto": "Incorporar secos; enfriar 30 min."
-      },
-      {
-        "tipo": "texto",
-        "texto": "Estirar, cortar tapitas y hornear a 170°C 8–10 min."
-      },
-      {
-        "tipo": "texto",
-        "texto": "Rellenar con dulce de leche y pasar bordes por coco."
-      }
-    ],
-    "porciones": null,
-    "tiempos": {
-      "preparacion": null,
-      "coccion": null,
-      "total": null
-    },
-    "imagen": null,
-    "autor": null,
-    "palabras_clave": [
-      "dulce",
-      "merienda",
-      "argentina"
-    ],
-    "origen": {
-      "url": "local",
-      "sitio": null
-    }
+      "gazpacho",
+      "sopa"
+    ]
   }
 ]

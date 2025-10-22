@@ -19,59 +19,30 @@
     .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
     .tag{background:#132542;border:1px solid #1f3a66;border-radius:999px;padding:2px 8px;font-size:12px}
     #web-results{padding:16px}
+    .section-title{margin:0 16px}
   </style>
 </head>
 <body>
   <header>
     <h1>Recetas (ES)</h1>
-
-    <!-- FORM de búsqueda (submit + Enter) -->
     <form id="searchForm" style="display:flex;gap:8px;align-items:center;flex:1">
-      <input id="q" type="search" placeholder="Buscar por nombre, ingrediente o etiqueta" style="flex:1">
+      <input id="q" type="search" placeholder="Buscar por nombre, ingrediente o etiqueta">
       <button id="btnBuscar" type="submit">Buscar</button>
     </form>
-
     <button id="btnImport" type="button">Importar por URL</button>
   </header>
 
-  <main>
-    <section class="grid" id="grid"></section>
-    <section id="web-results"></section>
-  </main>
+  <h3 class="section-title">Recetas locales</h3>
+  <section class="grid" id="grid"></section>
+  <h3 class="section-title">Resultados web</h3>
+  <section id="web-results"></section>
 
   <template id="card-tpl">
-  <article class="card">
-    <h3 class="title"></h3>
-    <p class="muted desc"></p>
-    <div class="tags"></div>
-  </article>
-</template>
-
-
-  <!-- Modal de detalle -->
-<div id="detail" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);align-items:center;justify-content:center;z-index:50;">
-  <article style="max-width:720px;width:92%;background:#0f1b33;border:1px solid #1f2937;border-radius:14px;padding:16px;">
-    <header style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-      <h2 id="d-title" style="margin:0;"></h2>
-      <button id="d-close">Cerrar</button>
-    </header>
-    <p id="d-desc" class="muted" style="margin-top:0;"></p>
-    <div style="display:grid;grid-template-columns:1fr 2fr;gap:16px;">
-      <div>
-        <h4>Ingredientes</h4>
-        <ul id="d-ings" style="margin-top:6px;"></ul>
-        <div id="d-meta" class="muted" style="margin-top:6px;font-size:13px;"></div>
-      </div>
-      <div>
-        <h4>Pasos</h4>
-        <ol id="d-steps" style="margin-top:6px;"></ol>
-      </div>
-    </div>
-    <footer id="d-origin" class="muted" style="margin-top:12px;font-size:13px;"></footer>
-  </article>
-</div>
-
-  <!-- cache-bust del JS -->
-  <script src="/app.js?v=6"></script>
+    <article class="card">
+      <h3 class="title"></h3>
+      <p class="muted desc"></p>
+      <div class="tags"></div>
+    </article>
+  </template>
 </body>
 </html>
