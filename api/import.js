@@ -1,5 +1,4 @@
-
-function parseISO8601DurationToMinutes(iso){ if(!iso) return null; const m=iso.match(/P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?/i); if(!m) return null; const d=+ (m[1]||0), h=+ (m[2]||0), min=+ (m[3]||0); return d*24*60+h*60+min; }
+function parseISO8601DurationToMinutes(iso){ if(!iso) return null; const m=iso.match(/P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?/i); if(!m) return null; const d=+(m[1]||0), h=+(m[2]||0), min=+(m[3]||0); return d*24*60+h*60+min; }
 function normalizeRecipe(r, sourceUrl){
   if(!r) return null; let instrucciones=[];
   if(Array.isArray(r.recipeInstructions)){
@@ -39,5 +38,4 @@ module.exports = async (req,res)=>{
     const normalized=normalizeRecipe(recipe,url); return res.status(200).json({ ok:true, receta:normalized, original:recipe });
   }catch(err){ return res.status(500).json({ error:'Fallo al importar la URL', detail:String(err) }); }
 };
-
 module.exports.config = { runtime: 'nodejs' };

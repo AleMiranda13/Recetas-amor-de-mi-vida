@@ -2,6 +2,7 @@
   'use strict';
   var BASE = []; var RECIPES_URL = '/recipes.json';
   function $(sel){ return document.querySelector(sel); }
+  function log(){ try { console.log.apply(console, arguments); } catch(_){} }
 
   function render(recipes){
     var grid = $('#grid'); var tpl = document.querySelector('#card-tpl');
@@ -30,48 +31,43 @@
     render(list); return list.length;
   }
 
-  
-// (Reemplazo) Renderizado seguro sin innerHTML: construye DOM y evita escapado manual
-function renderWebResults(items){
-  var box = document.getElementById('web-results');
-  if (!box) return;
-  while (box.firstChild) box.removeChild(box.firstChild);
-  if (!items || !items.length) return;
+  // Render “Resultados web” sin innerHTML
+  function renderWebResults(items){
+    var box = document.getElementById('web-results');
+    if (!box) return;
+    while (box.firstChild) box.removeChild(box.firstChild);
+    if (!items || !items.length) return;
 
-  var h3 = document.createElement('h3');
-  h3.textContent = 'Resultados web';
-  h3.style.margin = '0 0 8px';
-  box.appendChild(h3);
+    var h3 = document.createElement('h3');
+    h3.textContent = 'Resultados web';
+    h3.style.margin = '0 0 8px';
+    box.appendChild(h3);
 
-  items.forEach(function(it){
-    var wrap = document.createElement('div');
-    wrap.style.margin = '6px 0';
-    wrap.style.padding = '8px';
-    wrap.style.border = '1px solid #1f2937';
-    wrap.style.borderRadius = '8px';
+    items.forEach(function(it){
+      var wrap = document.createElement('div');
+      wrap.style.margin = '6px 0'; wrap.style.padding = '8px'; wrap.style.border = '1px solid #1f2937'; wrap.style.borderRadius = '8px';
 
-    var title = document.createElement('div');
-    title.style.fontWeight = '600';
-    title.textContent = it.title || it.url;
-    wrap.appendChild(title);
+      var title = document.createElement('div');
+      title.style.fontWeight = '600';
+      title.textContent = it.title || it.url;
+      wrap.appendChild(title);
 
-    var site = document.createElement('div');
-    site.className = 'muted';
-    site.textContent = it.site || '';
-    wrap.appendChild(site);
+      var site = document.createElement('div');
+      site.className = 'muted';
+      site.textContent = it.site || '';
+      wrap.appendChild(site);
 
-    var btn = document.createElement('button');
-    btn.textContent = 'Importar';
-    btn.style.marginTop = '6px';
-    btn.addEventListener('click', function(){
-      importFromURL(it.url);
+      var btn = document.createElement('button');
+      btn.textContent = 'Importar';
+      btn.style.marginTop = '6px';
+      btn.addEventListener('click', function(){ importFromURL(it.url); });
+      wrap.appendChild(btn);
+
+      box.appendChild(wrap);
     });
-    wrap.appendChild(btn);
+  }
 
-    box.appendChild(wrap);
-  });
-}
-function importFromURL(url){
+  function importFromURL(url){
     fetch('/api/import?url=' + encodeURIComponent(url))
       .then(function(r){ return r.json(); })
       .then(function(j){
@@ -86,41 +82,58 @@ function importFromURL(url){
   }
 
   function doSearchAndMaybeWeb(q){
+    log('[recetas] buscar:', q);
     var count = localSearch(q);
     if (!q || q.trim().length < 2) { renderWebResults([]); return; }
     if (count === 0){
       fetch('/api/search?q=' + encodeURIComponent(q))
         .then(function(r){ return r.json(); })
         .then(function(j){ if (j && j.ok) renderWebResults(j.results); })
-        .catch(function(){});
+        .catch(function(e){ console.warn('search fallback', e); });
     } else { renderWebResults([]); }
   }
 
-  function initEvents(){
-    var q = $('#q'); var b = $('#btnBuscar'); var imp = $('#btnImport');
-    if (b) b.addEventListener('click', function(){ doSearchAndMaybeWeb(q.value); });
-    if (imp) imp.addEventListener('click', function(){ var url = prompt('Pega la URL de la receta'); if (url) importFromURL(url); });
-    if (q) q.addEventListener('input', function(e){ doSearchAndMaybeWeb(e.target.value); });
+  function bindSearchEvents() {
+    var form = document.getElementById('searchForm');
+    var q = document.getElementById('q');
+    var btn = document.getElementById('btnBuscar');
+    var imp = document.getElementById('btnImport');
+
+    if (form) form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var val = (q && q.value) ? q.value : '';
+      log('[recetas] submit:', val);
+      doSearchAndMaybeWeb(val);
+    });
+    if (btn) btn.addEventListener('click', function(){
+      var val = (q && q.value) ? q.value : '';
+      log('[recetas] click buscar:', val);
+      doSearchAndMaybeWeb(val);
+    });
+    if (q) {
+      q.addEventListener('keyup', function(e){
+        if (e.key === 'Enter') {
+          log('[recetas] enter:', q.value);
+          doSearchAndMaybeWeb(q.value);
+        }
+      });
+      q.addEventListener('input', function(e){ doSearchAndMaybeWeb(e.target.value); });
+    }
+    if (imp) imp.addEventListener('click', function(){
+      var url = prompt('Pega la URL de la receta (con JSON-LD)');
+      if (url) importFromURL(url);
+    });
   }
 
   function init(){
     fetch(RECIPES_URL).then(function(res){ if(!res.ok) throw new Error('No se pudo cargar recipes.json'); return res.json(); })
-      .then(function(json){ BASE = Array.isArray(json) ? json : []; render(BASE); initEvents(); })
-      .catch(function(err){ console.error(err); render([]); initEvents(); });
+      .then(function(json){ BASE = Array.isArray(json) ? json : []; render(BASE); bindSearchEvents(); })
+      .catch(function(err){ console.error(err); render([]); bindSearchEvents(); });
   }
-  init();
-})();
 
-// Si el backend devuelve ok:true pero sin results, mostrar aviso
-(function ensureNoResultsMessage(){
-  const orig = window.renderWebResults;
-  if (!orig) return;
-  window.renderWebResults = function(items){
-    orig(items);
-    const box = document.getElementById('web-results');
-    if (!box) return;
-    if ((!items || !items.length) && (document.querySelector('#grid article') == null)) {
-      box.textContent = 'No encontramos resultados en la web ahora mismo. Intenta otra búsqueda o vuelve a intentar en unos segundos.';
-    }
-  };
+  init();
+  // Exponer para envoltorios externos si hiciera falta
+  window.doSearchAndMaybeWeb = doSearchAndMaybeWeb;
+  window.renderWebResults = renderWebResults;
+
 })();

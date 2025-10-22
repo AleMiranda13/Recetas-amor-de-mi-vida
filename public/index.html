@@ -24,9 +24,14 @@
 <body>
   <header>
     <h1>Recetas (ES)</h1>
-    <input id="q" type="search" placeholder="Buscar por nombre, ingrediente o etiqueta">
-    <button id="btnBuscar">Buscar</button>
-    <button id="btnImport">Importar por URL</button>
+
+    <!-- FORM de búsqueda (submit + Enter) -->
+    <form id="searchForm" style="display:flex;gap:8px;align-items:center;flex:1">
+      <input id="q" type="search" placeholder="Buscar por nombre, ingrediente o etiqueta" style="flex:1">
+      <button id="btnBuscar" type="submit">Buscar</button>
+    </form>
+
+    <button id="btnImport" type="button">Importar por URL</button>
   </header>
 
   <main>
@@ -42,6 +47,7 @@
     </article>
   </template>
 
-  <script src="/app.js"></script>
+  <!-- cache-bust del JS -->
+  <script src="/app.js?v=6"></script>
 </body>
 </html>
