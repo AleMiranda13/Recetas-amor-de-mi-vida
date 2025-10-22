@@ -1,0 +1,147 @@
+[
+  {
+    "id": "tortilla-de-patatas-clasica",
+    "nombre": "Tortilla de patatas clásica",
+    "descripcion": "",
+    "ingredientes": [
+      "6 huevos",
+      "600 g de patatas",
+      "1 cebolla (opcional)",
+      "Aceite de oliva",
+      "Sal"
+    ],
+    "instrucciones": [
+      {
+        "tipo": "texto",
+        "texto": "Pelar y cortar las patatas en láminas finas; picar la cebolla."
+      },
+      {
+        "tipo": "texto",
+        "texto": "Freír patatas y cebolla a fuego medio en abundante aceite hasta que estén tiernas; escurrir."
+      },
+      {
+        "tipo": "texto",
+        "texto": "Batir los huevos con sal, mezclar con las patatas."
+      },
+      {
+        "tipo": "texto",
+        "texto": "Cuajar en sartén antiadherente por ambos lados al punto deseado."
+      }
+    ],
+    "porciones": null,
+    "tiempos": {
+      "preparacion": null,
+      "coccion": null,
+      "total": null
+    },
+    "imagen": null,
+    "autor": null,
+    "palabras_clave": [
+      "tortilla",
+      "huevo",
+      "patata",
+      "clásico"
+    ],
+    "origen": {
+      "url": "local",
+      "sitio": null
+    }
+  },
+  {
+    "id": "gazpacho-andaluz",
+    "nombre": "Gazpacho andaluz",
+    "descripcion": "",
+    "ingredientes": [
+      "1 kg de tomates maduros",
+      "1 pepino",
+      "1 pimiento verde",
+      "1 diente de ajo",
+      "50 ml de aceite de oliva",
+      "30 ml de vinagre",
+      "Sal",
+      "Agua fría (opcional)"
+    ],
+    "instrucciones": [
+      {
+        "tipo": "texto",
+        "texto": "Lavar y trocear verduras; pelar el pepino si se prefiere."
+      },
+      {
+        "tipo": "texto",
+        "texto": "Triturar todo con el aceite, vinagre y sal hasta conseguir una crema fina."
+      },
+      {
+        "tipo": "texto",
+        "texto": "Ajustar con agua fría si hace falta y enfriar en la nevera."
+      }
+    ],
+    "porciones": null,
+    "tiempos": {
+      "preparacion": null,
+      "coccion": null,
+      "total": null
+    },
+    "imagen": null,
+    "autor": null,
+    "palabras_clave": [
+      "sopa fría",
+      "verano",
+      "andalucía"
+    ],
+    "origen": {
+      "url": "local",
+      "sitio": null
+    }
+  },
+  {
+    "id": "alfajores-de-maicena",
+    "nombre": "Alfajores de maicena",
+    "descripcion": "",
+    "ingredientes": [
+      "200 g de manteca",
+      "150 g de azúcar",
+      "3 yemas",
+      "1 cdita de esencia de vainilla",
+      "200 g de harina 0000",
+      "300 g de maicena",
+      "1 cdita de polvo de hornear",
+      "Dulce de leche repostero c/n",
+      "Coco rallado c/n"
+    ],
+    "instrucciones": [
+      {
+        "tipo": "texto",
+        "texto": "Batir manteca con azúcar; agregar yemas y vainilla."
+      },
+      {
+        "tipo": "texto",
+        "texto": "Incorporar harina, maicena y polvo; formar masa y enfriar 30 min."
+      },
+      {
+        "tipo": "texto",
+        "texto": "Estirar, cortar tapitas y hornear a 170°C 8–10 min (sin dorar)."
+      },
+      {
+        "tipo": "texto",
+        "texto": "Rellenar con dulce de leche y pasar los bordes por coco."
+      }
+    ],
+    "porciones": null,
+    "tiempos": {
+      "preparacion": null,
+      "coccion": null,
+      "total": null
+    },
+    "imagen": null,
+    "autor": null,
+    "palabras_clave": [
+      "dulce",
+      "merienda",
+      "argentina"
+    ],
+    "origen": {
+      "url": "local",
+      "sitio": null
+    }
+  }
+]
