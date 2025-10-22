@@ -10,3 +10,5 @@ module.exports = async (req, res) => {
     return res.status(200).send(data);
   } catch (err) { return res.status(500).json({ error: 'No se pudo leer recipes.json', detail: String(err) }); }
 };
+
+module.exports.config = { runtime: 'nodejs' };

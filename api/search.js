@@ -14,3 +14,5 @@ module.exports=async (req,res)=>{
     res.status(200).json({ ok:true, results:Array.from(map.values()) });
   }catch(e){ res.status(500).json({ error:'No se pudo buscar', detail:String(e) }); }
 };
+
+module.exports.config = { runtime: 'nodejs' };

@@ -39,3 +39,5 @@ module.exports = async (req,res)=>{
     const normalized=normalizeRecipe(recipe,url); return res.status(200).json({ ok:true, receta:normalized, original:recipe });
   }catch(err){ return res.status(500).json({ error:'Fallo al importar la URL', detail:String(err) }); }
 };
+
+module.exports.config = { runtime: 'nodejs' };
