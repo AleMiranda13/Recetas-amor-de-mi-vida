@@ -110,3 +110,17 @@ function importFromURL(url){
   }
   init();
 })();
+
+// Si el backend devuelve ok:true pero sin results, mostrar aviso
+(function ensureNoResultsMessage(){
+  const orig = window.renderWebResults;
+  if (!orig) return;
+  window.renderWebResults = function(items){
+    orig(items);
+    const box = document.getElementById('web-results');
+    if (!box) return;
+    if ((!items || !items.length) && (document.querySelector('#grid article') == null)) {
+      box.textContent = 'No encontramos resultados en la web ahora mismo. Intenta otra búsqueda o vuelve a intentar en unos segundos.';
+    }
+  };
+})();
