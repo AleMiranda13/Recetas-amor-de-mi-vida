@@ -2,7 +2,7 @@
   {
     "id": "tortilla-de-patatas-clasica",
     "nombre": "Tortilla de patatas clásica",
-    "descripcion": "",
+    "descripcion": "La tortilla española tradicional: huevos, patata y cebolla (opcional).",
     "ingredientes": [
       "6 huevos",
       "600 g de patatas",
@@ -17,7 +17,7 @@
       },
       {
         "tipo": "texto",
-        "texto": "Freír patatas y cebolla a fuego medio en abundante aceite hasta que estén tiernas; escurrir."
+        "texto": "Freír patatas y cebolla en aceite hasta que estén tiernas; escurrir."
       },
       {
         "tipo": "texto",
@@ -25,7 +25,7 @@
       },
       {
         "tipo": "texto",
-        "texto": "Cuajar en sartén antiadherente por ambos lados al punto deseado."
+        "texto": "Cuajar en sartén por ambos lados al punto deseado."
       }
     ],
     "porciones": null,
@@ -50,7 +50,7 @@
   {
     "id": "gazpacho-andaluz",
     "nombre": "Gazpacho andaluz",
-    "descripcion": "",
+    "descripcion": "Sopa fría de tomate y verduras, perfecta para el verano.",
     "ingredientes": [
       "1 kg de tomates maduros",
       "1 pepino",
@@ -68,11 +68,11 @@
       },
       {
         "tipo": "texto",
-        "texto": "Triturar todo con el aceite, vinagre y sal hasta conseguir una crema fina."
+        "texto": "Triturar con aceite, vinagre y sal hasta crema fina."
       },
       {
         "tipo": "texto",
-        "texto": "Ajustar con agua fría si hace falta y enfriar en la nevera."
+        "texto": "Ajustar con agua fría y enfriar en la nevera."
       }
     ],
     "porciones": null,
@@ -96,7 +96,7 @@
   {
     "id": "alfajores-de-maicena",
     "nombre": "Alfajores de maicena",
-    "descripcion": "",
+    "descripcion": "Clásicos alfajores con dulce de leche y coco rallado.",
     "ingredientes": [
       "200 g de manteca",
       "150 g de azúcar",
@@ -115,15 +115,15 @@
       },
       {
         "tipo": "texto",
-        "texto": "Incorporar harina, maicena y polvo; formar masa y enfriar 30 min."
+        "texto": "Incorporar secos; enfriar 30 min."
       },
       {
         "tipo": "texto",
-        "texto": "Estirar, cortar tapitas y hornear a 170°C 8–10 min (sin dorar)."
+        "texto": "Estirar, cortar tapitas y hornear a 170°C 8–10 min."
       },
       {
         "tipo": "texto",
-        "texto": "Rellenar con dulce de leche y pasar los bordes por coco."
+        "texto": "Rellenar con dulce de leche y pasar bordes por coco."
       }
     ],
     "porciones": null,

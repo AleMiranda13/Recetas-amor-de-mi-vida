@@ -6,16 +6,19 @@
   <title>Recetas (ES)</title>
   <link rel="icon" href="/favicon.ico">
   <style>
-    body{margin:0;background:#0b1424;color:#e5ecf5;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial,sans-serif}
-    header{display:flex;gap:8px;align-items:center;padding:12px;border-bottom:1px solid #1f2937;background:#0f1b33;position:sticky;top:0}
+    :root{--bg:#0b1424;--fg:#e5ecf5;--card:#0f1b33;--muted:#9fb0c5;--border:#1f2937;--accent:#244c7a;--accent2:#0e2b4f}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial,sans-serif}
+    header{display:flex;gap:8px;align-items:center;padding:12px;border-bottom:1px solid var(--border);background:var(--card);position:sticky;top:0;z-index:10}
     h1{margin:0;font-size:16px}
-    input[type="search"]{flex:1 1 320px;padding:8px 10px;border-radius:8px;border:1px solid #24324a;background:#0b1424;color:#e5ecf5}
-    button{padding:8px 10px;border-radius:10px;border:1px solid #244c7a;background:#0e2b4f;color:#e5ecf5;cursor:pointer}
+    input[type="search"]{flex:1 1 320px;padding:8px 10px;border-radius:8px;border:1px solid var(--accent);background:var(--bg);color:var(--fg)}
+    button{padding:8px 10px;border-radius:10px;border:1px solid var(--accent);background:var(--accent2);color:var(--fg);cursor:pointer}
     #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;padding:16px}
-    .card{border:1px solid #1f2937;border-radius:12px;padding:12px;background:#0f1b33}
-    .muted{color:#9fb0c5;font-size:14px}
+    .card{border:1px solid var(--border);border-radius:12px;padding:12px;background:var(--card)}
+    .muted{color:var(--muted);font-size:14px}
     .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
     .tag{background:#132542;border:1px solid #1f3a66;border-radius:999px;padding:2px 8px;font-size:12px}
+    #web-results{padding:16px}
   </style>
 </head>
 <body>
@@ -23,9 +26,13 @@
     <h1>Recetas (ES)</h1>
     <input id="q" type="search" placeholder="Buscar por nombre, ingrediente o etiqueta">
     <button id="btnBuscar">Buscar</button>
-    <a href="/" style="text-decoration:none"><button>Inicio</button></a>
+    <button id="btnImport">Importar por URL</button>
   </header>
-  <main id="grid"></main>
+
+  <main>
+    <section class="grid" id="grid"></section>
+    <section id="web-results"></section>
+  </main>
 
   <template id="card-tpl">
     <article class="card">
