@@ -30,27 +30,48 @@
     render(list); return list.length;
   }
 
-  function escapeHtml(s){ return (s||'').replace(/[&<>"']/g, function(c){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',':'&#39;'})[c]; }); }
-  function renderWebResults(items){
-    var box = document.getElementById('web-results'); if (!box) return;
-    if (!items || !items.length) { box.innerHTML = ''; return; }
-    var html = ['<h3 style=\"margin:0 0 8px\">Resultados web</h3>'];
-    items.forEach(function(it){
-      html.push('<div style=\"margin:6px 0;padding:8px;border:1px solid #1f2937;border-radius:8px\">'
-        + '<div style=\"font-weight:600\">'+ escapeHtml(it.title || it.url) +'</div>'
-        + '<div class=\"muted\">'+ escapeHtml(it.site || '') +'</div>'
-        + '<button data-url=\"'+ encodeURIComponent(it.url) +'\" class=\"btn-import-web\" style=\"margin-top:6px\">Importar</button>'
-        + '</div>');
-    });
-    box.innerHTML = html.join('');
-    Array.prototype.forEach.call(document.querySelectorAll('.btn-import-web'), function(btn){
-      btn.addEventListener('click', function(){
-        var u = decodeURIComponent(btn.getAttribute('data-url')); importFromURL(u);
-      });
-    });
-  }
+  
+// (Reemplazo) Renderizado seguro sin innerHTML: construye DOM y evita escapado manual
+function renderWebResults(items){
+  var box = document.getElementById('web-results');
+  if (!box) return;
+  while (box.firstChild) box.removeChild(box.firstChild);
+  if (!items || !items.length) return;
 
-  function importFromURL(url){
+  var h3 = document.createElement('h3');
+  h3.textContent = 'Resultados web';
+  h3.style.margin = '0 0 8px';
+  box.appendChild(h3);
+
+  items.forEach(function(it){
+    var wrap = document.createElement('div');
+    wrap.style.margin = '6px 0';
+    wrap.style.padding = '8px';
+    wrap.style.border = '1px solid #1f2937';
+    wrap.style.borderRadius = '8px';
+
+    var title = document.createElement('div');
+    title.style.fontWeight = '600';
+    title.textContent = it.title || it.url;
+    wrap.appendChild(title);
+
+    var site = document.createElement('div');
+    site.className = 'muted';
+    site.textContent = it.site || '';
+    wrap.appendChild(site);
+
+    var btn = document.createElement('button');
+    btn.textContent = 'Importar';
+    btn.style.marginTop = '6px';
+    btn.addEventListener('click', function(){
+      importFromURL(it.url);
+    });
+    wrap.appendChild(btn);
+
+    box.appendChild(wrap);
+  });
+}
+function importFromURL(url){
     fetch('/api/import?url=' + encodeURIComponent(url))
       .then(function(r){ return r.json(); })
       .then(function(j){
