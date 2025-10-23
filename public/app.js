@@ -305,18 +305,29 @@
   }
 
   // soporta array directo o { ok, results } o { organic_results }
-  async function searchWeb(q){
-    if(!q) return [];
+// incluye fallbacks: q -> "q receta" -> "q recetas"
+async function searchWeb(q){
+  const tryFetch = async (term) => {
     try{
-      const res = await fetch('/api/search?q=' + encodeURIComponent(q));
-      if(!res.ok) throw 0;
+      const res = await fetch('/api/search?q=' + encodeURIComponent(term));
+      if(!res.ok) return [];
       const data = await res.json();
       const arr = Array.isArray(data) ? data : (data.results || data.organic_results || []);
-      return arr.slice(0, 12);
+      return Array.isArray(arr) ? arr : [];
     }catch{
       return [];
     }
-  }
+  };
+
+  const base = (q||'').trim();
+  if (!base) return [];
+
+  let out = await tryFetch(base);
+  if (!out.length) out = await tryFetch(`${base} receta`);
+  if (!out.length) out = await tryFetch(`${base} recetas`);
+  return out.slice(0, 12);
+}
+
 
   // --------- render genérico
   function renderList(container, recipes, {mode='local', section=null, sourceUrls=[]} = {}){
@@ -335,36 +346,41 @@
 
   // --------- handlers
   async function onSearch(){
-    const q = els.q.value;
-
-    // locales (sin fitness)
-    const local = searchLocal(q);
-    renderList(els.localResults, local);
-    toggleLocalMoreVisibility(false); // oculta "Ver más" al estar en modo búsqueda
-
-    // web
-    const web = await searchWeb(q);
-    if (!web.length) {
-      els.webResults.innerHTML = `
-        <div class="empty">
-          Sin resultados por ahora.<br/><br/>
-          <a href="https://www.google.com/search?q=${encodeURIComponent(q)}" target="_blank" rel="noopener">
-            Abrir búsqueda en Google
-          </a>
-        </div>`;
-      return;
-    }
-
-    const webRecipes = web.map((w, i) => ({
-      id: `web_${i}_${Date.now()}`,
-      title: w.title,
-      description: w.snippet || '',
-      tags: ['web'],
-      source: w.url
-    }));
-    const urls = web.map(w => w.url);
-    renderList(els.webResults, webRecipes, {mode:'web', sourceUrls: urls});
+  const q = els.q.value;
+  // 1) LOCALES (sin fitness)
+  const local = searchLocal(q);
+  renderList(els.localResults, local);
+  toggleLocalMoreVisibility(false); // oculta "Ver más" mientras hay búsqueda
+  // 2) WEB (placeholder "cargando")
+  els.webResults.innerHTML = `
+    <div class="empty">
+      Buscando en la web…
+    </div>
+  `;
+  // buscar web en paralelo
+  const web = await searchWeb(q);
+  if (!web.length) {
+    els.webResults.innerHTML = `
+      <div class="empty">
+        Sin resultados web por ahora.<br/><br/>
+        <a href="https://www.google.com/search?q=${encodeURIComponent(q)}" target="_blank" rel="noopener">
+          Abrir búsqueda en Google
+        </a>
+      </div>`;
+    return;
   }
+
+  const webRecipes = web.map((w, i) => ({
+    id: `web_${i}_${Date.now()}`,
+    title: w.title,
+    description: w.snippet || '',
+    tags: ['web'],
+    source: w.url
+  }));
+  const urls = web.map(w => w.url);
+  renderList(els.webResults, webRecipes, {mode:'web', sourceUrls: urls});
+}
+
 
   function renderImported(){
     const q = (els.importSearch.value||'').toLowerCase();
