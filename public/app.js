@@ -152,95 +152,104 @@
   }
 
   // --------- tarjeta
-  function recipeCard(recipe, opts = {}){
-    const card = document.createElement('div');
-    card.className = 'card';
+function recipeCard(recipe, opts = {}) {
+  const card = document.createElement('div');
+  card.className = 'card';
 
-    const title = document.createElement('h3');
-    title.textContent = recipe.title;
+  const title = document.createElement('h3');
+  title.textContent = recipe.title || 'Receta sin título';
+  card.append(title);
 
-    const desc = document.createElement('div');
-    desc.textContent = recipe.description || '';
+  const desc = document.createElement('div');
+  desc.className = 'desc';
+  desc.textContent = recipe.description || '';
+  card.append(desc);
 
-    const tags = document.createElement('div');
-    tags.className = 'tags';
-    (recipe.tags || []).forEach(t => {
-      const s = document.createElement('span');
-      s.className = 'tag'; s.textContent = t;
-      tags.appendChild(s);
+  const tags = document.createElement('div');
+  tags.className = 'tags';
+  (recipe.tags || []).forEach(t => {
+    const s = document.createElement('span');
+    s.className = 'tag';
+    s.textContent = t;
+    tags.appendChild(s);
+  });
+  card.append(tags);
+
+  const actions = document.createElement('div');
+  actions.className = 'card-actions';
+
+  // 🔸 Locales, importadas, favoritas, fitness
+  if (opts.mode !== 'web') {
+    // Ver (en importadas intenta enriquecer antes)
+    const btnView = document.createElement('button');
+    btnView.className = 'ghost';
+    btnView.textContent = 'Ver';
+    btnView.addEventListener('click', async () => {
+      const r = (opts.section === 'importadas')
+        ? await ensureDetails(recipe)
+        : recipe;
+      openModal(r);
     });
+    actions.append(btnView);
 
-    const actions = document.createElement('div');
-    actions.className = 'card-actions';
-
-    if (opts.mode !== 'web') {
-      // Ver (en importadas intenta enriquecer antes)
-      const btnView = document.createElement('button');
-      btnView.className = 'ghost';
-      btnView.textContent = 'Ver';
-      btnView.addEventListener('click', async () => {
-        const r = (opts.section === 'importadas') ? await ensureDetails(recipe) : recipe;
-        openModal(r);
-      });
-      actions.append(btnView);
-
-      // Eliminar (solo en importadas)
-      if (opts.section === 'importadas') {
-        const del = document.createElement('button');
-        del.className = 'ghost danger';
-        del.textContent = 'Eliminar';
-        del.addEventListener('click', () => deleteImported(recipe.id));
-        actions.append(del);
-      }
-    } else {
-      // Resultados web: Importar + Fuente
-      const imp = document.createElement('button');
-      imp.className = 'ghost';
-      imp.textContent = 'Importar';
-      imp.addEventListener('click', ()=> importFromUrl(opts.sourceUrl, recipe, imp));
-      actions.append(imp);
-
-      if (opts.sourceUrl) {
-        const a = document.createElement('a');
-        a.className = 'ghost';
-        a.textContent = 'Fuente';
-        a.href = opts.sourceUrl;
-        a.target = '_blank';
-        a.rel = 'noopener';
-        a.style.textDecoration = 'none';
-        actions.append(a);
-      }
+    // Eliminar (solo en importadas)
+    if (opts.section === 'importadas') {
+      const del = document.createElement('button');
+      del.className = 'ghost danger';
+      del.textContent = 'Eliminar';
+      del.addEventListener('click', () => deleteImported(recipe.id));
+      actions.append(del);
     }
 
     // Favoritos
     const fav = document.createElement('button');
-    fav.className = 'icon fav' + (store.isFav(recipe.id) ? ' active' : '');
-    fav.innerHTML = '★';
-    fav.title = store.isFav(recipe.id) ? 'Quitar de favoritos' : 'Agregar a favoritos';
-    fav.addEventListener('click', ()=> toggleFavorite(recipe, fav));
+    fav.className = 'ghost';
+    fav.textContent = '★';
+    fav.title = 'Agregar a favoritos';
+    fav.addEventListener('click', () => toggleFavorite(recipe));
     actions.append(fav);
-
-    card.append(title, desc, tags, actions);
-    return card;
   }
 
-  function toggleFavorite(recipe, btn){
-    let favs = store.getFavorites();
-    const exists = favs.some(r => r.id === recipe.id);
-    if (exists) {
-      favs = favs.filter(r => r.id !== recipe.id);
-      btn?.classList.remove('active');
-      btn.title = 'Agregar a favoritos';
-      toast('Quitado de favoritos', 'warn');
-    } else {
-      favs.unshift(recipe);
-      btn?.classList.add('active');
-      btn.title = 'Quitar de favoritos';
-      toast('Agregado a favoritos');
+  // 🔹 Resultados web
+  else {
+    const isSuggestion = !!recipe.suggestion;
+
+    // Importar solo si NO es sugerencia
+    if (!isSuggestion) {
+      const imp = document.createElement('button');
+      imp.className = 'ghost';
+      imp.textContent = 'Importar';
+      imp.addEventListener('click', () =>
+        importFromUrl(opts.sourceUrl, recipe, imp)
+      );
+      actions.append(imp);
     }
-    store.setFavorites(favs);
-    renderFavorites();
+
+    // Fuente (siempre visible)
+    if (opts.sourceUrl) {
+      const a = document.createElement('a');
+      a.className = 'ghost';
+      a.textContent = 'Fuente';
+      a.href = opts.sourceUrl;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.style.textDecoration = 'none';
+      actions.append(a);
+    }
+
+    // Favoritos también posible desde web
+    const fav = document.createElement('button');
+    fav.className = 'ghost';
+    fav.textContent = '★';
+    fav.title = 'Agregar a favoritos';
+    fav.addEventListener('click', () => toggleFavorite(recipe));
+    actions.append(fav);
   }
+
+  card.append(actions);
+  return card;
+}
+
 
   // --------- importar (desde resultados web)
   async function importFromUrl(url, meta = {}, button){
@@ -370,15 +379,16 @@ async function searchWeb(q){
     return;
   }
 
-  const webRecipes = web.map((w, i) => ({
-    id: `web_${i}_${Date.now()}`,
-    title: w.title,
-    description: w.snippet || '',
-    tags: ['web'],
-    source: w.url
-  }));
-  const urls = web.map(w => w.url);
-  renderList(els.webResults, webRecipes, {mode:'web', sourceUrls: urls});
+ const webRecipes = web.map((w, i) => ({
+  id: `web_${i}_${Date.now()}`,
+  title: w.title,
+  description: w.snippet || '',
+  tags: ['web'],
+  source: w.url,
+  suggestion: !!w.suggestion  
+}));
+const urls = web.map(w => w.url);
+renderList(els.webResults, webRecipes, {mode:'web', sourceUrls: urls});
 }
 
 
