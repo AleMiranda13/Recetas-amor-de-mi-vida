@@ -1,79 +1,34 @@
-// api/search.js — “real recipes first”
+// api/search.js — funciona con o sin SERPAPI
 const ALLOWED = [
-  // ES / global
-  "recetasgratis.net","pequerecetas.com","directoalpaladar.com","recetasderechupete.com",
-  "bonviveur.es","javirecetas.com","deliciosi.com","cookpad.com",
-  // LATAM
-  "cocinafacil.com.mx","kiwilimon.com","cocinadelirante.com","paulinacocina.net",
-  "annarecetasfaciles.com","todareceta.es","cocinafacil.com.co","cocinayvino.com",
-  "comedera.com","elsemanario.com.mx","midiario.com","midiariodecocina.com" // puedes quitar/añadir
+  "recetasgratis.net",
+  "directoalpaladar.com",
+  "kiwilimon.com",
+  "cookpad.com"
 ];
 
-// dominios preferidos cuando buscamos “suelto”
-const PREFERRED = new Set(ALLOWED);
+const UA = "RecetasES/1.3";
+const CACHE = new Map();
+const TTL_MS = 15_000;
 
-const UA = "RecetasES/1.2";
-
+// -------- util
 function normalize(s){
   return (s||"").toLowerCase()
     .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
     .replace(/\s+/g," ").trim();
 }
-
-const SYN = {
-  torta:["pastel","bizcocho","queque","tarta"],
-  pastel:["torta","bizcocho","queque","tarta"],
-  bizcocho:["pastel","torta","queque","tarta"],
-  queque:["bizcocho","pastel","torta","tarta"],
-  tarta:["pastel","torta","bizcocho","queque"],
-  papa:["papas","patata","patatas"],papas:["papa","patata","patatas"],
-  patata:["patatas","papa","papas"],patatas:["patata","papa","papas"]
-};
-
-function queryVariants(q){
-  const base = normalize(q);
-  const toks = base.split(" ").filter(Boolean);
-  const out = new Set([base, `${base} receta`, `${base} recetas`, `"${base}"`]);
-  toks.forEach((tk,i)=>{
-    const syn = SYN[tk];
-    if (syn) syn.forEach(s=>{
-      const arr = toks.slice(); arr[i]=s;
-      const p = arr.join(" ");
-      out.add(p); out.add(`${p} receta`); out.add(`${p} recetas`);
-    });
-  });
-  return Array.from(out).slice(0,12);
+function dedupe(items){
+  const m = new Map();
+  for (const it of items) if (it.url && !m.has(it.url)) m.set(it.url, it);
+  return Array.from(m.values());
 }
-
-async function serpapi(q, key){
-  const u = new URL("https://serpapi.com/search.json");
-  u.searchParams.set("engine","google");
-  u.searchParams.set("hl","es");
-  u.searchParams.set("num","10");
-  u.searchParams.set("q", q);
-  u.searchParams.set("api_key", key);
-  const r = await fetch(u, { headers:{ "User-Agent": UA } });
-  if (!r.ok) return { list:[], error:`HTTP ${r.status}` };
-  const j = await r.json();
-  if (j.error) return { list:[], error:j.error };
-  const list = Array.isArray(j.organic_results) ? j.organic_results : [];
-  return { list, error:null };
-}
-
-function mapResults(list){
-  const out=[];
-  for (const it of list){
-    const link = it.link || it.formattedUrl;
-    if (!link) continue;
+function onlyAllowed(items){
+  return items.filter(it=>{
     try{
-      const u = new URL(link);
-      out.push({ title: it.title || link, url: link, site: u.hostname, snippet: it.snippet || "" });
-    }catch{}
-  }
-  return out;
+      const h = new URL(it.url).hostname;
+      return ALLOWED.some(d => h===d || h.endsWith("."+d));
+    }catch{ return false; }
+  });
 }
-
-// Quitar listados/portadas
 function dropListingPages(items){
   const BAD = /(buscar|b[úu]squeda|search|categoria|categor[ií]a|tag|etiqueta|listado|coleccion|collection)/i;
   return items.filter(it=>{
@@ -89,20 +44,103 @@ function dropListingPages(items){
   });
 }
 
-// Quedarnos con páginas con “pinta” de receta
-function likelyRecipe(items){
-  const WORDS = /receta|ingredientes|preparaci[oó]n|paso a paso|cómo hacer/i;
-  return items.filter(it=>{
-    try{
-      const u = new URL(it.url);
-      const hostOk = PREFERRED.has(u.hostname) || ALLOWED.some(d=>u.hostname===d||u.hostname.endsWith("."+d));
-      const pathOk = /receta|recipe/i.test(u.pathname);
-      const textOk = WORDS.test(it.title||"") || WORDS.test(it.snippet||"");
-      return hostOk || pathOk || textOk;
-    }catch{ return false; }
-  });
+// -------- SerpAPI (si hay cupo)
+async function serpapi(q, key){
+  const u = new URL("https://serpapi.com/search.json");
+  u.searchParams.set("engine","google");
+  u.searchParams.set("hl","es");
+  u.searchParams.set("num","10");
+  u.searchParams.set("q", q);
+  u.searchParams.set("api_key", key);
+  const r = await fetch(u, { headers:{ "User-Agent": UA } });
+  if (!r.ok) return { list:[], error:`HTTP ${r.status}` };
+  const j = await r.json();
+  if (j.error) return { list:[], error:j.error };
+  const list = Array.isArray(j.organic_results) ? j.organic_results : [];
+  const mapped = list.map(it=>{
+    const url = it.link || it.formattedUrl;
+    return url ? { title: it.title || url, url, site: safeHost(url), snippet: it.snippet || "" } : null;
+  }).filter(Boolean);
+  return { list: mapped, error:null };
+}
+function safeHost(url){ try{ return new URL(url).hostname; }catch{ return ""; } }
+
+// -------- Scrapers sin API (HTML simple)
+async function fetchHTML(url){
+  const r = await fetch(url, { headers:{ "User-Agent": UA } });
+  if (!r.ok) throw new Error("HTTP "+r.status);
+  return await r.text();
 }
 
+// RecetasGratis
+async function scrapeRecetasGratis(q){
+  const s = encodeURIComponent(q);
+  const url = `https://www.recetasgratis.net/busqueda?q=${s}`;
+  const html = await fetchHTML(url);
+  const out = [];
+  // tarjetas de receta
+  const re = /<a[^>]+href="(https:\/\/www\.recetasgratis\.net\/receta[^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
+  let m;
+  while ((m = re.exec(html)) && out.length < 8){
+    const u = m[1];
+    let title = m[2].replace(/<[^>]+>/g,"").replace(/\s+/g," ").trim();
+    if (!title) title = u;
+    out.push({ title, url:u, site:"recetasgratis.net", snippet:"" });
+  }
+  return out;
+}
+
+// Directo al Paladar
+async function scrapeDirecto(q){
+  const s = encodeURIComponent(q);
+  const url = `https://www.directoalpaladar.com/buscar?q=${s}`;
+  const html = await fetchHTML(url);
+  const out = [];
+  const re = /<a class="link"[^>]+href="(https:\/\/www\.directoalpaladar\.com\/[^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
+  let m;
+  while ((m = re.exec(html)) && out.length < 8){
+    const u = m[1];
+    if (/\/categoria\//i.test(u)) continue;
+    let title = m[2].replace(/<[^>]+>/g,"").replace(/\s+/g," ").trim();
+    out.push({ title: title || u, url:u, site:"directoalpaladar.com", snippet:"" });
+  }
+  return out;
+}
+
+// Kiwilimon
+async function scrapeKiwilimon(q){
+  const s = encodeURIComponent(q);
+  const url = `https://www.kiwilimon.com/buscar?q=${s}`;
+  const html = await fetchHTML(url);
+  const out = [];
+  const re = /<a[^>]+href="(https:\/\/www\.kiwilimon\.com\/receta[^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
+  let m;
+  while ((m = re.exec(html)) && out.length < 8){
+    const u = m[1];
+    let title = m[2].replace(/<[^>]+>/g,"").replace(/\s+/g," ").trim();
+    out.push({ title: title || u, url:u, site:"kiwilimon.com", snippet:"" });
+  }
+  return out;
+}
+
+// Cookpad
+async function scrapeCookpad(q){
+  const s = encodeURIComponent(q);
+  const url = `https://cookpad.com/es/search/${s}`;
+  const html = await fetchHTML(url);
+  const out = [];
+  const re = /<a[^>]+class="recipe-name"[^>]+href="(\/es\/recetas\/[^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
+  let m;
+  while ((m = re.exec(html)) && out.length < 8){
+    const path = m[1].replace(/&amp;/g,"&");
+    const u = `https://cookpad.com${path}`;
+    let title = m[2].replace(/<[^>]+>/g,"").replace(/\s+/g," ").trim();
+    out.push({ title: title || u, url:u, site:"cookpad.com", snippet:"" });
+  }
+  return out;
+}
+
+// Sugerencias (fallback)
 function suggestions(q){
   const s = encodeURIComponent(q);
   return [
@@ -111,11 +149,8 @@ function suggestions(q){
     { title:`Buscar "${q}" en Kiwilimon`, url:`https://www.kiwilimon.com/buscar?q=${s}` },
     { title:`Buscar "${q}" en Cookpad`, url:`https://cookpad.com/es/search/${s}` },
     { title:`Buscar "${q}" en Google`, url:`https://www.google.com/search?q=${s}+receta` }
-  ].map(x => ({ ...x, site: new URL(x.url).hostname, snippet:"", suggestion:true }));
+  ].map(x => ({ ...x, site: safeHost(x.url), snippet:"", suggestion:true }));
 }
-
-const CACHE = new Map();
-const TTL_MS = 20_000;
 
 module.exports = async (req,res)=>{
   const q=(req.query.q||"").toString().trim();
@@ -129,45 +164,42 @@ module.exports = async (req,res)=>{
   }
 
   let final = [];
-  let lastErr = null;
+  let warn = null;
 
   try{
-    const vars = queryVariants(q);
-
     if (key){
-      // 1) Búsqueda por dominio (lista blanca)
-      const perDomain = [];
-      for (const d of ALLOWED){
-        for (const v of vars){
-          const { list, error } = await serpapi(`site:${d} ${v}`, key);
-          if (error) lastErr = error;
-          perDomain.push(...mapResults(list));
-        }
-      }
-
-      // 2) Búsqueda suelta
-      const loose = [];
-      for (const v of vars){
-        const { list, error } = await serpapi(v, key);
-        if (error) lastErr = error;
-        loose.push(...mapResults(list));
-      }
-
-      // 3) Fusionar, filtrar y deduplicar
-      const merged = [...perDomain, ...loose];
-      const cleaned = dropListingPages(likelyRecipe(merged));
-      const ded = new Map();
-      for (const it of cleaned) if (!ded.has(it.url)) ded.set(it.url, it);
-      final = Array.from(ded.values()).slice(0, 12);
+      // Intentar con SerpAPI
+      const { list, error } = await serpapi(`${q} receta`, key);
+      if (error) warn = error;
+      let filtered = dropListingPages(onlyAllowed(list));
+      final = dedupe(filtered).slice(0,12);
     }
 
-    // 4) último recurso
-    if (!final.length) final = suggestions(q);
+    if (!final.length){
+      // Scrapers sin API
+      const results = await Promise.allSettled([
+        scrapeRecetasGratis(q),
+        scrapeDirecto(q),
+        scrapeKiwilimon(q),
+        scrapeCookpad(q),
+      ]);
+      const merged = results
+        .filter(r=>r.status==="fulfilled")
+        .flatMap(r=>r.value || []);
+      let filtered = dropListingPages(onlyAllowed(merged));
+      final = dedupe(filtered).slice(0,12);
+      if (!final.length) warn = (warn||"")+" no_api_results";
+    }
+
+    if (!final.length){
+      final = suggestions(q);
+      warn = (warn||"")+" fallback_suggestions";
+    }
 
     CACHE.set(cacheKey, { t: Date.now(), data: final });
-    return res.status(200).json({ ok:true, results: final, warn: lastErr || undefined });
+    res.status(200).json({ ok:true, results: final, warn: warn || undefined });
   }catch(e){
-    return res.status(200).json({ ok:true, results: suggestions(q), warn: 'fallback:'+String(e) });
+    res.status(200).json({ ok:true, results: suggestions(q), warn: 'fallback:'+String(e) });
   }
 };
 
