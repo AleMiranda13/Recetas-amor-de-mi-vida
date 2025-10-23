@@ -1,127 +1,270 @@
 [
   {
-    "id": "tortilla-de-patatas-clasica",
-    "nombre": "Tortilla de patatas clásica",
-    "descripcion": "La tortilla española tradicional: huevos, patata y cebolla (opcional).",
-    "ingredientes": [
-      "6 huevos",
-      "600 g de patatas",
-      "1 cebolla (opcional)",
-      "Aceite de oliva",
-      "Sal"
-    ],
-    "instrucciones": [
-      {
-        "tipo": "texto",
-        "texto": "Pelar y cortar las patatas en láminas finas; picar la cebolla."
-      },
-      {
-        "tipo": "texto",
-        "texto": "Freír patatas y cebolla en aceite hasta que estén tiernas; escurrir."
-      },
-      {
-        "tipo": "texto",
-        "texto": "Batir los huevos con sal, mezclar con patatas y cuajar por ambos lados."
-      }
-    ],
-    "porciones": "4",
-    "tiempos": {
-      "total": 30
-    },
-    "palabras_clave": [
-      "tortilla",
-      "huevo",
-      "patata",
-      "clásico"
-    ],
-    "origen": {
-      "url": "local",
-      "sitio": "local"
-    }
-  },
-  {
-    "id": "gazpacho-andaluz",
-    "nombre": "Gazpacho andaluz",
-    "descripcion": "Sopa fría de tomate y verduras, perfecta para el verano.",
-    "ingredientes": [
-      "1 kg de tomates",
+    "id": "loc_ensalada_quinoa",
+    "title": "Ensalada de quinoa con vegetales",
+    "description": "Fresca, alta en proteína vegetal. Ideal para almuerzo.",
+    "ingredients": [
+      "1 taza de quinoa",
+      "2 tazas de agua",
       "1 pepino",
-      "1 pimiento verde",
-      "1 diente de ajo",
-      "50 ml de aceite de oliva",
-      "30 ml de vinagre",
-      "Sal",
-      "Agua fría (opcional)"
+      "1 tomate",
+      "1/2 cebolla morada",
+      "jugo de 1 limón",
+      "aceite de oliva",
+      "sal",
+      "pimienta"
     ],
-    "instrucciones": [
-      {
-        "tipo": "texto",
-        "texto": "Lavar y trocear verduras; pelar el pepino si se prefiere."
-      },
-      {
-        "tipo": "texto",
-        "texto": "Triturar con aceite, vinagre y sal hasta textura fina."
-      },
-      {
-        "tipo": "texto",
-        "texto": "Enfriar y ajustar con agua si se desea más líquido."
-      }
+    "steps": [
+      "Enjuagar la quinoa.",
+      "Cocinar 15 min con el agua.",
+      "Picar vegetales.",
+      "Mezclar todo con limón, aceite, sal y pimienta."
     ],
-    "porciones": "4",
-    "tiempos": {
-      "total": 15
-    },
-    "palabras_clave": [
-      "sopa fría",
-      "verano",
-      "andalucía"
-    ],
-    "origen": {
-      "url": "local",
-      "sitio": "local"
-    }
+    "tags": [
+      "fitness",
+      "saludable",
+      "vegana",
+      "rápida"
+    ]
   },
   {
-    "id": "alfajores-de-maicena",
-    "nombre": "Alfajores de maicena",
-    "descripcion": "Clásicos alfajores con dulce de leche y coco rallado.",
-    "ingredientes": [
-      "200 g de manteca",
-      "150 g de azúcar",
-      "3 yemas",
-      "1 cdita de vainilla",
-      "200 g de harina",
-      "300 g de maicena",
-      "1 cdita de polvo de hornear",
-      "Dulce de leche",
-      "Coco rallado"
+    "id": "loc_pechuga_plancha",
+    "title": "Pechuga de pollo a la plancha con ensalada",
+    "description": "Proteica, baja en grasa.",
+    "ingredients": [
+      "1 pechuga de pollo",
+      "sal",
+      "pimienta",
+      "ensalada verde a elección"
     ],
-    "instrucciones": [
-      {
-        "tipo": "texto",
-        "texto": "Batir manteca con azúcar; agregar yemas y vainilla."
-      },
-      {
-        "tipo": "texto",
-        "texto": "Añadir secos, unir sin amasar, reposar 30 min en frío."
-      },
-      {
-        "tipo": "texto",
-        "texto": "Estirar, cortar, hornear 8–10 min; rellenar con dulce y pasar por coco."
-      }
+    "steps": [
+      "Salpimentar el pollo.",
+      "Cocinar a la plancha 6-8 min por lado.",
+      "Servir con ensalada."
     ],
-    "porciones": "20",
-    "tiempos": {
-      "total": 50
-    },
-    "palabras_clave": [
+    "tags": [
+      "fitness",
+      "sin gluten",
+      "fácil"
+    ]
+  },
+  {
+    "id": "loc_omelette_claras",
+    "title": "Omelette de claras con espinaca",
+    "description": "Desayuno liviano y alto en proteína.",
+    "ingredients": [
+      "4 claras",
+      "1 huevo",
+      "1 taza de espinaca",
+      "sal",
+      "pimienta"
+    ],
+    "steps": [
+      "Batir claras y huevo.",
+      "Saltear espinaca.",
+      "Agregar mezcla y cocinar."
+    ],
+    "tags": [
+      "fitness",
+      "desayuno"
+    ]
+  },
+  {
+    "id": "loc_tarta_verdura",
+    "title": "Tarta de verdura fácil",
+    "description": "Clásico argentino con masa comprada.",
+    "ingredients": [
+      "1 tapa de tarta",
+      "acelga",
+      "cebolla",
+      "huevo",
+      "queso",
+      "sal",
+      "pimienta"
+    ],
+    "steps": [
+      "Saltear acelga y cebolla.",
+      "Mezclar con huevo y queso.",
+      "Rellenar y hornear."
+    ],
+    "tags": [
+      "horno",
+      "familiar"
+    ]
+  },
+  {
+    "id": "loc_milanesas_papas",
+    "title": "Milanesas con papas al horno",
+    "description": "Infalible para la semana.",
+    "ingredients": [
+      "500 g carne para milanesa",
+      "2 huevos",
+      "pan rallado",
+      "papas",
+      "aceite",
+      "sal"
+    ],
+    "steps": [
+      "Empanar la carne.",
+      "Hornear o freír.",
+      "Papas al horno con aceite y sal."
+    ],
+    "tags": [
+      "clásico",
+      "económico"
+    ]
+  },
+  {
+    "id": "loc_empanadas_carne",
+    "title": "Empanadas de carne",
+    "description": "Bien jugosas, estilo norteño.",
+    "ingredients": [
+      "12 tapas",
+      "500 g carne picada",
+      "cebolla",
+      "morron",
+      "papa",
+      "comino",
+      "pimentón",
+      "huevo duro",
+      "aceitunas"
+    ],
+    "steps": [
+      "Preparar el relleno salteando.",
+      "Armar y hornear."
+    ],
+    "tags": [
+      "regional",
+      "horno"
+    ]
+  },
+  {
+    "id": "loc_bizcochuelo_rapido",
+    "title": "Bizcochuelo rápido",
+    "description": "Esponjoso para la merienda.",
+    "ingredients": [
+      "3 huevos",
+      "1 taza azúcar",
+      "1 taza leche",
+      "1/2 taza aceite",
+      "2 tazas harina leudante",
+      "esencia de vainilla"
+    ],
+    "steps": [
+      "Batir huevos con azúcar.",
+      "Agregar líquidos y harina.",
+      "Hornear 40 min."
+    ],
+    "tags": [
       "dulce",
-      "merienda",
-      "argentina"
+      "horno"
+    ]
+  },
+  {
+    "id": "loc_pastas_tomate",
+    "title": "Pasta con salsa de tomate casera",
+    "description": "Sencilla y rica.",
+    "ingredients": [
+      "pasta seca",
+      "tomates",
+      "ajo",
+      "aceite de oliva",
+      "albahaca",
+      "sal"
     ],
-    "origen": {
-      "url": "local",
-      "sitio": "local"
-    }
+    "steps": [
+      "Hervir pasta.",
+      "Saltear ajo, agregar tomate y albahaca.",
+      "Mezclar con pasta."
+    ],
+    "tags": [
+      "vegetariana",
+      "rápida"
+    ]
+  },
+  {
+    "id": "loc_bowl_yogur",
+    "title": "Bowl de yogur con frutas y granola",
+    "description": "Desayuno/merienda saludable.",
+    "ingredients": [
+      "yogur natural",
+      "fruta a elección",
+      "granola",
+      "miel (opcional)"
+    ],
+    "steps": [
+      "Servir yogur.",
+      "Agregar frutas y granola.",
+      "Endulzar si se desea."
+    ],
+    "tags": [
+      "fitness",
+      "saludable",
+      "sin cocción"
+    ]
+  },
+  {
+    "id": "loc_sopa_calabaza",
+    "title": "Sopa crema de calabaza",
+    "description": "Suave y reconfortante.",
+    "ingredients": [
+      "1 calabaza",
+      "1 cebolla",
+      "caldo",
+      "crema (opcional)",
+      "sal",
+      "pimienta"
+    ],
+    "steps": [
+      "Saltear cebolla.",
+      "Agregar calabaza y caldo.",
+      "Procesar y terminar con crema."
+    ],
+    "tags": [
+      "invierno",
+      "sin carne"
+    ]
+  },
+  {
+    "id": "loc_ensalada_garbanzos",
+    "title": "Ensalada de garbanzos y atún",
+    "description": "Rápida y con buena proteína.",
+    "ingredients": [
+      "1 lata garbanzos",
+      "1 lata atún",
+      "tomate",
+      "cebolla",
+      "perejil",
+      "aceite y limón"
+    ],
+    "steps": [
+      "Enjuagar garbanzos.",
+      "Mezclar todo y aliñar."
+    ],
+    "tags": [
+      "fitness",
+      "rápida"
+    ]
+  },
+  {
+    "id": "loc_brownies_avena",
+    "title": "Brownies de avena y cacao (fit)",
+    "description": "Bajos en azúcar, para antojo sin culpa.",
+    "ingredients": [
+      "2 bananas maduras",
+      "2 huevos",
+      "1 taza avena molida",
+      "2 cdas cacao",
+      "1 cdita polvo de hornear"
+    ],
+    "steps": [
+      "Procesar todo.",
+      "Hornear 25 min.",
+      "Enfriar y cortar."
+    ],
+    "tags": [
+      "fitness",
+      "dulce saludable"
+    ]
   }
 ]

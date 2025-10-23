@@ -1,191 +1,327 @@
-(function(){
-  'use strict';
-  var BASE = []; var RECIPES_URL = '/recipes.json';
-  function $(sel){ return document.querySelector(sel); }
-  function log(){ try { console.log.apply(console, arguments); } catch(_){} }
 
-  function render(recipes){
-    var grid = document.querySelector('#grid');
-    var tpl  = document.querySelector('#card-tpl');
-    if (!grid) return;
-    grid.innerHTML = '';
+(() => {
+  const els = {
+    tabs: document.querySelectorAll('.tab-btn'),
+    panels: {
+      buscar: document.getElementById('tab-buscar'),
+      importadas: document.getElementById('tab-importadas'),
+      favoritas: document.getElementById('tab-favoritas'),
+      fitness: document.getElementById('tab-fitness'),
+    },
+    q: document.getElementById('q'),
+    searchBtn: document.getElementById('searchBtn'),
+    localResults: document.getElementById('localResults'),
+    webResults: document.getElementById('webResults'),
+    importedList: document.getElementById('importedList'),
+    favoriteList: document.getElementById('favoriteList'),
+    fitnessList: document.getElementById('fitnessList'),
+    importSearch: document.getElementById('importSearch'),
+    favSearch: document.getElementById('favSearch'),
+    fitSearch: document.getElementById('fitSearch'),
+    toastWrap: document.getElementById('toastWrap'),
+    modalBackdrop: document.getElementById('modalBackdrop'),
+    modalTitle: document.getElementById('modalTitle'),
+    modalDesc: document.getElementById('modalDesc'),
+    modalIngr: document.getElementById('modalIngr'),
+    modalSteps: document.getElementById('modalSteps'),
+    modalClose: document.getElementById('modalClose'),
+    modalClose2: document.getElementById('modalClose2'),
+    syncBtn: document.getElementById('syncBtn'),
+  };
 
-    if (!tpl || !tpl.content) {
-      (recipes || []).forEach(function(r){
-        var art = document.createElement('article');
-        art.className = 'card';
-        var h = document.createElement('h3'); h.className = 'title'; h.textContent = r.nombre || '(Sin título)'; art.appendChild(h);
-        var p = document.createElement('p'); p.className = 'muted desc'; p.textContent = r.descripcion || ''; art.appendChild(p);
-        var tags = document.createElement('div'); tags.className = 'tags';
-        (r.palabras_clave || []).slice(0,6).forEach(function(t){
-          var s = document.createElement('span'); s.className = 'tag'; s.textContent = t; tags.appendChild(s);
-        });
-        art.appendChild(tags);
-        art.tabIndex = 0;
-        art.addEventListener('click', function(){ if (typeof openDetail === 'function') openDetail(r); });
-        art.addEventListener('keydown', function(e){ if (e.key === 'Enter' && typeof openDetail === 'function') openDetail(r); });
-        grid.appendChild(art);
+  // ---- Storage helpers
+  const LS_IMPORTED = 'recetas_importadas_v1';
+  const LS_FAVORITES = 'recetas_favoritas_v1';
+
+  const store = {
+    getImported(){ return JSON.parse(localStorage.getItem(LS_IMPORTED) || '[]'); },
+    setImported(arr){ localStorage.setItem(LS_IMPORTED, JSON.stringify(arr)); },
+    getFavorites(){ return JSON.parse(localStorage.getItem(LS_FAVORITES) || '[]'); },
+    setFavorites(arr){ localStorage.setItem(LS_FAVORITES, JSON.stringify(arr)); },
+    isFav(id){
+      return this.getFavorites().some(r => r.id === id);
+    }
+  };
+
+  // ---- Toasts
+  function toast(msg, type='success'){
+    const div = document.createElement('div');
+    div.className = `toast ${type}`;
+    div.textContent = msg;
+    els.toastWrap.appendChild(div);
+    setTimeout(() => {
+      div.style.transform = 'translateY(10px)';
+      div.style.opacity = '0';
+      setTimeout(() => div.remove(), 250);
+    }, 2200);
+  }
+
+  // ---- Modal
+  function openModal(recipe){
+    els.modalTitle.textContent = recipe.title || 'Receta';
+    els.modalDesc.textContent = recipe.description || '';
+    els.modalIngr.innerHTML = '';
+    (recipe.ingredients || []).forEach(i => {
+      const li = document.createElement('li');
+      li.textContent = i;
+      els.modalIngr.appendChild(li);
+    });
+    els.modalSteps.innerHTML = '';
+    (recipe.steps || []).forEach(s => {
+      const li = document.createElement('li');
+      li.textContent = s;
+      els.modalSteps.appendChild(li);
+    });
+    els.modalBackdrop.style.display = 'flex';
+    els.modalBackdrop.setAttribute('aria-hidden','false');
+  }
+  function closeModal(){
+    els.modalBackdrop.style.display = 'none';
+    els.modalBackdrop.setAttribute('aria-hidden','true');
+  }
+  els.modalClose.addEventListener('click', closeModal);
+  els.modalClose2.addEventListener('click', closeModal);
+  els.modalBackdrop.addEventListener('click', (e)=>{
+    if(e.target === els.modalBackdrop){ closeModal(); }
+  });
+
+  // ---- Tabs
+  els.tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      els.tabs.forEach(b => b.setAttribute('aria-selected', 'false'));
+      btn.setAttribute('aria-selected', 'true');
+      Object.entries(els.panels).forEach(([key, sec]) => {
+        sec.hidden = (btn.dataset.tab !== key);
       });
+      // Refresh lists on tab switch
+      if(btn.dataset.tab==='importadas') renderImported();
+      if(btn.dataset.tab==='favoritas') renderFavorites();
+      if(btn.dataset.tab==='fitness') renderFitness();
+    });
+  });
+
+  // ---- Fetch local recipes (with fallback to static file)
+  let LOCAL_RECIPES = [];
+  async function loadLocalRecipes(){
+    try{
+      const res = await fetch('/api/recipes');
+      if(!res.ok) throw 0;
+      LOCAL_RECIPES = await res.json();
+    }catch{
+      const res2 = await fetch('./recipes.json');
+      LOCAL_RECIPES = await res2.json();
+    }
+  }
+
+  // ---- Render helpers
+  function recipeCard(recipe, opts = {}){
+    const card = document.createElement('div');
+    card.className = 'card';
+    const title = document.createElement('h3');
+    title.textContent = recipe.title;
+    const desc = document.createElement('div');
+    desc.textContent = recipe.description || '';
+    const tags = document.createElement('div');
+    tags.className = 'tags';
+    (recipe.tags || []).forEach(t => {
+      const s = document.createElement('span');
+      s.className = 'tag'; s.textContent = t;
+      tags.appendChild(s);
+    });
+    const actions = document.createElement('div');
+    actions.className = 'card-actions';
+
+    const btnView = document.createElement('button');
+    btnView.className = 'ghost';
+    btnView.textContent = 'Ver';
+    btnView.addEventListener('click', ()=> openModal(recipe));
+
+    const fav = document.createElement('button');
+    fav.className = 'icon fav' + (store.isFav(recipe.id) ? ' active' : '');
+    fav.innerHTML = '★';
+    fav.title = store.isFav(recipe.id) ? 'Quitar de favoritos' : 'Agregar a favoritos';
+    fav.addEventListener('click', ()=> toggleFavorite(recipe, fav));
+
+    actions.append(btnView, fav);
+
+    if(opts.allowImport){
+      const imp = document.createElement('button');
+      imp.className = 'ghost';
+      imp.textContent = 'Importar';
+      imp.addEventListener('click', ()=> importFromUrl(opts.sourceUrl, recipe, imp));
+      actions.prepend(imp);
+    }
+
+    card.append(title, desc, tags, actions);
+    return card;
+  }
+
+  function toggleFavorite(recipe, btn){
+    let favs = store.getFavorites();
+    const exists = favs.some(r => r.id === recipe.id);
+    if(exists){
+      favs = favs.filter(r => r.id !== recipe.id);
+      btn && (btn.classList.remove('active'), btn.title='Agregar a favoritos');
+      toast('Quitado de favoritos', 'warn');
+    }else{
+      favs.unshift(recipe);
+      btn && (btn.classList.add('active'), btn.title='Quitar de favoritos');
+      toast('Agregado a favoritos');
+    }
+    store.setFavorites(favs);
+    renderFavorites();
+  }
+
+  // ---- Import flow (no campo de URL, sólo desde resultados web)
+  async function importFromUrl(url, meta = {}, button){
+    try{
+      button && (button.disabled = true, button.textContent = 'Importando...');
+      // Prefer POST JSON; fallback to GET if fails
+      let data;
+      try{
+        const res = await fetch('/api/import', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ url })
+        });
+        if(!res.ok) throw new Error('POST no disponible');
+        data = await res.json();
+      }catch(_e){
+        const res = await fetch('/api/import?url=' + encodeURIComponent(url));
+        data = await res.json();
+      }
+      // Normalize minimal fields we rely on
+      const recipe = {
+        id: data.id || `imp_${Date.now()}`,
+        title: data.title || meta.title || 'Receta importada',
+        description: data.description || meta.description || '',
+        ingredients: data.ingredients || [],
+        steps: data.steps || data.instructions || [],
+        tags: Array.from(new Set([...(data.tags||[]),'importada'])),
+        source: url
+      };
+      const list = store.getImported();
+      list.unshift(recipe);
+      store.setImported(list);
+      toast('Receta importada ✔');
+      renderImported();
+    }catch(e){
+      console.error(e);
+      toast('No se pudo importar esta URL', 'error');
+    }finally{
+      button && (button.disabled = false, button.textContent = 'Importar');
+    }
+  }
+
+  // ---- Search Local
+  function searchLocal(q){
+    const term = (q||'').trim().toLowerCase();
+    if(!term) return LOCAL_RECIPES;
+    return LOCAL_RECIPES.filter(r => 
+      (r.title||'').toLowerCase().includes(term) ||
+      (r.description||'').toLowerCase().includes(term) ||
+      (r.tags||[]).join(' ').toLowerCase().includes(term) ||
+      (r.ingredients||[]).join(' ').toLowerCase().includes(term)
+    );
+  }
+
+  // ---- Search Web (uses /api/search)
+  async function searchWeb(q){
+    if(!q) return [];
+    try{
+      const res = await fetch('/api/search?q=' + encodeURIComponent(q));
+      if(!res.ok) throw 0;
+      const data = await res.json();
+      // normalize: expect array of {title, url, snippet}
+      return data.slice(0, 12);
+    }catch{
+      toast('No se pudo buscar en la web ahora', 'warn');
+      return [];
+    }
+  }
+
+  // ---- Render sections
+  function renderList(container, recipes, {allowImport=false, sourceUrls=[]} = {}){
+    container.innerHTML = '';
+    if(!recipes.length){
+      const empty = document.createElement('div');
+      empty.className = 'empty';
+      empty.textContent = 'Sin resultados por ahora.';
+      container.appendChild(empty);
       return;
     }
-
-    (recipes || []).forEach(function(r){
-      var node = document.importNode(tpl.content, true);
-      var card = node.querySelector('.card') || node.firstElementChild;
-      if (card) {
-        card.tabIndex = 0;
-        card.addEventListener('click', function(){ if (typeof openDetail === 'function') openDetail(r); });
-        card.addEventListener('keydown', function(e){ if (e.key === 'Enter' && typeof openDetail === 'function') openDetail(r); });
-      }
-      var t = node.querySelector('.title'); if (t) t.textContent = r.nombre || '(Sin título)';
-      var d = node.querySelector('.desc');  if (d) d.textContent = r.descripcion || '';
-      var tags = node.querySelector('.tags');
-      if (tags) {
-        (r.palabras_clave || []).slice(0,6).forEach(function(tag){
-          var s = document.createElement('span'); s.className = 'tag'; s.textContent = tag; tags.appendChild(s);
-        });
-      }
-      grid.appendChild(node);
+    recipes.forEach((r, idx) => {
+      const card = recipeCard(r, allowImport ? {allowImport, sourceUrl: sourceUrls[idx]} : {});
+      container.appendChild(card);
     });
   }
 
-  function localSearch(q){
-    q = (q || '').toLowerCase().trim();
-    var list = BASE.filter(function(r){
-      var inTitulo = (r.nombre || '').toLowerCase().indexOf(q) !== -1;
-      var inDesc = (r.descripcion || '').toLowerCase().indexOf(q) !== -1;
-      var inIng = (r.ingredientes || []).join(' ').toLowerCase().indexOf(q) !== -1;
-      var inTags = (r.palabras_clave || []).join(' ').toLowerCase().indexOf(q) !== -1;
-      return inTitulo || inDesc || inIng || inTags;
-    });
-    render(list); return list.length;
+  async function onSearch(){
+    const q = els.q.value;
+    // local first
+    const local = searchLocal(q);
+    renderList(els.localResults, local);
+    // then web
+    const web = await searchWeb(q);
+    const webRecipes = web.map((w, i) => ({
+      id: `web_${i}_${Date.now()}`,
+      title: w.title,
+      description: w.snippet || '',
+      tags: ['web'],
+    }));
+    const urls = web.map(w => w.url);
+    renderList(els.webResults, webRecipes, {allowImport:true, sourceUrls: urls});
   }
 
-  function openDetail(r){
-    var dlg = document.getElementById('detail'); if (!dlg) return;
-    $('#d-title').textContent = r.nombre || '(Sin título)';
-    $('#d-desc').textContent  = r.descripcion || '';
-    var ings = $('#d-ings'); ings.innerHTML='';
-    (r.ingredientes || []).forEach(function(x){ var li=document.createElement('li'); li.textContent=x; ings.appendChild(li); });
-    var steps = $('#d-steps'); steps.innerHTML='';
-    (r.instrucciones || []).forEach(function(p){ var li=document.createElement('li'); li.textContent=(p.texto||p.name||'').trim(); steps.appendChild(li); });
-    var meta=[];
-    if (r.porciones) meta.push('Porciones: '+r.porciones);
-    if (r.tiempos && (r.tiempos.total || r.tiempos.preparacion || r.tiempos.coccion)) {
-      var t=r.tiempos.total||r.tiempos.preparacion||r.tiempos.coccion; if (t) meta.push('Tiempo (min): '+t);
-    }
-    $('#d-meta').textContent = meta.join(' · ');
-    var origin = $('#d-origin');
-    origin.innerHTML = r.origen && r.origen.url && r.origen.url!=='local'
-      ? 'Fuente: <a href="'+r.origen.url+'" target="_blank" rel="noopener">'+(r.origen.sitio||r.origen.url)+'</a>'
-      : '';
-    dlg.style.display='flex';
-    $('#d-close').onclick=function(){ dlg.style.display='none'; };
-    dlg.onclick=function(e){ if(e.target===dlg) dlg.style.display='none'; };
+  function renderImported(){
+    const q = (els.importSearch.value||'').toLowerCase();
+    const list = store.getImported().filter(r => 
+      r.title.toLowerCase().includes(q) ||
+      (r.description||'').toLowerCase().includes(q) ||
+      (r.tags||[]).join(' ').toLowerCase().includes(q)
+    );
+    renderList(els.importedList, list);
   }
 
-  function clearWebResults(){
-    var box = document.getElementById('web-results'); if (!box) return;
-    while (box.firstChild) box.removeChild(box.firstChild);
-  }
-  function renderNoWebResults(term){
-    var box = document.getElementById('web-results'); if (!box) return;
-    clearWebResults();
-    var p = document.createElement('p'); p.className='muted';
-    p.textContent = 'No encontramos resultados web para “'+term+'”. Intenta otra búsqueda.';
-    box.appendChild(p);
-  }
-  function renderWebResults(items){
-    var box = document.getElementById('web-results'); if (!box) return;
-    clearWebResults();
-    if (!items || !items.length) return;
-    items.forEach(function(it){
-      var wrap = document.createElement('div');
-      wrap.style.margin='6px 0'; wrap.style.padding='8px';
-      wrap.style.border='1px solid #1f2937'; wrap.style.borderRadius='8px';
-      var title = document.createElement('div'); title.style.fontWeight='600'; title.textContent = it.title || it.url; wrap.appendChild(title);
-      var site = document.createElement('div'); site.className='muted'; site.textContent = it.site || ''; wrap.appendChild(site);
-      var btn = document.createElement('button'); btn.textContent='Importar'; btn.style.marginTop='6px';
-      btn.addEventListener('click', function(){ importFromURL(it.url); });
-      wrap.appendChild(btn);
-      box.appendChild(wrap);
-    });
+  function renderFavorites(){
+    const q = (els.favSearch.value||'').toLowerCase();
+    const list = store.getFavorites().filter(r => 
+      r.title.toLowerCase().includes(q) ||
+      (r.description||'').toLowerCase().includes(q) ||
+      (r.tags||[]).join(' ').toLowerCase().includes(q)
+    );
+    renderList(els.favoriteList, list);
   }
 
-  function importFromURL(url){
-    fetch('/api/import?url=' + encodeURIComponent(url))
-      .then(function(r){ return r.json(); })
-      .then(function(j){
-        if (!j.ok) throw new Error(j.error || 'No se pudo importar');
-        var receta = j.receta;
-        if (!BASE.some(function(r){ return r.id === receta.id; })){ BASE.push(receta); }
-        render(BASE);
-        openDetail(receta);
-        console.log('Receta importada (copia a recipes.json para persistir):', receta);
-        clearWebResults();
-      }).catch(function(err){ console.error(err); alert('Error al importar: ' + err.message); });
+  function renderFitness(){
+    const q = (els.fitSearch.value||'').toLowerCase();
+    const list = LOCAL_RECIPES
+      .filter(r => (r.tags||[]).map(t=>t.toLowerCase()).includes('fitness') || (r.tags||[]).map(t=>t.toLowerCase()).includes('saludable'))
+      .filter(r => 
+        r.title.toLowerCase().includes(q) ||
+        (r.description||'').toLowerCase().includes(q) ||
+        (r.ingredients||[]).join(' ').toLowerCase().includes(q)
+      );
+    renderList(els.fitnessList, list);
   }
 
-  function doSearchAndMaybeWeb(q){
-    log('[recetas] buscar:', q);
-    var count = localSearch(q);
-    if (!q || q.trim().length < 2) { clearWebResults(); return; }
-    if (count === 0){
-      fetch('/api/search?q=' + encodeURIComponent(q))
-        .then(function(r){ return r.json(); })
-        .then(function(j){
-          log('[recetas] /api/search ->', j);
-          if (j && j.ok && Array.isArray(j.results) && j.results.length){
-            renderWebResults(j.results);
-          } else {
-            renderNoWebResults(q);
-          }
-        })
-        .catch(function(e){ console.warn('search error', e); renderNoWebResults(q); });
-    } else {
-      clearWebResults();
-    }
-  }
+  // ---- Events
+  els.searchBtn.addEventListener('click', onSearch);
+  els.q.addEventListener('keydown', e => { if(e.key==='Enter') onSearch(); });
+  els.importSearch.addEventListener('input', renderImported);
+  els.favSearch.addEventListener('input', renderFavorites);
+  els.fitSearch.addEventListener('input', renderFitness);
+  els.syncBtn.addEventListener('click', async ()=>{
+    await loadLocalRecipes();
+    toast('Datos locales recargados');
+    onSearch();
+    renderFitness();
+  });
 
-  function bindSearchEvents() {
-    var form = document.getElementById('searchForm');
-    var q = document.getElementById('q');
-    var btn = document.getElementById('btnBuscar');
-    var imp = document.getElementById('btnImport');
-
-    if (form) form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var val = (q && q.value) ? q.value : '';
-      log('[recetas] submit:', val);
-      doSearchAndMaybeWeb(val);
-    });
-    if (btn) btn.addEventListener('click', function(){
-      var val = (q && q.value) ? q.value : '';
-      log('[recetas] click buscar:', val);
-      doSearchAndMaybeWeb(val);
-    });
-    if (q) {
-      q.addEventListener('keyup', function(e){
-        if (e.key === 'Enter') {
-          log('[recetas] enter:', q.value);
-          doSearchAndMaybeWeb(q.value);
-        }
-      });
-      // Si querés búsqueda "en vivo", descomenta:
-      // q.addEventListener('input', function(e){ doSearchAndMaybeWeb(e.target.value); });
-    }
-    if (imp) imp.addEventListener('click', function(){
-      var url = prompt('Pega la URL de la receta (con JSON-LD)');
-      if (url) importFromURL(url);
-    });
-  }
-
-  function init(){
-    fetch(RECIPES_URL).then(function(res){ if(!res.ok) throw new Error('No se pudo cargar recipes.json'); return res.json(); })
-      .then(function(json){ BASE = Array.isArray(json) ? json : []; render(BASE); bindSearchEvents(); })
-      .catch(function(err){ console.error(err); render([]); bindSearchEvents(); });
-  }
-
-  init();
-  window.openDetail = openDetail;
+  // ---- Startup
+  (async () => {
+    await loadLocalRecipes();
+    renderList(els.localResults, LOCAL_RECIPES.slice(0, 8)); // initial
+    renderFitness();
+  })();
 })();
