@@ -138,3 +138,29 @@ button.icon{
 .toast.success{background:#2a9d8f}
 .toast.warn{background:#e9c46a;color:#2f2f2f}
 .toast.error{background:#e76f51}
+
+/* --- Modal: hacer scroll interno cómodo --- */
+.modal-backdrop{
+  position:fixed; inset:0; background:rgba(0,0,0,.35);
+  display:none; align-items:center; justify-content:center; padding:20px;
+}
+
+.modal{
+  background:#fff; width:100%; max-width:720px;
+  max-height:85vh;              /* 👈 límite vertical */
+  overflow:auto;                /* 👈 scroll dentro del modal */
+  border-radius:18px; box-shadow:0 8px 20px rgba(0,0,0,.2); padding:18px;
+}
+
+.modal header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.modal h3{margin:0}
+
+.modal .content{
+  display:grid; gap:10px; margin-top:8px;
+  max-height:60vh;             /* 👈 contenido scrolleable */
+  overflow:auto; padding-right:8px;
+}
+
+/* UX de lectura */
+.modal ul, .modal ol{ margin:0; padding-left:22px; line-height:1.45 }
+.modal li{ margin: 4px 0 }

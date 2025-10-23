@@ -114,6 +114,24 @@
     }
   }
 
+  (async () => {
+  await loadLocalRecipes();
+  if (!Array.isArray(LOCAL_RECIPES) || !LOCAL_RECIPES.length) {
+    LOCAL_RECIPES = [
+      {
+        id: 'loc_demo_pastel_papa',
+        title: 'Pastel de papa clásico',
+        description: 'Carne, puré y gratinado. Fácil y rendidor.',
+        ingredients: ['1 kg papas','500 g carne picada','1 cebolla','1 morrón','sal y pimienta'],
+        steps: ['Hervir papas y hacer puré','Saltear carne y verduras','Armar fuente y gratinar'],
+        tags: ['horno','familiar']
+      }
+    ];
+  }
+  renderList(els.localResults, LOCAL_RECIPES.slice(0, 8));
+  renderFitness();
+})();
+
   // --------- enriquecer detalles (re-import si faltan)
   async function ensureDetails(recipe){
     const has = (recipe.ingredients && recipe.ingredients.length) || (recipe.steps && recipe.steps.length);
