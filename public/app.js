@@ -1,3 +1,4 @@
+const hasDetails = r => (r.ingredients?.length || r.steps?.length);
 
 (() => {
   const els = {
@@ -114,47 +115,70 @@
   }
 
   // ---- Render helpers
-  function recipeCard(recipe, opts = {}){
-    const card = document.createElement('div');
-    card.className = 'card';
-    const title = document.createElement('h3');
-    title.textContent = recipe.title;
-    const desc = document.createElement('div');
-    desc.textContent = recipe.description || '';
-    const tags = document.createElement('div');
-    tags.className = 'tags';
-    (recipe.tags || []).forEach(t => {
-      const s = document.createElement('span');
-      s.className = 'tag'; s.textContent = t;
-      tags.appendChild(s);
-    });
-    const actions = document.createElement('div');
-    actions.className = 'card-actions';
+ function recipeCard(recipe, opts = {}) {
+  const card = document.createElement('div');
+  card.className = 'card';
 
+  const title = document.createElement('h3');
+  title.textContent = recipe.title;
+
+  const desc = document.createElement('div');
+  desc.textContent = recipe.description || '';
+
+  const tags = document.createElement('div');
+  tags.className = 'tags';
+  (recipe.tags || []).forEach(t => {
+    const s = document.createElement('span');
+    s.className = 'tag'; s.textContent = t;
+    tags.appendChild(s);
+  });
+
+  const actions = document.createElement('div');
+  actions.className = 'card-actions';
+
+  // Si NO es un resultado web, mostramos Ver (detalles ya disponibles)
+  if (opts.mode !== 'web') {
     const btnView = document.createElement('button');
     btnView.className = 'ghost';
     btnView.textContent = 'Ver';
     btnView.addEventListener('click', ()=> openModal(recipe));
+    actions.append(btnView);
+  } else {
+    // Resultado web: Importar + Fuente, sin "Ver"
+    const imp = document.createElement('button');
+    imp.className = 'ghost';
+    imp.textContent = 'Importar';
+    imp.addEventListener('click', ()=> importFromUrl(opts.sourceUrl, recipe, imp));
+    actions.append(imp);
 
-    const fav = document.createElement('button');
-    fav.className = 'icon fav' + (store.isFav(recipe.id) ? ' active' : '');
-    fav.innerHTML = '★';
-    fav.title = store.isFav(recipe.id) ? 'Quitar de favoritos' : 'Agregar a favoritos';
-    fav.addEventListener('click', ()=> toggleFavorite(recipe, fav));
-
-    actions.append(btnView, fav);
-
-    if(opts.allowImport){
-      const imp = document.createElement('button');
-      imp.className = 'ghost';
-      imp.textContent = 'Importar';
-      imp.addEventListener('click', ()=> importFromUrl(opts.sourceUrl, recipe, imp));
-      actions.prepend(imp);
+    if (opts.sourceUrl) {
+      const a = document.createElement('a');
+      a.className = 'ghost';
+      a.textContent = 'Fuente';
+      a.href = opts.sourceUrl;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.style.textDecoration = 'none';
+      a.style.display = 'inline-block';
+      a.style.padding = '8px 10px';
+      a.style.borderRadius = '10px';
+      a.style.background = 'var(--rose)';
+      actions.append(a);
     }
-
-    card.append(title, desc, tags, actions);
-    return card;
   }
+
+  // Favorito siempre disponible
+  const fav = document.createElement('button');
+  fav.className = 'icon fav' + (store.isFav(recipe.id) ? ' active' : '');
+  fav.innerHTML = '★';
+  fav.title = store.isFav(recipe.id) ? 'Quitar de favoritos' : 'Agregar a favoritos';
+  fav.addEventListener('click', ()=> toggleFavorite(recipe, fav));
+  actions.append(fav);
+
+  card.append(title, desc, tags, actions);
+  return card;
+}
+
 
   function toggleFavorite(recipe, btn){
     let favs = store.getFavorites();
@@ -173,45 +197,53 @@
   }
 
   // ---- Import flow (no campo de URL, sólo desde resultados web)
-  async function importFromUrl(url, meta = {}, button){
+ async function importFromUrl(url, meta = {}, button){
+  try{
+    button && (button.disabled = true, button.textContent = 'Importando...');
+    let data;
     try{
-      button && (button.disabled = true, button.textContent = 'Importando...');
-      // Prefer POST JSON; fallback to GET if fails
-      let data;
-      try{
-        const res = await fetch('/api/import', {
-          method:'POST',
-          headers:{'Content-Type':'application/json'},
-          body: JSON.stringify({ url })
-        });
-        if(!res.ok) throw new Error('POST no disponible');
-        data = await res.json();
-      }catch(_e){
-        const res = await fetch('/api/import?url=' + encodeURIComponent(url));
-        data = await res.json();
-      }
-      // Normalize minimal fields we rely on
-      const recipe = {
-        id: data.id || `imp_${Date.now()}`,
-        title: data.title || meta.title || 'Receta importada',
-        description: data.description || meta.description || '',
-        ingredients: data.ingredients || [],
-        steps: data.steps || data.instructions || [],
-        tags: Array.from(new Set([...(data.tags||[]),'importada'])),
-        source: url
-      };
-      const list = store.getImported();
-      list.unshift(recipe);
-      store.setImported(list);
-      toast('Receta importada ✔');
-      renderImported();
-    }catch(e){
-      console.error(e);
-      toast('No se pudo importar esta URL', 'error');
-    }finally{
-      button && (button.disabled = false, button.textContent = 'Importar');
+      const res = await fetch('/api/import', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ url })
+      });
+      if(!res.ok) throw new Error('POST no disponible');
+      data = await res.json();
+    }catch(_e){
+      const res = await fetch('/api/import?url=' + encodeURIComponent(url));
+      data = await res.json();
     }
+
+    const recipe = {
+      id: data.id || `imp_${Date.now()}`,
+      title: data.title || meta.title || 'Receta importada',
+      description: data.description || meta.description || '',
+      ingredients: data.ingredients || [],
+      steps: data.steps || data.instructions || [],
+      tags: Array.from(new Set([...(data.tags||[]),'importada'])),
+      source: url
+    };
+
+    const list = store.getImported();
+    list.unshift(recipe);
+    store.setImported(list);
+    toast('Receta importada ✔');
+
+    // Cambiamos a pestaña Importadas y abrimos el modal
+    document.querySelector('.tab-btn[aria-selected="true"]')?.setAttribute('aria-selected','false');
+    document.querySelector('.tab-btn[data-tab="importadas"]').setAttribute('aria-selected','true');
+    Object.entries(els.panels).forEach(([key, sec]) => sec.hidden = (key !== 'importadas'));
+    renderImported();
+    openModal(recipe);
+
+  }catch(e){
+    console.error(e);
+    toast('No se pudo importar esta URL', 'error');
+  }finally{
+    button && (button.disabled = false, button.textContent = 'Importar');
   }
+}
+
 
   // ---- Search Local
   function searchLocal(q){
@@ -261,22 +293,36 @@
     });
   }
 
-  async function onSearch(){
-    const q = els.q.value;
-    // local first
-    const local = searchLocal(q);
-    renderList(els.localResults, local);
-    // then web
-    const web = await searchWeb(q);
-    const webRecipes = web.map((w, i) => ({
-      id: `web_${i}_${Date.now()}`,
-      title: w.title,
-      description: w.snippet || '',
-      tags: ['web'],
-    }));
-    const urls = web.map(w => w.url);
-    renderList(els.webResults, webRecipes, {allowImport:true, sourceUrls: urls});
+ async function onSearch(){
+  const q = els.q.value;
+  const local = searchLocal(q);
+  renderList(els.localResults, local);
+
+  const web = await searchWeb(q);
+  if (!web.length) {
+    els.webResults.innerHTML = '';
+    const empty = document.createElement('div');
+    empty.className = 'empty';
+    empty.innerHTML = `Sin resultados por ahora. <br/><br/>
+      <a href="https://www.google.com/search?q=${encodeURIComponent(q)}" target="_blank" rel="noopener noreferrer">
+        Abrir búsqueda en Google
+      </a>`;
+    els.webResults.appendChild(empty);
+    return;
   }
+
+  const webRecipes = web.map((w, i) => ({
+    id: `web_${i}_${Date.now()}`,
+    title: w.title,
+    description: w.snippet || '',
+    tags: ['web'],
+    source: w.url
+  }));
+  const urls = web.map(w => w.url);
+  // modo web: sin "Ver"
+  renderList(els.webResults, webRecipes, { mode:'web', sourceUrls: urls, allowImport:true });
+}
+
 
   function renderImported(){
     const q = (els.importSearch.value||'').toLowerCase();
