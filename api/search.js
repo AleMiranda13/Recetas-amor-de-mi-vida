@@ -1,3 +1,6 @@
+// api/search.js
+// Búsqueda web en español con filtros y Fallback sin filtro si no hay resultados.
+// Requiere SERPAPI_KEY en variables de entorno (Vercel → Settings → Environment Variables).
 
 const ALLOWED = [
   "recetasgratis.net",
@@ -11,6 +14,7 @@ const ALLOWED = [
   "javirecetas.com",
   "deliciosi.com"
 ];
+
 function normalize(s) {
   return (s || "")
     .toLowerCase()
@@ -18,6 +22,7 @@ function normalize(s) {
     .replace(/\s+/g, " ")
     .trim();
 }
+
 const SYN = {
   "papa": ["papas","patata","patatas"],
   "papas": ["papa","patata","patatas"],
@@ -48,22 +53,27 @@ const SYN = {
   "queque": ["bizcocho","pastel","torta","tarta"],
   "tarta": ["pastel","torta","bizcocho","queque"]
 };
+
 function queryVariants(q) {
   const base = normalize(q);
   const tokens = base.split(" ");
-  const variants = new Set([base, `"${base}"`]);
+  const variants = new Set([base, `"${base}"`, `${base} receta`, `${base} recetas`]);
   tokens.forEach((tk, i) => {
     const syns = SYN[tk];
     if (syns) {
       syns.forEach(s => {
         const v = tokens.slice(); v[i] = s;
         variants.add(v.join(" "));
+        variants.add(`${v.join(" ")} receta`);
+        variants.add(`${v.join(" ")} recetas`);
       });
     }
   });
-  return Array.from(variants).slice(0, 10);
+  // Máximo 12 para no exceder cuota
+  return Array.from(variants).slice(0, 12);
 }
-async function serpapiSearch(query, key) {
+
+async function serpapiRaw(query, key) {
   const url = new URL("https://serpapi.com/search.json");
   url.searchParams.set("engine", "google");
   url.searchParams.set("hl", "es");
@@ -73,50 +83,92 @@ async function serpapiSearch(query, key) {
   const r = await fetch(url.toString(), { headers: { "User-Agent": "RecetasES/1.0" } });
   if (!r.ok) return [];
   const j = await r.json();
-  const list = Array.isArray(j.organic_results) ? j.organic_results : [];
+  return Array.isArray(j.organic_results) ? j.organic_results : [];
+}
+
+function mapAllowed(list) {
   const out = [];
   for (const it of list) {
-    const url = it.link || it.formattedUrl;
-    const title = it.title || url;
-    if (!url) continue;
+    const link = it.link || it.formattedUrl;
+    if (!link) continue;
     try {
-      const u = new URL(url);
+      const u = new URL(link);
       if (ALLOWED.some(d => u.hostname === d || u.hostname.endsWith("." + d))) {
-        out.push({ title, url, site: u.hostname });
+        out.push({ title: it.title || link, url: link, site: u.hostname, snippet: it.snippet || "" });
       }
     } catch {}
   }
   return out;
 }
+
+function mapAny(list) {
+  const out = [];
+  for (const it of list) {
+    const link = it.link || it.formattedUrl;
+    if (!link) continue;
+    try {
+      const u = new URL(link);
+      out.push({ title: it.title || link, url: link, site: u.hostname, snippet: it.snippet || "" });
+    } catch {}
+  }
+  return out;
+}
+
 const CACHE = new Map();
 const TTL_MS = 60_000;
+
 module.exports = async (req, res) => {
   const q = (req.query.q || "").toString().trim();
   if (!q) return res.status(400).json({ error: "Falta parámetro 'q'." });
+
   const key = process.env.SERPAPI_KEY;
-  if (!key) return res.status(200).json({ ok: true, results: [], warn: "Falta SERPAPI_KEY" });
+  if (!key) {
+    // Sin clave, devolvemos vacío pero sin romper el front
+    return res.status(200).json({ ok: true, results: [], warn: "Falta SERPAPI_KEY" });
+  }
+
   const cacheKey = normalize(q);
   const cached = CACHE.get(cacheKey);
   if (cached && Date.now() - cached.t < TTL_MS) {
     return res.status(200).json({ ok: true, results: cached.data, cached: true });
   }
+
   try {
     const vars = queryVariants(q);
-    const all = [];
+
+    // 1) Intento principal: site:dominio + variantes
+    const collected = [];
     for (const d of ALLOWED) {
       for (const v of vars) {
-        const q2 = `site:${d} ${v}`;
-        const items = await serpapiSearch(q2, key);
-        all.push(...items.slice(0, 3));
+        const raw = await serpapiRaw(`site:${d} ${v}`, key);
+        collected.push(...mapAllowed(raw).slice(0, 3));
       }
     }
+
+    // Dedupe por URL
     const map = new Map();
-    for (const it of all) if (!map.has(it.url)) map.set(it.url, it);
-    const results = Array.from(map.values());
+    for (const it of collected) if (!map.has(it.url)) map.set(it.url, it);
+    let results = Array.from(map.values());
+
+    // 2) Fallback: si no hay nada permitido, buscar sin filtro (con las mismas variantes)
+    if (!results.length) {
+      const any = [];
+      for (const v of vars) {
+        const raw = await serpapiRaw(v, key);
+        any.push(...mapAny(raw));
+        if (any.length >= 12) break;
+      }
+      // dedupe y recortar
+      const uniq = new Map();
+      for (const it of any) if (!uniq.has(it.url)) uniq.set(it.url, it);
+      results = Array.from(uniq.values()).slice(0, 12);
+    }
+
     CACHE.set(cacheKey, { t: Date.now(), data: results });
     return res.status(200).json({ ok: true, results });
   } catch (e) {
     return res.status(200).json({ ok: true, results: [], warn: "fallback", detail: String(e) });
   }
 };
+
 module.exports.config = { runtime: "nodejs" };
