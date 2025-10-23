@@ -170,31 +170,38 @@
       fav.addEventListener('click', ()=> toggleFavorite(recipe));
       actions.append(fav);
     } else {
-      const isSuggestion = !!recipe.suggestion;
+  // SIEMPRE mostrar Importar (auto)
+  const imp = document.createElement('button');
+  imp.className = 'ghost';
+  imp.textContent = 'Importar';
+  imp.addEventListener('click', () => importFromUrl(opts.sourceUrl, recipe, imp));
+  actions.append(imp);
 
-      // Importar AUTOMÁTICO (solo si NO es sugerencia)
-      if (!isSuggestion){
-        const imp = document.createElement('button'); imp.className='ghost'; imp.textContent='Importar';
-        imp.addEventListener('click', ()=> importFromUrl(opts.sourceUrl, recipe, imp));
-        actions.append(imp);
-      }
+  // Importar MANUAL (para editar a gusto si el auto no trae datos)
+  const man = document.createElement('button');
+  man.className = 'ghost';
+  man.textContent = 'Importar (manual)';
+  man.addEventListener('click', () => importManualFromSearch(recipe, opts.sourceUrl));
+  actions.append(man);
 
-      // Importar MANUAL (siempre disponible)
-      const man = document.createElement('button');
-      man.className = 'ghost';
-      man.textContent = isSuggestion ? 'Importar (manual)' : 'Editar tras importar';
-      man.addEventListener('click', () => importManualFromSearch(recipe, opts.sourceUrl));
-      actions.append(man);
+  // Fuente (siempre)
+  if (opts.sourceUrl) {
+    const a = document.createElement('a');
+    a.className = 'ghost';
+    a.textContent = 'Fuente';
+    a.href = opts.sourceUrl;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    actions.append(a);
+  }
 
-      if (opts.sourceUrl){
-        const a = document.createElement('a'); a.className='ghost'; a.textContent='Fuente';
-        a.href=opts.sourceUrl; a.target='_blank'; a.rel='noopener';
-        actions.append(a);
-      }
-      const fav = document.createElement('button'); fav.className='ghost'; fav.textContent='★';
-      fav.addEventListener('click', ()=> toggleFavorite(recipe));
-      actions.append(fav);
-    }
+  // Favoritos
+  const fav = document.createElement('button');
+  fav.className = 'ghost';
+  fav.textContent = '★';
+  fav.addEventListener('click', () => toggleFavorite(recipe));
+  actions.append(fav);
+}
 
     card.append(actions);
     return card;
