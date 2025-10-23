@@ -1,71 +1,211 @@
-import * as cheerio from 'cheerio';
+// api/import.js
+const cheerio = require('cheerio');
 
-export default async function handler(req, res) {
+const UA = 'RecetasES/1.0 (+vercel)';
+
+const clean = (s) =>
+  (s || '')
+    .replace(/\s+/g, ' ')
+    .replace(/[·•►]/g, '')
+    .trim();
+
+const uniq = (arr) => Array.from(new Set(arr.map(clean))).filter(Boolean);
+
+function pickJSONLD($) {
+  let found = null;
+  $('script[type="application/ld+json"]').each((_, el) => {
+    try {
+      const raw = $(el).contents().text();
+      const obj = JSON.parse(raw);
+      const arr = Array.isArray(obj) ? obj : [obj];
+      for (const it of arr) {
+        const type = it['@type'];
+        if (!type) continue;
+        const types = Array.isArray(type) ? type : [type];
+        if (types.map(String).includes('Recipe')) {
+          found = it;
+          return false; // break .each
+        }
+      }
+    } catch {}
+  });
+  return found;
+}
+
+function extractFromJSONLD(rec) {
+  const title = rec.name || '';
+  const description = rec.description || '';
+
+  let ingredients = rec.recipeIngredient || rec.ingredients || [];
+  if (typeof ingredients === 'string') {
+    ingredients = ingredients.split(/\r?\n|·|•|,/g);
+  }
+
+  let steps = [];
+  if (Array.isArray(rec.recipeInstructions)) {
+    steps = rec.recipeInstructions.map((s) =>
+      typeof s === 'string' ? s : s.text || s.name || ''
+    );
+  } else if (typeof rec.recipeInstructions === 'string') {
+    steps = rec.recipeInstructions.split(/\r?\n|\.\s+/g);
+  }
+
+  return {
+    title: clean(title),
+    description: clean(description),
+    ingredients: uniq(ingredients),
+    steps: uniq(steps),
+  };
+}
+
+function extractMicrodata($) {
+  const ingredients = [];
+  const steps = [];
+
+  // itemprop-based
+  $('[itemprop="recipeIngredient"], [itemprop="ingredients"]').each((_, el) => {
+    ingredients.push($(el).text());
+  });
+
+  // HowToStep / recipeInstructions itemprop
+  $('[itemprop="recipeInstructions"]').each((_, el) => {
+    const $el = $(el);
+    if ($el.find('[itemprop="text"]').length) {
+      $el.find('[itemprop="text"]').each((_, li) => steps.push($(li).text()));
+    } else if ($el.find('li').length) {
+      $el.find('li').each((_, li) => steps.push($(li).text()));
+    } else {
+      steps.push($el.text());
+    }
+  });
+
+  return {
+    ingredients: uniq(ingredients),
+    steps: uniq(steps),
+  };
+}
+
+function extractHeuristics($) {
+  const ingredients = [];
+  const steps = [];
+
+  // Sitios comunes (clases/ids frecuentes)
+  const ING_SEL = [
+    '.ingredientes li',
+    '.ingredients li',
+    '.lista-ingredientes li',
+    '.ingredient',
+    'li.ingredient',
+    '.ingredients__list li',
+    '#ingredientes li',
+    '[class*="ingredien"] li',
+  ];
+
+  const STEP_SEL = [
+    '.pasos li',
+    '.instrucciones li',
+    '.preparacion li',
+    '.preparation li',
+    '.instructions li',
+    '.recipe-steps li',
+    'ol li',
+    '.step',
+    '.howto-step',
+    '[class*="paso"] li',
+  ];
+
+  for (const sel of ING_SEL) {
+    if ($(sel).length) {
+      $(sel).each((_, el) => ingredients.push($(el).text()));
+      break;
+    }
+  }
+
+  if (!steps.length) {
+    for (const sel of STEP_SEL) {
+      if ($(sel).length) {
+        $(sel).each((_, el) => steps.push($(el).text()));
+        break;
+      }
+    }
+  }
+
+  // fallback ultra genérico: párrafos que parezcan instrucciones
+  if (!steps.length) {
+    $('p').each((_, el) => {
+      const t = clean($(el).text());
+      if (t.length > 30 && t.length < 400) steps.push(t);
+    });
+  }
+
+  return {
+    ingredients: uniq(ingredients),
+    steps: uniq(steps),
+  };
+}
+
+async function fetchHTML(url) {
+  const r = await fetch(url, { headers: { 'User-Agent': UA } });
+  if (!r.ok) throw new Error('No se pudo acceder a la URL');
+  return await r.text();
+}
+
+module.exports = async (req, res) => {
   try {
-    const url = (req.method === 'POST' ? req.body.url : req.query.url || '').trim();
-    if (!url) return res.status(400).json({ error: 'Falta URL' });
+    const url = (req.method === 'POST' ? req.body?.url : req.query?.url || '').toString().trim();
+    if (!url) return res.status(400).json({ error: 'Falta parámetro url' });
 
-    const r = await fetch(url, { headers: { 'User-Agent': 'RecetasES/1.0' } });
-    if (!r.ok) throw new Error('No se pudo acceder');
-    const html = await r.text();
+    const html = await fetchHTML(url);
     const $ = cheerio.load(html);
 
-    let data = {};
-    // 1️⃣ intenta extraer JSON-LD (schema.org)
-    $('script[type="application/ld+json"]').each((_, el) => {
-      try {
-        const obj = JSON.parse($(el).contents().text());
-        const rec = Array.isArray(obj) ? obj.find(o => o['@type']?.includes('Recipe')) : obj;
-        if (rec && rec['@type']?.includes('Recipe')) {
-          data = rec;
-          throw new Error('found'); // corta el each
-        }
-      } catch(e) { /* ignore */ }
-    });
+    // 1) JSON-LD
+    let title = clean($('title').first().text());
+    let description = clean($('meta[name="description"]').attr('content') || '');
 
-    // 2️⃣ normaliza
-    const ingredients = data.recipeIngredient || data.ingredients || [];
-    const steps =
-      (Array.isArray(data.recipeInstructions)
-        ? data.recipeInstructions.map(s =>
-            typeof s === 'string' ? s : s.text || s.name || ''
-          )
-        : typeof data.recipeInstructions === 'string'
-          ? data.recipeInstructions.split(/[\n\.]/).filter(Boolean)
-          : []
-      );
-
-    let description = data.description || '';
-    let title = data.name || $('title').text().trim();
-
-    // 3️⃣ fallback si no encontró nada
-    if (!ingredients.length) {
-      const alt = $('li:contains(ingrediente), li.ingredient, .ingredientes li');
-      if (alt.length) alt.each((_, el) => ingredients.push($(el).text().trim()));
-    }
-    if (!steps.length) {
-      const alt2 = $('ol li, .instrucciones li, .pasos li, p');
-      alt2.each((_, el) => {
-        const t = $(el).text().trim();
-        if (t.length > 20 && t.length < 400) steps.push(t);
-      });
+    const ld = pickJSONLD($);
+    let ingredients = [];
+    let steps = [];
+    if (ld) {
+      const fromLD = extractFromJSONLD(ld);
+      title = fromLD.title || title;
+      description = fromLD.description || description;
+      ingredients = fromLD.ingredients;
+      steps = fromLD.steps;
     }
 
-    const result = {
+    // 2) Microdata si faltan
+    if (!ingredients.length || !steps.length) {
+      const md = extractMicrodata($);
+      if (!ingredients.length) ingredients = md.ingredients;
+      if (!steps.length) steps = md.steps;
+    }
+
+    // 3) Heurísticas si aún faltan
+    if (!ingredients.length || !steps.length) {
+      const hx = extractHeuristics($);
+      if (!ingredients.length) ingredients = hx.ingredients;
+      if (!steps.length) steps = hx.steps;
+    }
+
+    return res.status(200).json({
       id: 'imp_' + Date.now(),
       title,
       description,
       ingredients,
       steps,
       tags: ['importada'],
-      source: url
-    };
-
-    return res.status(200).json(result);
+      source: url,
+    });
   } catch (e) {
-    console.error('import error', e);
-    return res.status(200).json({ title: 'Error al importar', description: '', ingredients: [], steps: [] });
+    console.error('import error:', e);
+    return res.status(200).json({
+      title: 'No se pudo importar',
+      description: '',
+      ingredients: [],
+      steps: [],
+      tags: ['importada'],
+    });
   }
-}
+};
 
-export const config = { runtime: 'nodejs' };
+module.exports.config = { runtime: 'nodejs' };
