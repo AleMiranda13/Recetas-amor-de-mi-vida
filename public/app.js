@@ -226,19 +226,24 @@
   }
 
   // ---- Search Web (uses /api/search)
-  async function searchWeb(q){
-    if(!q) return [];
-    try{
-      const res = await fetch('/api/search?q=' + encodeURIComponent(q));
-      if(!res.ok) throw 0;
-      const data = await res.json();
-      // normalize: expect array of {title, url, snippet}
-      return data.slice(0, 12);
-    }catch{
-      toast('No se pudo buscar en la web ahora', 'warn');
-      return [];
-    }
+ async function searchWeb(q){
+  if(!q) return [];
+  try{
+    const res = await fetch('/api/search?q=' + encodeURIComponent(q));
+    if(!res.ok) throw 0;
+    const data = await res.json();
+
+    // Normalizar: aceptar {results:[...]} o {organic_results:[...]} o array directo
+    const arr = Array.isArray(data)
+      ? data
+      : data.results || data.organic_results || [];
+
+    return arr.slice(0, 12);
+  }catch{
+    toast('No se pudo buscar en la web ahora', 'warn');
+    return [];
   }
+}
 
   // ---- Render sections
   function renderList(container, recipes, {allowImport=false, sourceUrls=[]} = {}){
