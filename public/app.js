@@ -1,5 +1,3 @@
-const hasDetails = r => (r.ingredients?.length || r.steps?.length);
-
 (() => {
   const els = {
     tabs: document.querySelectorAll('.tab-btn'),
@@ -30,31 +28,24 @@ const hasDetails = r => (r.ingredients?.length || r.steps?.length);
     syncBtn: document.getElementById('syncBtn'),
   };
 
-  // ---- Storage helpers
+  // ---- Storage
   const LS_IMPORTED = 'recetas_importadas_v1';
   const LS_FAVORITES = 'recetas_favoritas_v1';
-
   const store = {
     getImported(){ return JSON.parse(localStorage.getItem(LS_IMPORTED) || '[]'); },
     setImported(arr){ localStorage.setItem(LS_IMPORTED, JSON.stringify(arr)); },
     getFavorites(){ return JSON.parse(localStorage.getItem(LS_FAVORITES) || '[]'); },
     setFavorites(arr){ localStorage.setItem(LS_FAVORITES, JSON.stringify(arr)); },
-    isFav(id){
-      return this.getFavorites().some(r => r.id === id);
-    }
+    isFav(id){ return this.getFavorites().some(r => r.id === id); }
   };
 
-  // ---- Toasts
+  // ---- Toast
   function toast(msg, type='success'){
     const div = document.createElement('div');
     div.className = `toast ${type}`;
     div.textContent = msg;
     els.toastWrap.appendChild(div);
-    setTimeout(() => {
-      div.style.transform = 'translateY(10px)';
-      div.style.opacity = '0';
-      setTimeout(() => div.remove(), 250);
-    }, 2200);
+    setTimeout(() => { div.style.opacity = '0'; setTimeout(() => div.remove(), 250); }, 2200);
   }
 
   // ---- Modal
@@ -62,46 +53,36 @@ const hasDetails = r => (r.ingredients?.length || r.steps?.length);
     els.modalTitle.textContent = recipe.title || 'Receta';
     els.modalDesc.textContent = recipe.description || '';
     els.modalIngr.innerHTML = '';
-    (recipe.ingredients || []).forEach(i => {
-      const li = document.createElement('li');
-      li.textContent = i;
-      els.modalIngr.appendChild(li);
-    });
     els.modalSteps.innerHTML = '';
-    (recipe.steps || []).forEach(s => {
-      const li = document.createElement('li');
-      li.textContent = s;
-      els.modalSteps.appendChild(li);
-    });
+    if (recipe.ingredients?.length) {
+      recipe.ingredients.forEach(i => { const li=document.createElement('li'); li.textContent=i; els.modalIngr.appendChild(li); });
+    } else if (recipe.source) {
+      els.modalIngr.innerHTML = `<li><a href="${recipe.source}" target="_blank" rel="noopener">Ver receta completa en la web</a></li>`;
+    }
+    if (recipe.steps?.length) {
+      recipe.steps.forEach(s => { const li=document.createElement('li'); li.textContent=s; els.modalSteps.appendChild(li); });
+    }
     els.modalBackdrop.style.display = 'flex';
     els.modalBackdrop.setAttribute('aria-hidden','false');
   }
-  function closeModal(){
-    els.modalBackdrop.style.display = 'none';
-    els.modalBackdrop.setAttribute('aria-hidden','true');
-  }
+  function closeModal(){ els.modalBackdrop.style.display = 'none'; els.modalBackdrop.setAttribute('aria-hidden','true'); }
   els.modalClose.addEventListener('click', closeModal);
-  els.modalClose2.addEventListener('click', closeModal);
-  els.modalBackdrop.addEventListener('click', (e)=>{
-    if(e.target === els.modalBackdrop){ closeModal(); }
-  });
+  els.modalClose2?.addEventListener('click', closeModal);
+  els.modalBackdrop.addEventListener('click', e => { if (e.target === els.modalBackdrop) closeModal(); });
 
   // ---- Tabs
   els.tabs.forEach(btn => {
     btn.addEventListener('click', () => {
       els.tabs.forEach(b => b.setAttribute('aria-selected', 'false'));
       btn.setAttribute('aria-selected', 'true');
-      Object.entries(els.panels).forEach(([key, sec]) => {
-        sec.hidden = (btn.dataset.tab !== key);
-      });
-      // Refresh lists on tab switch
-      if(btn.dataset.tab==='importadas') renderImported();
-      if(btn.dataset.tab==='favoritas') renderFavorites();
-      if(btn.dataset.tab==='fitness') renderFitness();
+      Object.entries(els.panels).forEach(([key, sec]) => { sec.hidden = (btn.dataset.tab !== key); });
+      if (btn.dataset.tab==='importadas') renderImported();
+      if (btn.dataset.tab==='favoritas') renderFavorites();
+      if (btn.dataset.tab==='fitness') renderFitness();
     });
   });
 
-  // ---- Fetch local recipes (with fallback to static file)
+  // ---- Local recipes
   let LOCAL_RECIPES = [];
   async function loadLocalRecipes(){
     try{
@@ -114,142 +95,133 @@ const hasDetails = r => (r.ingredients?.length || r.steps?.length);
     }
   }
 
-  // ---- Render helpers
- function recipeCard(recipe, opts = {}) {
-  const card = document.createElement('div');
-  card.className = 'card';
+  // ---- Cards
+  function recipeCard(recipe, opts = {}){
+    const card = document.createElement('div');
+    card.className = 'card';
 
-  const title = document.createElement('h3');
-  title.textContent = recipe.title;
+    const title = document.createElement('h3');
+    title.textContent = recipe.title;
 
-  const desc = document.createElement('div');
-  desc.textContent = recipe.description || '';
+    const desc = document.createElement('div');
+    desc.textContent = recipe.description || '';
 
-  const tags = document.createElement('div');
-  tags.className = 'tags';
-  (recipe.tags || []).forEach(t => {
-    const s = document.createElement('span');
-    s.className = 'tag'; s.textContent = t;
-    tags.appendChild(s);
-  });
+    const tags = document.createElement('div');
+    tags.className = 'tags';
+    (recipe.tags || []).forEach(t => {
+      const s = document.createElement('span');
+      s.className = 'tag'; s.textContent = t;
+      tags.appendChild(s);
+    });
 
-  const actions = document.createElement('div');
-  actions.className = 'card-actions';
+    const actions = document.createElement('div');
+    actions.className = 'card-actions';
 
-  // Si NO es un resultado web, mostramos Ver (detalles ya disponibles)
-  if (opts.mode !== 'web') {
-    const btnView = document.createElement('button');
-    btnView.className = 'ghost';
-    btnView.textContent = 'Ver';
-    btnView.addEventListener('click', ()=> openModal(recipe));
-    actions.append(btnView);
-  } else {
-    // Resultado web: Importar + Fuente, sin "Ver"
-    const imp = document.createElement('button');
-    imp.className = 'ghost';
-    imp.textContent = 'Importar';
-    imp.addEventListener('click', ()=> importFromUrl(opts.sourceUrl, recipe, imp));
-    actions.append(imp);
+    if (opts.mode !== 'web') {
+      const btnView = document.createElement('button');
+      btnView.className = 'ghost';
+      btnView.textContent = 'Ver';
+      btnView.addEventListener('click', ()=> openModal(recipe));
+      actions.append(btnView);
+    } else {
+      const imp = document.createElement('button');
+      imp.className = 'ghost';
+      imp.textContent = 'Importar';
+      imp.addEventListener('click', ()=> importFromUrl(opts.sourceUrl, recipe, imp));
+      actions.append(imp);
 
-    if (opts.sourceUrl) {
-      const a = document.createElement('a');
-      a.className = 'ghost';
-      a.textContent = 'Fuente';
-      a.href = opts.sourceUrl;
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-      a.style.textDecoration = 'none';
-      a.style.display = 'inline-block';
-      a.style.padding = '8px 10px';
-      a.style.borderRadius = '10px';
-      a.style.background = 'var(--rose)';
-      actions.append(a);
+      if (opts.sourceUrl) {
+        const a = document.createElement('a');
+        a.className = 'ghost';
+        a.textContent = 'Fuente';
+        a.href = opts.sourceUrl;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.style.textDecoration = 'none';
+        actions.append(a);
+      }
     }
+
+    const fav = document.createElement('button');
+    fav.className = 'icon fav' + (store.isFav(recipe.id) ? ' active' : '');
+    fav.innerHTML = '★';
+    fav.title = store.isFav(recipe.id) ? 'Quitar de favoritos' : 'Agregar a favoritos';
+    fav.addEventListener('click', ()=> toggleFavorite(recipe, fav));
+    actions.append(fav);
+
+    card.append(title, desc, tags, actions);
+    return card;
   }
-
-  // Favorito siempre disponible
-  const fav = document.createElement('button');
-  fav.className = 'icon fav' + (store.isFav(recipe.id) ? ' active' : '');
-  fav.innerHTML = '★';
-  fav.title = store.isFav(recipe.id) ? 'Quitar de favoritos' : 'Agregar a favoritos';
-  fav.addEventListener('click', ()=> toggleFavorite(recipe, fav));
-  actions.append(fav);
-
-  card.append(title, desc, tags, actions);
-  return card;
-}
-
 
   function toggleFavorite(recipe, btn){
     let favs = store.getFavorites();
     const exists = favs.some(r => r.id === recipe.id);
-    if(exists){
+    if (exists) {
       favs = favs.filter(r => r.id !== recipe.id);
-      btn && (btn.classList.remove('active'), btn.title='Agregar a favoritos');
+      btn?.classList.remove('active');
       toast('Quitado de favoritos', 'warn');
-    }else{
+    } else {
       favs.unshift(recipe);
-      btn && (btn.classList.add('active'), btn.title='Quitar de favoritos');
+      btn?.classList.add('active');
       toast('Agregado a favoritos');
     }
     store.setFavorites(favs);
     renderFavorites();
   }
 
-  // ---- Import flow (no campo de URL, sólo desde resultados web)
- async function importFromUrl(url, meta = {}, button){
-  try{
-    button && (button.disabled = true, button.textContent = 'Importando...');
-    let data;
+  // ---- Import flow
+  async function importFromUrl(url, meta = {}, button){
     try{
-      const res = await fetch('/api/import', {
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ url })
-      });
-      if(!res.ok) throw new Error('POST no disponible');
-      data = await res.json();
-    }catch(_e){
-      const res = await fetch('/api/import?url=' + encodeURIComponent(url));
-      data = await res.json();
+      button && (button.disabled = true, button.textContent = 'Importando...');
+      let data;
+      try{
+        const res = await fetch('/api/import', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ url })
+        });
+        if(!res.ok) throw 0;
+        data = await res.json();
+      }catch{
+        const res = await fetch('/api/import?url=' + encodeURIComponent(url));
+        data = await res.json();
+      }
+
+      const recipe = {
+        id: data.id || `imp_${Date.now()}`,
+        title: data.title || meta.title || 'Receta importada',
+        description: data.description || meta.description || '',
+        ingredients: data.ingredients || [],
+        steps: data.steps || data.instructions || [],
+        tags: Array.from(new Set([...(data.tags||[]),'importada'])),
+        source: url
+      };
+
+      const list = store.getImported();
+      list.unshift(recipe);
+      store.setImported(list);
+      toast('Receta importada ✔');
+
+      // mover a Importadas y abrir modal
+      els.tabs.forEach(b => b.setAttribute('aria-selected','false'));
+      document.querySelector('.tab-btn[data-tab="importadas"]').setAttribute('aria-selected','true');
+      Object.entries(els.panels).forEach(([key, sec]) => sec.hidden = (key !== 'importadas'));
+      renderImported();
+      openModal(recipe);
+
+    }catch(e){
+      console.error(e);
+      toast('No se pudo importar esta URL', 'error');
+    }finally{
+      button && (button.disabled = false, button.textContent = 'Importar');
     }
-
-    const recipe = {
-      id: data.id || `imp_${Date.now()}`,
-      title: data.title || meta.title || 'Receta importada',
-      description: data.description || meta.description || '',
-      ingredients: data.ingredients || [],
-      steps: data.steps || data.instructions || [],
-      tags: Array.from(new Set([...(data.tags||[]),'importada'])),
-      source: url
-    };
-
-    const list = store.getImported();
-    list.unshift(recipe);
-    store.setImported(list);
-    toast('Receta importada ✔');
-
-    // Cambiamos a pestaña Importadas y abrimos el modal
-    document.querySelector('.tab-btn[aria-selected="true"]')?.setAttribute('aria-selected','false');
-    document.querySelector('.tab-btn[data-tab="importadas"]').setAttribute('aria-selected','true');
-    Object.entries(els.panels).forEach(([key, sec]) => sec.hidden = (key !== 'importadas'));
-    renderImported();
-    openModal(recipe);
-
-  }catch(e){
-    console.error(e);
-    toast('No se pudo importar esta URL', 'error');
-  }finally{
-    button && (button.disabled = false, button.textContent = 'Importar');
   }
-}
 
-
-  // ---- Search Local
+  // ---- Local search
   function searchLocal(q){
     const term = (q||'').trim().toLowerCase();
     if(!term) return LOCAL_RECIPES;
-    return LOCAL_RECIPES.filter(r => 
+    return LOCAL_RECIPES.filter(r =>
       (r.title||'').toLowerCase().includes(term) ||
       (r.description||'').toLowerCase().includes(term) ||
       (r.tags||[]).join(' ').toLowerCase().includes(term) ||
@@ -257,76 +229,69 @@ const hasDetails = r => (r.ingredients?.length || r.steps?.length);
     );
   }
 
-  // ---- Search Web (uses /api/search)
- async function searchWeb(q){
-  if(!q) return [];
-  try{
-    const res = await fetch('/api/search?q=' + encodeURIComponent(q));
-    if(!res.ok) throw 0;
-    const data = await res.json();
-
-    // Normalizar: aceptar {results:[...]} o {organic_results:[...]} o array directo
-    const arr = Array.isArray(data)
-      ? data
-      : data.results || data.organic_results || [];
-
-    return arr.slice(0, 12);
-  }catch{
-    toast('No se pudo buscar en la web ahora', 'warn');
-    return [];
+  // ---- Web search (acepta { ok, results } o array)
+  async function searchWeb(q){
+    if(!q) return [];
+    try{
+      const res = await fetch('/api/search?q=' + encodeURIComponent(q));
+      if(!res.ok) throw 0;
+      const data = await res.json();
+      const arr = Array.isArray(data) ? data : (data.results || data.organic_results || []);
+      return arr.slice(0, 12);
+    }catch{
+      return [];
+    }
   }
-}
 
-  // ---- Render sections
-  function renderList(container, recipes, {allowImport=false, sourceUrls=[]} = {}){
+  // ---- Render helpers
+  function renderList(container, recipes, {mode='local', sourceUrls=[]} = {}){
     container.innerHTML = '';
     if(!recipes.length){
       const empty = document.createElement('div');
       empty.className = 'empty';
-      empty.textContent = 'Sin resultados por ahora.';
+      empty.innerHTML = 'Sin resultados por ahora.';
       container.appendChild(empty);
       return;
     }
     recipes.forEach((r, idx) => {
-      const card = recipeCard(r, allowImport ? {allowImport, sourceUrl: sourceUrls[idx]} : {});
-      container.appendChild(card);
+      container.appendChild(recipeCard(r, {mode, sourceUrl: sourceUrls[idx]}));
     });
   }
 
- async function onSearch(){
-  const q = els.q.value;
-  const local = searchLocal(q);
-  renderList(els.localResults, local);
+  async function onSearch(){
+    const q = els.q.value;
+    // locales
+    const local = searchLocal(q);
+    renderList(els.localResults, local);
 
-  const web = await searchWeb(q);
-  if (!web.length) {
-    els.webResults.innerHTML = '';
-    const empty = document.createElement('div');
-    empty.className = 'empty';
-    empty.innerHTML = `Sin resultados por ahora. <br/><br/>
-      <a href="https://www.google.com/search?q=${encodeURIComponent(q)}" target="_blank" rel="noopener noreferrer">
-        Abrir búsqueda en Google
-      </a>`;
-    els.webResults.appendChild(empty);
-    return;
+    // web
+    const web = await searchWeb(q);
+    if (!web.length) {
+      els.webResults.innerHTML = `
+        <div class="empty">
+          Sin resultados por ahora.<br/><br/>
+          <a href="https://www.google.com/search?q=${encodeURIComponent(q)}" target="_blank" rel="noopener">
+            Abrir búsqueda en Google
+          </a>
+        </div>`;
+      return;
+    }
+
+    // normalizar resultados web
+    const webRecipes = web.map((w, i) => ({
+      id: `web_${i}_${Date.now()}`,
+      title: w.title,
+      description: w.snippet || '',
+      tags: ['web'],
+      source: w.url
+    }));
+    const urls = web.map(w => w.url);
+    renderList(els.webResults, webRecipes, {mode:'web', sourceUrls: urls});
   }
-
-  const webRecipes = web.map((w, i) => ({
-    id: `web_${i}_${Date.now()}`,
-    title: w.title,
-    description: w.snippet || '',
-    tags: ['web'],
-    source: w.url
-  }));
-  const urls = web.map(w => w.url);
-  // modo web: sin "Ver"
-  renderList(els.webResults, webRecipes, { mode:'web', sourceUrls: urls, allowImport:true });
-}
-
 
   function renderImported(){
     const q = (els.importSearch.value||'').toLowerCase();
-    const list = store.getImported().filter(r => 
+    const list = store.getImported().filter(r =>
       r.title.toLowerCase().includes(q) ||
       (r.description||'').toLowerCase().includes(q) ||
       (r.tags||[]).join(' ').toLowerCase().includes(q)
@@ -336,7 +301,7 @@ const hasDetails = r => (r.ingredients?.length || r.steps?.length);
 
   function renderFavorites(){
     const q = (els.favSearch.value||'').toLowerCase();
-    const list = store.getFavorites().filter(r => 
+    const list = store.getFavorites().filter(r =>
       r.title.toLowerCase().includes(q) ||
       (r.description||'').toLowerCase().includes(q) ||
       (r.tags||[]).join(' ').toLowerCase().includes(q)
@@ -347,8 +312,8 @@ const hasDetails = r => (r.ingredients?.length || r.steps?.length);
   function renderFitness(){
     const q = (els.fitSearch.value||'').toLowerCase();
     const list = LOCAL_RECIPES
-      .filter(r => (r.tags||[]).map(t=>t.toLowerCase()).includes('fitness') || (r.tags||[]).map(t=>t.toLowerCase()).includes('saludable'))
-      .filter(r => 
+      .filter(r => (r.tags||[]).some(t => ['fitness','saludable'].includes(t.toLowerCase())))
+      .filter(r =>
         r.title.toLowerCase().includes(q) ||
         (r.description||'').toLowerCase().includes(q) ||
         (r.ingredients||[]).join(' ').toLowerCase().includes(q)
@@ -362,17 +327,12 @@ const hasDetails = r => (r.ingredients?.length || r.steps?.length);
   els.importSearch.addEventListener('input', renderImported);
   els.favSearch.addEventListener('input', renderFavorites);
   els.fitSearch.addEventListener('input', renderFitness);
-  els.syncBtn.addEventListener('click', async ()=>{
-    await loadLocalRecipes();
-    toast('Datos locales recargados');
-    onSearch();
-    renderFitness();
-  });
+  els.syncBtn.addEventListener('click', async ()=>{ await loadLocalRecipes(); toast('Datos locales recargados'); onSearch(); renderFitness(); });
 
-  // ---- Startup
+  // ---- Init
   (async () => {
     await loadLocalRecipes();
-    renderList(els.localResults, LOCAL_RECIPES.slice(0, 8)); // initial
+    renderList(els.localResults, LOCAL_RECIPES.slice(0, 8));
     renderFitness();
   })();
 })();
