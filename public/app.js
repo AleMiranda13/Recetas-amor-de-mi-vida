@@ -112,25 +112,8 @@
       const r2 = await fetch('./recipes.json');
       LOCAL_RECIPES = await r2.json();
     }
+    if (!Array.isArray(LOCAL_RECIPES)) LOCAL_RECIPES = [];
   }
-
-  (async () => {
-  await loadLocalRecipes();
-  if (!Array.isArray(LOCAL_RECIPES) || !LOCAL_RECIPES.length) {
-    LOCAL_RECIPES = [
-      {
-        id: 'loc_demo_pastel_papa',
-        title: 'Pastel de papa clásico',
-        description: 'Carne, puré y gratinado. Fácil y rendidor.',
-        ingredients: ['1 kg papas','500 g carne picada','1 cebolla','1 morrón','sal y pimienta'],
-        steps: ['Hervir papas y hacer puré','Saltear carne y verduras','Armar fuente y gratinar'],
-        tags: ['horno','familiar']
-      }
-    ];
-  }
-  renderList(els.localResults, LOCAL_RECIPES.slice(0, 8));
-  renderFitness();
-})();
 
   // --------- enriquecer detalles (re-import si faltan)
   async function ensureDetails(recipe){
@@ -310,8 +293,10 @@
   // --------- búsquedas
   function searchLocal(q){
     const term = (q||'').trim().toLowerCase();
-    if(!term) return LOCAL_RECIPES;
-    return LOCAL_RECIPES.filter(r =>
+    // excluye fitness del buscador local
+    const base = LOCAL_RECIPES.filter(r => !(r.tags||[]).includes('fitness'));
+    if(!term) return base;
+    return base.filter(r =>
       (r.title||'').toLowerCase().includes(term) ||
       (r.description||'').toLowerCase().includes(term) ||
       (r.tags||[]).join(' ').toLowerCase().includes(term) ||
@@ -352,9 +337,12 @@
   async function onSearch(){
     const q = els.q.value;
 
+    // locales (sin fitness)
     const local = searchLocal(q);
     renderList(els.localResults, local);
+    toggleLocalMoreVisibility(false); // oculta "Ver más" al estar en modo búsqueda
 
+    // web
     const web = await searchWeb(q);
     if (!web.length) {
       els.webResults.innerHTML = `
@@ -399,15 +387,57 @@
   }
 
   function renderFitness(){
-    const q = (els.fitSearch.value||'').toLowerCase();
-    const list = LOCAL_RECIPES
-      .filter(r => (r.tags||[]).some(t => ['fitness','saludable'].includes(t.toLowerCase())))
-      .filter(r =>
-        r.title.toLowerCase().includes(q) ||
-        (r.description||'').toLowerCase().includes(q) ||
-        (r.ingredients||[]).join(' ').toLowerCase().includes(q)
-      );
-    renderList(els.fitnessList, list);
+    const term = (els.fitSearch.value||'').trim().toLowerCase();
+    const base = LOCAL_RECIPES.filter(r => (r.tags||[]).includes('fitness') || (r.tags||[]).includes('saludable'));
+    const list = !term ? base : base.filter(r =>
+      (r.title||'').toLowerCase().includes(term) ||
+      (r.description||'').toLowerCase().includes(term) ||
+      (r.ingredients||[]).join(' ').toLowerCase().includes(term)
+    );
+    renderList(els.fitnessList, list); // sin slice: muestra todas las fitness
+  }
+
+  // --------- "Ver más / Ver menos" para locales (inicio)
+  let showAllLocal = false;      // por defecto mostramos una parte
+  const LOCAL_PAGE = 24;         // cantidad inicial
+
+  // botón creado dinámicamente y colocado entre locales y web
+  let localMoreWrap = null;
+  let localMoreBtn = null;
+
+  function ensureLocalMoreButton(){
+    if (localMoreWrap) return;
+    localMoreWrap = document.createElement('div');
+    localMoreWrap.style.display = 'flex';
+    localMoreWrap.style.justifyContent = 'center';
+    localMoreWrap.style.margin = '10px 0 4px 0';
+
+    localMoreBtn = document.createElement('button');
+    localMoreBtn.className = 'ghost';
+    localMoreBtn.textContent = 'Ver más';
+    localMoreBtn.addEventListener('click', () => {
+      showAllLocal = !showAllLocal;
+      renderLocalInitial(); // vuelve a pintar locales
+      localMoreBtn.textContent = showAllLocal ? 'Ver menos' : 'Ver más';
+    });
+
+    // Insertar antes de la sección de resultados web
+    els.webResults.parentNode.insertBefore(localMoreWrap, els.webResults);
+    localMoreWrap.appendChild(localMoreBtn);
+  }
+
+  function toggleLocalMoreVisibility(show){
+    if (!localMoreWrap) return;
+    localMoreWrap.style.display = show ? 'flex' : 'none';
+  }
+
+  function renderLocalInitial(){
+    // lista local sin fitness
+    const base = LOCAL_RECIPES.filter(r => !(r.tags||[]).includes('fitness'));
+    const list = showAllLocal ? base : base.slice(0, LOCAL_PAGE);
+    renderList(els.localResults, list);
+    // el botón solo aparece cuando NO hay búsqueda activa
+    toggleLocalMoreVisibility(true);
   }
 
   // --------- eventos e init
@@ -416,11 +446,14 @@
   els.importSearch.addEventListener('input', renderImported);
   els.favSearch.addEventListener('input', renderFavorites);
   els.fitSearch.addEventListener('input', renderFitness);
-  els.syncBtn.addEventListener('click', async ()=>{ await loadLocalRecipes(); toast('Datos locales recargados'); onSearch(); renderFitness(); });
+  els.syncBtn.addEventListener('click', async ()=>{ await loadLocalRecipes(); toast('Datos locales recargados'); renderLocalInitial(); renderFitness(); });
 
   (async () => {
     await loadLocalRecipes();
-    renderList(els.localResults, LOCAL_RECIPES.slice(0, 8));
-    renderFitness();
+
+    // preparar botón "Ver más" y pintar locales/finess iniciales
+    ensureLocalMoreButton();
+    renderLocalInitial();   // locales (24 o todos si showAllLocal = true)
+    renderFitness();        // fitness: todas las fitness disponibles
   })();
 })();
