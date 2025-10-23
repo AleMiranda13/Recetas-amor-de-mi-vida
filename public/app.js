@@ -1,4 +1,5 @@
 (() => {
+  // --------- refs del DOM
   const els = {
     tabs: document.querySelectorAll('.tab-btn'),
     panels: {
@@ -28,32 +29,46 @@
     syncBtn: document.getElementById('syncBtn'),
   };
 
-  // ---- Storage
+  // --------- storage
   const LS_IMPORTED = 'recetas_importadas_v1';
   const LS_FAVORITES = 'recetas_favoritas_v1';
   const store = {
     getImported(){ return JSON.parse(localStorage.getItem(LS_IMPORTED) || '[]'); },
-    setImported(arr){ localStorage.setItem(LS_IMPORTED, JSON.stringify(arr)); },
+    setImported(a){ localStorage.setItem(LS_IMPORTED, JSON.stringify(a)); },
     getFavorites(){ return JSON.parse(localStorage.getItem(LS_FAVORITES) || '[]'); },
-    setFavorites(arr){ localStorage.setItem(LS_FAVORITES, JSON.stringify(arr)); },
+    setFavorites(a){ localStorage.setItem(LS_FAVORITES, JSON.stringify(a)); },
     isFav(id){ return this.getFavorites().some(r => r.id === id); }
   };
 
-  // ---- Toast
+  function upsertImported(updated){
+    const list = store.getImported();
+    const i = list.findIndex(r => r.id === updated.id);
+    if (i >= 0) list[i] = updated; else list.unshift(updated);
+    store.setImported(list);
+  }
+  function deleteImported(id){
+    const list = store.getImported().filter(r => r.id !== id);
+    store.setImported(list);
+    renderImported();
+    toast('Eliminada de importadas', 'warn');
+  }
+
+  // --------- toast
   function toast(msg, type='success'){
     const div = document.createElement('div');
     div.className = `toast ${type}`;
     div.textContent = msg;
     els.toastWrap.appendChild(div);
-    setTimeout(() => { div.style.opacity = '0'; setTimeout(() => div.remove(), 250); }, 2200);
+    setTimeout(() => { div.style.opacity='0'; setTimeout(()=>div.remove(), 260); }, 2200);
   }
 
-  // ---- Modal
+  // --------- modal
   function openModal(recipe){
     els.modalTitle.textContent = recipe.title || 'Receta';
     els.modalDesc.textContent = recipe.description || '';
     els.modalIngr.innerHTML = '';
     els.modalSteps.innerHTML = '';
+
     if (recipe.ingredients?.length) {
       recipe.ingredients.forEach(i => { const li=document.createElement('li'); li.textContent=i; els.modalIngr.appendChild(li); });
     } else if (recipe.source) {
@@ -62,40 +77,80 @@
     if (recipe.steps?.length) {
       recipe.steps.forEach(s => { const li=document.createElement('li'); li.textContent=s; els.modalSteps.appendChild(li); });
     }
+
     els.modalBackdrop.style.display = 'flex';
     els.modalBackdrop.setAttribute('aria-hidden','false');
   }
-  function closeModal(){ els.modalBackdrop.style.display = 'none'; els.modalBackdrop.setAttribute('aria-hidden','true'); }
+  function closeModal(){
+    els.modalBackdrop.style.display = 'none';
+    els.modalBackdrop.setAttribute('aria-hidden','true');
+  }
   els.modalClose.addEventListener('click', closeModal);
   els.modalClose2?.addEventListener('click', closeModal);
   els.modalBackdrop.addEventListener('click', e => { if (e.target === els.modalBackdrop) closeModal(); });
 
-  // ---- Tabs
+  // --------- tabs
   els.tabs.forEach(btn => {
     btn.addEventListener('click', () => {
       els.tabs.forEach(b => b.setAttribute('aria-selected', 'false'));
       btn.setAttribute('aria-selected', 'true');
-      Object.entries(els.panels).forEach(([key, sec]) => { sec.hidden = (btn.dataset.tab !== key); });
-      if (btn.dataset.tab==='importadas') renderImported();
-      if (btn.dataset.tab==='favoritas') renderFavorites();
-      if (btn.dataset.tab==='fitness') renderFitness();
+      Object.entries(els.panels).forEach(([k, sec]) => sec.hidden = (btn.dataset.tab !== k));
+      if (btn.dataset.tab === 'importadas') renderImported();
+      if (btn.dataset.tab === 'favoritas') renderFavorites();
+      if (btn.dataset.tab === 'fitness') renderFitness();
     });
   });
 
-  // ---- Local recipes
+  // --------- datos locales
   let LOCAL_RECIPES = [];
   async function loadLocalRecipes(){
     try{
-      const res = await fetch('/api/recipes');
-      if(!res.ok) throw 0;
-      LOCAL_RECIPES = await res.json();
+      const r = await fetch('/api/recipes');
+      if(!r.ok) throw 0;
+      LOCAL_RECIPES = await r.json();
     }catch{
-      const res2 = await fetch('./recipes.json');
-      LOCAL_RECIPES = await res2.json();
+      const r2 = await fetch('./recipes.json');
+      LOCAL_RECIPES = await r2.json();
     }
   }
 
-  // ---- Cards
+  // --------- enriquecer detalles (re-import si faltan)
+  async function ensureDetails(recipe){
+    const has = (recipe.ingredients && recipe.ingredients.length) || (recipe.steps && recipe.steps.length);
+    if (has || !recipe.source) return recipe;
+
+    try{
+      let data;
+      try{
+        const r = await fetch('/api/import', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ url: recipe.source })
+        });
+        if(!r.ok) throw 0;
+        data = await r.json();
+      }catch{
+        const r = await fetch('/api/import?url=' + encodeURIComponent(recipe.source));
+        data = await r.json();
+      }
+
+      const enriched = {
+        ...recipe,
+        title: data.title || recipe.title,
+        description: data.description || recipe.description,
+        ingredients: data.ingredients || recipe.ingredients || [],
+        steps: data.steps || data.instructions || recipe.steps || [],
+        tags: Array.from(new Set([...(recipe.tags||[]), ...(data.tags||[]), 'importada'])),
+      };
+      upsertImported(enriched);
+      return enriched;
+    }catch(e){
+      console.error('ensureDetails', e);
+      return recipe;
+    }
+  }
+
+  // --------- tarjeta
   function recipeCard(recipe, opts = {}){
     const card = document.createElement('div');
     card.className = 'card';
@@ -118,12 +173,26 @@
     actions.className = 'card-actions';
 
     if (opts.mode !== 'web') {
+      // Ver (en importadas intenta enriquecer antes)
       const btnView = document.createElement('button');
       btnView.className = 'ghost';
       btnView.textContent = 'Ver';
-      btnView.addEventListener('click', ()=> openModal(recipe));
+      btnView.addEventListener('click', async () => {
+        const r = (opts.section === 'importadas') ? await ensureDetails(recipe) : recipe;
+        openModal(r);
+      });
       actions.append(btnView);
+
+      // Eliminar (solo en importadas)
+      if (opts.section === 'importadas') {
+        const del = document.createElement('button');
+        del.className = 'ghost danger';
+        del.textContent = 'Eliminar';
+        del.addEventListener('click', () => deleteImported(recipe.id));
+        actions.append(del);
+      }
     } else {
+      // Resultados web: Importar + Fuente
       const imp = document.createElement('button');
       imp.className = 'ghost';
       imp.textContent = 'Importar';
@@ -142,6 +211,7 @@
       }
     }
 
+    // Favoritos
     const fav = document.createElement('button');
     fav.className = 'icon fav' + (store.isFav(recipe.id) ? ' active' : '');
     fav.innerHTML = '★';
@@ -159,17 +229,19 @@
     if (exists) {
       favs = favs.filter(r => r.id !== recipe.id);
       btn?.classList.remove('active');
+      btn.title = 'Agregar a favoritos';
       toast('Quitado de favoritos', 'warn');
     } else {
       favs.unshift(recipe);
       btn?.classList.add('active');
+      btn.title = 'Quitar de favoritos';
       toast('Agregado a favoritos');
     }
     store.setFavorites(favs);
     renderFavorites();
   }
 
-  // ---- Import flow
+  // --------- importar (desde resultados web)
   async function importFromUrl(url, meta = {}, button){
     try{
       button && (button.disabled = true, button.textContent = 'Importando...');
@@ -205,7 +277,7 @@
       // mover a Importadas y abrir modal
       els.tabs.forEach(b => b.setAttribute('aria-selected','false'));
       document.querySelector('.tab-btn[data-tab="importadas"]').setAttribute('aria-selected','true');
-      Object.entries(els.panels).forEach(([key, sec]) => sec.hidden = (key !== 'importadas'));
+      Object.entries(els.panels).forEach(([k, sec]) => sec.hidden = (k !== 'importadas'));
       renderImported();
       openModal(recipe);
 
@@ -217,7 +289,7 @@
     }
   }
 
-  // ---- Local search
+  // --------- búsquedas
   function searchLocal(q){
     const term = (q||'').trim().toLowerCase();
     if(!term) return LOCAL_RECIPES;
@@ -229,7 +301,7 @@
     );
   }
 
-  // ---- Web search (acepta { ok, results } o array)
+  // soporta array directo o { ok, results } o { organic_results }
   async function searchWeb(q){
     if(!q) return [];
     try{
@@ -243,28 +315,28 @@
     }
   }
 
-  // ---- Render helpers
-  function renderList(container, recipes, {mode='local', sourceUrls=[]} = {}){
+  // --------- render genérico
+  function renderList(container, recipes, {mode='local', section=null, sourceUrls=[]} = {}){
     container.innerHTML = '';
     if(!recipes.length){
       const empty = document.createElement('div');
       empty.className = 'empty';
-      empty.innerHTML = 'Sin resultados por ahora.';
+      empty.textContent = 'Sin resultados por ahora.';
       container.appendChild(empty);
       return;
     }
     recipes.forEach((r, idx) => {
-      container.appendChild(recipeCard(r, {mode, sourceUrl: sourceUrls[idx]}));
+      container.appendChild(recipeCard(r, {mode, section, sourceUrl: sourceUrls[idx]}));
     });
   }
 
+  // --------- handlers
   async function onSearch(){
     const q = els.q.value;
-    // locales
+
     const local = searchLocal(q);
     renderList(els.localResults, local);
 
-    // web
     const web = await searchWeb(q);
     if (!web.length) {
       els.webResults.innerHTML = `
@@ -277,7 +349,6 @@
       return;
     }
 
-    // normalizar resultados web
     const webRecipes = web.map((w, i) => ({
       id: `web_${i}_${Date.now()}`,
       title: w.title,
@@ -296,7 +367,7 @@
       (r.description||'').toLowerCase().includes(q) ||
       (r.tags||[]).join(' ').toLowerCase().includes(q)
     );
-    renderList(els.importedList, list);
+    renderList(els.importedList, list, { mode:'local', section:'importadas' });
   }
 
   function renderFavorites(){
@@ -321,7 +392,7 @@
     renderList(els.fitnessList, list);
   }
 
-  // ---- Events
+  // --------- eventos e init
   els.searchBtn.addEventListener('click', onSearch);
   els.q.addEventListener('keydown', e => { if(e.key==='Enter') onSearch(); });
   els.importSearch.addEventListener('input', renderImported);
@@ -329,7 +400,6 @@
   els.fitSearch.addEventListener('input', renderFitness);
   els.syncBtn.addEventListener('click', async ()=>{ await loadLocalRecipes(); toast('Datos locales recargados'); onSearch(); renderFitness(); });
 
-  // ---- Init
   (async () => {
     await loadLocalRecipes();
     renderList(els.localResults, LOCAL_RECIPES.slice(0, 8));
