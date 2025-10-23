@@ -172,11 +172,20 @@
     } else {
       const isSuggestion = !!recipe.suggestion;
 
+      // Importar AUTOMÁTICO (solo si NO es sugerencia)
       if (!isSuggestion){
         const imp = document.createElement('button'); imp.className='ghost'; imp.textContent='Importar';
         imp.addEventListener('click', ()=> importFromUrl(opts.sourceUrl, recipe, imp));
         actions.append(imp);
       }
+
+      // Importar MANUAL (siempre disponible)
+      const man = document.createElement('button');
+      man.className = 'ghost';
+      man.textContent = isSuggestion ? 'Importar (manual)' : 'Editar tras importar';
+      man.addEventListener('click', () => importManualFromSearch(recipe, opts.sourceUrl));
+      actions.append(man);
+
       if (opts.sourceUrl){
         const a = document.createElement('a'); a.className='ghost'; a.textContent='Fuente';
         a.href=opts.sourceUrl; a.target='_blank'; a.rel='noopener';
@@ -200,7 +209,7 @@
     renderFavorites();
   }
 
-  // ---------- importar desde web
+  // ---------- importar desde web (auto)
   async function importFromUrl(url, meta = {}, button){
     try{
       button && (button.disabled=true, button.textContent='Importando…');
@@ -237,6 +246,24 @@
     }finally{
       button && (button.disabled=false, button.textContent='Importar');
     }
+  }
+
+  // ---------- importar desde web (MANUAL)  ⬅️ NUEVO
+  function importManualFromSearch(meta = {}, url = '') {
+    const recipe = {
+      id: 'imp_' + Date.now(),
+      title: meta.title || 'Receta importada',
+      description: meta.description || '',
+      ingredients: [],
+      steps: [],
+      tags: Array.from(new Set([...(meta.tags || []), 'importada', 'manual'])),
+      source: url || meta.source || ''
+    };
+    upsertImported(recipe);
+    renderImported();
+    toast('Creada en importadas (manual) ✔');
+    // Abrir editor para completar ingredientes y pasos
+    openEditImported(recipe, { create: false });
   }
 
   // ---------- búsquedas
