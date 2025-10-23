@@ -75,7 +75,7 @@ function mapResults(list){
 
 // Quitar listados/portadas
 function dropListingPages(items){
-  const BAD = /(buscar|b[úu]squeda|search|categoria|categor[ií]a|tag|etiqueta)/i;
+  const BAD = /(buscar|b[úu]squeda|search|categoria|categor[ií]a|tag|etiqueta|listado|coleccion|collection)/i;
   return items.filter(it=>{
     try{
       const u = new URL(it.url);
@@ -83,7 +83,8 @@ function dropListingPages(items){
       const tooShort = path === "/" || path.split("/").filter(Boolean).length < 2;
       const isBad = BAD.test(path) || BAD.test(u.search || "");
       const titleLooksSearch = /^buscar\s+/i.test(it.title || "");
-      return !tooShort && !isBad && !titleLooksSearch;
+      const looksLikeListing = /resultados|recetas\s*de\s|todas\s+las\s+recetas/i.test(it.title || "");
+      return !tooShort && !isBad && !titleLooksSearch && !looksLikeListing;
     }catch{ return false; }
   });
 }
