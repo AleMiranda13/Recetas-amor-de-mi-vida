@@ -1,269 +1,5 @@
 [
   {
-    "id": "loc_a657bc9d",
-    "title": "Torta tres leches",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_dc256c61",
-    "title": "Quimbolitos",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_43ae2b51",
-    "title": "Dulce de higos con queso",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_3b8b7be3",
-    "title": "Espumillas",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_d072c845",
-    "title": "Pristiños con miel de panela",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_39ec57a6",
-    "title": "Buñuelos de viento",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_8deae25e",
-    "title": "Helado de paila de mora",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_d65adea9",
-    "title": "Humitas dulces",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_41434945",
-    "title": "Quesadillas quiteñas",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_ac037f12",
-    "title": "Rosero lojano",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_e31198f0",
-    "title": "Colada morada",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_1e94e594",
-    "title": "Cocadas",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
     "id": "loc_583053af",
     "title": "Alfajores de maicena",
     "description": "Postre o dulce típico de Ecuador.",
@@ -286,25 +22,25 @@
     ]
   },
   {
-    "id": "loc_06fd25ca",
-    "title": "Flan de caramelo",
-    "description": "Postre o dulce típico de Ecuador.",
+    "id": "loc_33263554",
+    "title": "Arroz colorado con atún",
+    "description": "Plato típico ecuatoriano.",
     "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
     ],
     "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
     ],
     "tags": [
-      "local",
-      "dulce"
+      "local"
     ]
   },
   {
@@ -330,1020 +66,8 @@
     ]
   },
   {
-    "id": "loc_6c272591",
-    "title": "Budín de pan",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_b68ddfa1",
-    "title": "Torta de chocolate húmeda",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_94b6de0a",
-    "title": "Brownies caseros",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_6bf9d755",
-    "title": "Milhojas con crema pastelera",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_176b3e0e",
-    "title": "Brazo gitano de guayaba",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_3ee40ea9",
-    "title": "Suspiros (merengues)",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_ed4b3c40",
-    "title": "Queque de plátano",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_9231541c",
-    "title": "Tarta de maracuyá",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_ffcd0ab9",
-    "title": "Cheesecake de mora",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_e2c658dd",
-    "title": "Torta de zanahoria",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_8a28f579",
-    "title": "Mousse de maracuyá",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_d833ec0d",
-    "title": "Torta de coco",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_29aa48e7",
-    "title": "Pay de limón",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_bc81629c",
-    "title": "Torta selva negra",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_ab5091f9",
-    "title": "Cupcakes de vainilla",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_1ed814da",
-    "title": "Tarta de queso al horno",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_b2eb683d",
-    "title": "Galletas de avena",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_6f2435f6",
-    "title": "Churros con chocolate",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_ccec1c3a",
-    "title": "Magdalenas caseras",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_999a5f12",
-    "title": "Panna cotta de vainilla",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_cf4f7685",
-    "title": "Helado de guanábana",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_966a7043",
-    "title": "Natillas",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_b30e5775",
-    "title": "Dulce de zapallo",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_40cbf0fb",
-    "title": "Mazamorra morada",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_459a7809",
-    "title": "Torta de naranja",
-    "description": "Postre o dulce típico de Ecuador.",
-    "ingredients": [
-      "harina",
-      "huevos",
-      "azúcar",
-      "leche",
-      "mantequilla"
-    ],
-    "steps": [
-      "Precalentar el horno a 180 °C.",
-      "Mezclar secos y húmedos por separado e integrar.",
-      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
-      "Dejar enfriar y desmoldar."
-    ],
-    "tags": [
-      "local",
-      "dulce"
-    ]
-  },
-  {
-    "id": "loc_6b4d7b56",
-    "title": "Llapingachos",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_b1d1b2d7",
-    "title": "Bolón de verde con queso",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_978da941",
-    "title": "Tigrillo",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_d0d127c6",
-    "title": "Encebollado de pescado",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_c3589063",
-    "title": "Ceviche de camarón",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_dd8760d4",
-    "title": "Locro de papa",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_798f5ed7",
-    "title": "Yahuarlocro",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_bf3fb81f",
-    "title": "Fritada",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_29600023",
-    "title": "Hornado",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_7158accb",
-    "title": "Seco de pollo",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_75737e78",
-    "title": "Seco de chivo",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_4b3c5b49",
-    "title": "Guatita",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_66abb987",
-    "title": "Menestra de fréjol con arroz",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_bfe708f2",
-    "title": "Churrasco ecuatoriano",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_f6f76109",
-    "title": "Encocado de pescado",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_50506163",
-    "title": "Encocado de camarón",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_a8153ffb",
-    "title": "Corviche",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_0f6d16ef",
-    "title": "Empanadas de viento",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_a2b27697",
-    "title": "Empanadas de verde",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_3c44ed0f",
-    "title": "Humitas saladas",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
     "id": "loc_585f2f34",
     "title": "Arroz con pollo",
-    "description": "Plato típico ecuatoriano.",
-    "ingredients": [
-      "cebolla",
-      "ajo",
-      "tomate",
-      "sal",
-      "pimienta",
-      "aceite"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "local"
-    ]
-  },
-  {
-    "id": "loc_b94921fa",
-    "title": "Caldo de bola",
     "description": "Plato típico ecuatoriano.",
     "ingredients": [
       "cebolla",
@@ -1386,8 +110,8 @@
     ]
   },
   {
-    "id": "loc_33263554",
-    "title": "Arroz colorado con atún",
+    "id": "loc_b1d1b2d7",
+    "title": "Bolón de verde con queso",
     "description": "Plato típico ecuatoriano.",
     "ingredients": [
       "cebolla",
@@ -1408,8 +132,96 @@
     ]
   },
   {
-    "id": "loc_d238f2a1",
-    "title": "Tortilla de verde",
+    "id": "loc_176b3e0e",
+    "title": "Brazo gitano de guayaba",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_94b6de0a",
+    "title": "Brownies caseros",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_6c272591",
+    "title": "Budín de pan",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_39ec57a6",
+    "title": "Buñuelos de viento",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_b94921fa",
+    "title": "Caldo de bola",
     "description": "Plato típico ecuatoriano.",
     "ingredients": [
       "cebolla",
@@ -1449,6 +261,2066 @@
     ],
     "tags": [
       "local"
+    ]
+  },
+  {
+    "id": "loc_c3589063",
+    "title": "Ceviche de camarón",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "local"
+    ]
+  },
+  {
+    "id": "loc_ffcd0ab9",
+    "title": "Cheesecake de mora",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_bfe708f2",
+    "title": "Churrasco ecuatoriano",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "local"
+    ]
+  },
+  {
+    "id": "loc_6f2435f6",
+    "title": "Churros con chocolate",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_1e94e594",
+    "title": "Cocadas",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_e31198f0",
+    "title": "Colada morada",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_a8153ffb",
+    "title": "Corviche",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "local"
+    ]
+  },
+  {
+    "id": "loc_ab5091f9",
+    "title": "Cupcakes de vainilla",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_43ae2b51",
+    "title": "Dulce de higos con queso",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_b30e5775",
+    "title": "Dulce de zapallo",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_a2b27697",
+    "title": "Empanadas de verde",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "local"
+    ]
+  },
+  {
+    "id": "loc_0f6d16ef",
+    "title": "Empanadas de viento",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "local"
+    ]
+  },
+  {
+    "id": "loc_d0d127c6",
+    "title": "Encebollado de pescado",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "local"
+    ]
+  },
+  {
+    "id": "loc_50506163",
+    "title": "Encocado de camarón",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "local"
+    ]
+  },
+  {
+    "id": "loc_f6f76109",
+    "title": "Encocado de pescado",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "local"
+    ]
+  },
+  {
+    "id": "loc_3b8b7be3",
+    "title": "Espumillas",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_06fd25ca",
+    "title": "Flan de caramelo",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_bf3fb81f",
+    "title": "Fritada",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "local"
+    ]
+  },
+  {
+    "id": "loc_b2eb683d",
+    "title": "Galletas de avena",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_4b3c5b49",
+    "title": "Guatita",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "local"
+    ]
+  },
+  {
+    "id": "loc_cf4f7685",
+    "title": "Helado de guanábana",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_8deae25e",
+    "title": "Helado de paila de mora",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_29600023",
+    "title": "Hornado",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "local"
+    ]
+  },
+  {
+    "id": "loc_d65adea9",
+    "title": "Humitas dulces",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_3c44ed0f",
+    "title": "Humitas saladas",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "local"
+    ]
+  },
+  {
+    "id": "loc_6b4d7b56",
+    "title": "Llapingachos",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "local"
+    ]
+  },
+  {
+    "id": "loc_dd8760d4",
+    "title": "Locro de papa",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "local"
+    ]
+  },
+  {
+    "id": "loc_ccec1c3a",
+    "title": "Magdalenas caseras",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_40cbf0fb",
+    "title": "Mazamorra morada",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_66abb987",
+    "title": "Menestra de fréjol con arroz",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "local"
+    ]
+  },
+  {
+    "id": "loc_6bf9d755",
+    "title": "Milhojas con crema pastelera",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_8a28f579",
+    "title": "Mousse de maracuyá",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_966a7043",
+    "title": "Natillas",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "local_ae0b6d90dc77",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-torta-de-chocolate-humeda-71485.html"
+  },
+  {
+    "id": "local_525a0cb0bbaf",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-torta-de-coco-67787.html"
+  },
+  {
+    "id": "local_a3f10f619627",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-torta-de-naranja-esponjosa-56433.html"
+  },
+  {
+    "id": "local_983fd78a0545",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-bizcochuelo-esponjoso-29282.html"
+  },
+  {
+    "id": "local_40f80de231a6",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-torta-selva-negra-53872.html"
+  },
+  {
+    "id": "local_c40255017838",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce",
+      "ecuador"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-torta-de-maracuya-67546.html"
+  },
+  {
+    "id": "local_908c292ad7a0",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-torta-de-limon-67822.html"
+  },
+  {
+    "id": "local_10cb3db5005f",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-torta-de-vainilla-esponjosa-54351.html"
+  },
+  {
+    "id": "local_ac392c349886",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-torta-de-fresas-con-crema-69959.html"
+  },
+  {
+    "id": "local_5afa17255733",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-tarta-de-queso-la-vina-receta-original-72954.html"
+  },
+  {
+    "id": "local_fc469daca904",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce",
+      "clasico"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-arroz-con-leche-tradicional-12308.html"
+  },
+  {
+    "id": "local_866909000021",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce",
+      "clasico"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-flan-casero-de-huevo-68764.html"
+  },
+  {
+    "id": "local_b2f6c43aaf18",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce",
+      "clasico"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-flan-de-caramelo-18641.html"
+  },
+  {
+    "id": "local_a66a462b087a",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce",
+      "ecuador"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-helado-de-mora-casero-64217.html"
+  },
+  {
+    "id": "local_9ea1411497d9",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-helado-de-mango-67284.html"
+  },
+  {
+    "id": "local_8dcfa7148c1f",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-budin-de-pan-casero-68647.html"
+  },
+  {
+    "id": "local_1dda1f7e7208",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-tarta-de-frutillas-63472.html"
+  },
+  {
+    "id": "local_394a8a0f0511",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-milhojas-de-crema-y-dulce-de-leche-69427.html"
+  },
+  {
+    "id": "local_b29acab98665",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce",
+      "clasico"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-chocotorta-67492.html"
+  },
+  {
+    "id": "local_c33c0a6b7538",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-brownies-caseros-61644.html"
+  },
+  {
+    "id": "local_8bcb847c46f9",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-brownies-de-chocolate-faciles-67899.html"
+  },
+  {
+    "id": "local_33c9414924a6",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-brownie-de-nuez-69657.html"
+  },
+  {
+    "id": "local_ccb32802afc9",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-galletas-de-avena-y-pasas-62205.html"
+  },
+  {
+    "id": "local_5101ba893ce7",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-galletas-de-chocolate-blanco-66090.html"
+  },
+  {
+    "id": "local_55d87352b0a9",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-galletas-navidenas-caseras-68976.html"
+  },
+  {
+    "id": "local_cfcdd80ecbc1",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-rosquillas-caseras-fritas-68792.html"
+  },
+  {
+    "id": "local_570a8e218f72",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-donas-caseras-66478.html"
+  },
+  {
+    "id": "local_f4b82463deb3",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-alfajores-de-maicena-63752.html"
+  },
+  {
+    "id": "local_470cde4e8fd4",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-alfajores-de-chocolate-68957.html"
+  },
+  {
+    "id": "local_708376ea86b7",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-mousse-de-chocolate-62911.html"
+  },
+  {
+    "id": "local_6c9b0be08783",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-mousse-de-maracuya-66787.html"
+  },
+  {
+    "id": "local_78607a8e1ab8",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-mousse-de-limon-62750.html"
+  },
+  {
+    "id": "local_58d6512bf65f",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-tarta-de-cerezas-63871.html"
+  },
+  {
+    "id": "local_dc684c662a3f",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-panqueques-dulces-69172.html"
+  },
+  {
+    "id": "local_4aba44de70b6",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce",
+      "ecuador"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pan-de-yuca-ecuador-60618.html"
+  },
+  {
+    "id": "local_9bf06de74033",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pan-de-banana-casero-69294.html"
+  },
+  {
+    "id": "local_9497229c4667",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pan-de-queso-69105.html"
+  },
+  {
+    "id": "local_b125d33c9fb0",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pan-casero-esponjoso-64092.html"
+  },
+  {
+    "id": "local_e047e1f7557c",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pastel-de-choclo-dulce-69073.html"
+  },
+  {
+    "id": "local_e2a07b0b72b7",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pastelitos-dulces-69080.html"
+  },
+  {
+    "id": "local_56364504c456",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce",
+      "ecuador"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-majar-de-maracuya-ecuatoriano-68745.html"
+  },
+  {
+    "id": "local_2acd3a1e5ac1",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-dulce-de-leche-casero-68549.html"
+  },
+  {
+    "id": "local_d798a4a1a01f",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-cajeta-de-leche-68021.html"
+  },
+  {
+    "id": "local_0aedb24784b2",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-suspiros-de-merengue-68931.html"
+  },
+  {
+    "id": "local_41b131a13e3d",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-manzanas-caramelizadas-68832.html"
+  },
+  {
+    "id": "local_d7554b8410e2",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce",
+      "ecuador"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-arepas-dulces-de-yuca-70350.html"
+  },
+  {
+    "id": "local_231528dd8f97",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce",
+      "ecuador"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-bocadillo-de-guayaba-66701.html"
+  },
+  {
+    "id": "local_b574f96d82cf",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce",
+      "ecuador"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-quimbolitos-ecuatorianos-70681.html"
+  },
+  {
+    "id": "local_dbee5c733ea6",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce",
+      "ecuador"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-higos-con-queso-70345.html"
+  },
+  {
+    "id": "local_6544bd5f0032",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce",
+      "ecuador"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pristiños-ecuatorianos-70322.html"
+  },
+  {
+    "id": "local_6a375c7b13a6",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-bizcocho-de-alfajor-68791.html"
+  },
+  {
+    "id": "local_34c6ea00e2de",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-cupcakes-de-vainilla-68033.html"
+  },
+  {
+    "id": "local_e824845f5028",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-cupcakes-de-chocolate-68293.html"
+  },
+  {
+    "id": "local_4943f4f26dc5",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-cupcakes-de-red-velvet-68345.html"
+  },
+  {
+    "id": "local_e84995127f61",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-macarons-de-colores-68381.html"
+  },
+  {
+    "id": "local_afdee1464f46",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-cookies-de-chocolate-62109.html"
+  },
+  {
+    "id": "local_caece37e98e0",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-tarta-de-dulce-de-leche-68788.html"
+  },
+  {
+    "id": "local_37ee0c03f0c9",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-tarta-de-limon-merengada-68501.html"
+  },
+  {
+    "id": "local_dd95ff30f213",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pie-de-manzana-casero-68982.html"
+  },
+  {
+    "id": "local_270fa50232d6",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pie-de-maracuya-68391.html"
+  },
+  {
+    "id": "local_e65a80c4900c",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pie-de-limon-68874.html"
+  },
+  {
+    "id": "local_1c485d479b6a",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pie-de-queso-68309.html"
+  },
+  {
+    "id": "local_3166bf2b664a",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pastel-de-frutas-68890.html"
+  },
+  {
+    "id": "local_942ad402b1da",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pastel-de-chocolate-68234.html"
+  },
+  {
+    "id": "local_e87e3d0b89ed",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pastel-de-zanahoria-68933.html"
+  },
+  {
+    "id": "local_a387dcdc9f33",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-empanadas-de-dulce-de-leche-68360.html"
+  },
+  {
+    "id": "local_8675baaf455d",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-buñuelos-dulces-69290.html"
+  },
+  {
+    "id": "local_02ff434a89ce",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-torrejas-de-pan-dulce-69302.html"
+  },
+  {
+    "id": "local_5c088b76732a",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-batido-de-chocolate-68520.html"
+  },
+  {
+    "id": "local_5f595da7e386",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-batido-de-fresas-68401.html"
+  },
+  {
+    "id": "local_4da6bbc28593",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-batido-de-banana-y-avena-68571.html"
+  },
+  {
+    "id": "local_6afefad894b8",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-smoothie-de-maracuya-68374.html"
+  },
+  {
+    "id": "local_4b6eaaa13c1f",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-smoothie-de-pina-68632.html"
+  },
+  {
+    "id": "local_12cfa19d7207",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-chocolate-caliente-68410.html"
+  },
+  {
+    "id": "local_fa801df1670a",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-cafe-frio-con-leche-68392.html"
+  },
+  {
+    "id": "local_d58dd1171904",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-leche-merengada-68508.html"
+  },
+  {
+    "id": "local_def3bce39bee",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-arroz-zambito-68617.html"
+  },
+  {
+    "id": "local_97a9bcc77fe3",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-budin-de-zanahoria-68516.html"
+  },
+  {
+    "id": "local_f6005fb2beb7",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-panqueques-rellenos-de-dulce-de-leche-68431.html"
+  },
+  {
+    "id": "local_f9f1e651d1d5",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-cinnamon-rolls-68594.html"
+  },
+  {
+    "id": "local_184cd90c6b9b",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-rollos-de-canela-caseros-68872.html"
+  },
+  {
+    "id": "local_bfcd1a782525",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-torta-de-guineo-68723.html"
+  },
+  {
+    "id": "local_fa995e20b56c",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-torta-de-mora-68753.html"
+  },
+  {
+    "id": "local_26fae8c06e45",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-torta-de-maracuyá-68871.html"
+  },
+  {
+    "id": "local_503feca451df",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-torta-de-pina-colada-68917.html"
+  },
+  {
+    "id": "local_b96267b7e9c4",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pan-de-leche-casero-69132.html"
+  },
+  {
+    "id": "local_6dfe62ad56b7",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-croissants-caseros-69001.html"
+  },
+  {
+    "id": "local_fcf207db5114",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-galletas-de-jengibre-68978.html"
+  },
+  {
+    "id": "local_674a62c4afd5",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-muffins-de-chocolate-68979.html"
+  },
+  {
+    "id": "local_65a4696d28c6",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-muffins-de-vainilla-69003.html"
+  },
+  {
+    "id": "local_e92541fefd67",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-muffins-de-banana-69104.html"
+  },
+  {
+    "id": "local_1577fc831dd1",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-dulce-de-zapallo-69045.html"
+  },
+  {
+    "id": "local_834f2df6b543",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-dulce-de-papaya-verde-69274.html"
+  },
+  {
+    "id": "local_fd618dee985d",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-dulce-de-tomate-de-arbol-69344.html"
+  },
+  {
+    "id": "local_8314fda861db",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-helado-de-chocolate-69402.html"
+  },
+  {
+    "id": "local_4319ede9423b",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-helado-de-vainilla-69420.html"
+  },
+  {
+    "id": "local_5dd4a21fba65",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-helado-de-frutilla-69425.html"
+  },
+  {
+    "id": "local_c887460877c4",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-helado-de-maracuya-69434.html"
+  },
+  {
+    "id": "local_e2102547a232",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-helado-de-coco-69438.html"
+  },
+  {
+    "id": "local_514890a6c00f",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-helado-de-banano-69440.html"
+  },
+  {
+    "id": "local_ee006e46b3d3",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-brownies-fit-sin-harina-694"
+  },
+  {
+    "id": "loc_999a5f12",
+    "title": "Panna cotta de vainilla",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_29aa48e7",
+    "title": "Pay de limón",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "local_92cbc88dbe1f",
+    "title": "Por qué no sube el bizcocho - Errores y TRUCOS",
+    "description": "Son varios los motivos que explican por qué un bizcocho no sube en el horno, como por ejemplo la temperatura, la forma de batir la masa, el molde utilizado o las funciones del horno activadas.",
+    "ingredients": [],
+    "steps": [
+      "Por qué no sube el bizcocho en el horno",
+      "Por qué no sube el bizcocho por el centro",
+      "Por qué no sube el bizcocho por los lados",
+      "¿Se puede arreglar un bizcocho hundido?",
+      "Cómo aprovechar un bizcocho apelmazado",
+      "Dale la vuelta y decóralo. Al desmoldar el bizcocho hundido por el centro, simplemente dale la vuelta para mostrar el lado \"bueno\" y cúbrelo con crema batida, ganache de chocolate o azúcar glass. ¡Verás que nadie se dará cuenta de lo ocurrido!",
+      "Corta para nivelar la superficie. Este truco solo sirve para arreglar un bizcocho hundido pero esponjoso, ya que si ha quedado completamente apelmazado no sirve de nada nivelar la superficie.",
+      "Sírvelo cortado en cuadrados. De esta manera, tus invitados no se percatarán de que tu bizcocho no ha subido e, incluso, pensarán que ha quedado más compacto porque así era la receta, ¡como si de un brownie se tratara!"
+    ],
+    "tags": [
+      "local",
+      "dulce",
+      "ecuador"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-leche-asada-ecuador-70876.html"
+  },
+  {
+    "id": "loc_d072c845",
+    "title": "Pristiños con miel de panela",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_c86cbd91",
+    "title": "Queque casero 100",
+    "description": "Bizcocho sencillo estilo casero.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "aceite",
+      "leche"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
     ]
   },
   {
@@ -2178,15 +3050,15 @@
     ]
   },
   {
-    "id": "loc_c86cbd91",
-    "title": "Queque casero 100",
-    "description": "Bizcocho sencillo estilo casero.",
+    "id": "loc_ed4b3c40",
+    "title": "Queque de plátano",
+    "description": "Postre o dulce típico de Ecuador.",
     "ingredients": [
       "harina",
       "huevos",
       "azúcar",
-      "aceite",
-      "leche"
+      "leche",
+      "mantequilla"
     ],
     "steps": [
       "Precalentar el horno a 180 °C.",
@@ -2200,14 +3072,641 @@
     ]
   },
   {
-    "id": "fit_1783718b",
-    "title": "Ensalada de quinoa y vegetales",
-    "description": "Opción ligera y balanceada.",
+    "id": "loc_41434945",
+    "title": "Quesadillas quiteñas",
+    "description": "Postre o dulce típico de Ecuador.",
     "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_dc256c61",
+    "title": "Quimbolitos",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "local_2ed7e91a72d9",
+    "title": "Receta de Acelgas con especias",
+    "description": "Gomen wat es uno de los platos vegetarianos auténticos de la cocina etíope cuyo ingrediente principal es la acelga. Consiste en un guiso de acelgas con especias que permite en menos de 20 minutos traer los aromas de este país a tu cocina. Es un plato saludable que puede servirse acompañado de pan etíope injera o lentejas etíopes, o simplemente como guarnición para cualquier plato de verdura o carne vegetal. Sigue leyendo y aprende con RecetasGratis cómo hacer acelgas con especias.",
+    "ingredients": [
+      "500 gramos de acelgas",
+      "2 tazas de agua",
+      "1 cucharada sopera de aceite de oliva",
+      "1 cebolla",
+      "1 pimiento verde",
+      "1 cucharada sopera de zumo de limón",
+      "1 cucharadita de sal",
+      "½ cucharadita de cardamomo",
+      "½ cucharadita de pimentón",
+      "8 dientes de ajo",
+      "2 cucharadas soperas de jengibre fresco rallado",
+      "1 pizca de pimienta"
+    ],
+    "steps": [
+      "Para elaborar las acelgas con especias más rápido, deja listos todos los ingredientes. Para ello, trocea las acelgas, corta el pimiento y la cebolla en dados y lamina el ajo.",
+      "Coloca las acelgas en una olla con el agua y llévala a ebullición. Baja el fuego, tapa la olla y cocina las acelgas a fuego bajo hasta que queden tiernas. Escurre las acelgas una vez cocidas y reserva el agua de la cocción.",
+      "Calienta una olla con aceite y sofríe la cebolla hasta que comience a dorarse. Añade el ajo y cocina un minuto más. Agrega las acelgas, una cucharada de aceite de oliva y el agua de la cocción de las verduras. Sigue cocinado las acelgas estíopes sin tapar la olla manteniendo un pequeño hervor hasta que se evapore el agua, durante 10-15 minutos.",
+      "Añade el pimiento, el zumo de limón, la sal, el cardamomo, la pimienta, el jengibre y el pimentón. Cocina las acelgas con especias hasta que se ablande el pimiento.",
+      "Ahora las acelgas con especias estilo etíope están listas para servir. Como decíamos, se pueden comer con pan injera etíope o servir como acompañamiento de carne vegetal, verduras asadas... Más recetas en mi blog Vegspiration, ¡te espero!"
+    ],
+    "tags": [
+      "local",
+      "dulce",
+      "ecuador"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-dulce-de-higos-ecuatoriano-70029.html"
+  },
+  {
+    "id": "local_095411f657f9",
+    "title": "Receta de Barritas energéticas caseras sin horno",
+    "description": "Hoy en día, existe una amplia oferta de barritas energéticas para todos los gustos: para los deportistas, para perder peso, con superalimentos y con miles de sabores diferentes. Sin embargo, la mayoría de ellas llevan cantidades elevadas de azúcares procesados y grasas saturadas, por tanto, la mejor opción es preparar las barritas energéticas caseras sin horno. Esta receta de barritas de avena caseras con nueces de macadamia y dátiles bañadas con chocolate negro son la opción perfecta. Necesitas tan solo 6 ingredientes para preparar estas deliciosas barritas energéticas caseras saludables sin azúcares añadidos y ricas en proteínas de origen vegetal. Queda una textura agradable, no demasiado pegajosa ni húmeda, como si fuera una galleta que encantará a cualquiera.",
+    "ingredients": [
+      "140 gramos de copos de avena",
+      "12 dátiles sin hueso",
+      "60 gramos de aceite de coco derretido",
+      "1 puñado de nueces de macadamia",
+      "50 gramos de chocolate negro",
+      "1 cucharadita de semillas se sésamo"
+    ],
+    "steps": [
+      "Prepara todos los ingredientes para las barritas de avena caseras. Derrite el aceite de coco en el microondas.",
+      "Coloca los dátiles, las nueces de macadamia, el aceite de coco y la avena en la batidora. Tritura hasta que se incorporen bien todos los ingredientes.",
+      "Cubre una bandeja de horno rectangular con papel vegetal y coloca la masa de las barritas de avena sin horno dentro. Expande la masa apretando con una cuchara y nivelando la superficie.",
+      "Derrite el chocolate negro al baño María y mezcla las semillas de sésamo dentro. Vierte el chocolate encima de la masa de barras energéticas en la bandeja.",
+      "Tritura algunas nueces de macadamia y espárcelas por encima.",
+      "Deja la bandeja enfriarse en la nevera hasta que se endurezca el chocolate. Desmolda la masa de las barritas proteicas caseras sin horno estirando de papel de horno con cuidado y córtalas a tu gusto.No puedes perderte estos otros snacks energéticos veganos y saludables con los que recargarte las pilas cuando lo necesites, y si entras en mi blog Vegspiration, aún disfrutarás de muchas más recetas:Barritas de dátiles y frutos secosBolitas energéticas veganasBarritas energéticas con fruta"
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-merengue-casero-70640.html"
+  },
+  {
+    "id": "local_23d5829ca94c",
+    "title": "Receta de Bizcocho de muesli y manzana",
+    "description": "Este bizcocho de muesli y manzana es facilísimo de hacer y es delicioso. Te va a encantar la combinación de la manzana y la canela que además, convierten este bizcocho con muesli en un desayuno o una merienda deliciosa. Es una receta compartida con RecetasGratis totalmente vegana, es decir, sin leche ni huevos para las personas alérgicas y con intolerancias alimenticias que no los puedan tomar tenga la oportunidad de probarlo.",
+    "ingredients": [
+      "150 gramos de harina de trigo",
+      "3 cucharadas soperas de azúcar moreno",
+      "½ cucharadita de bicarbonato",
+      "1 pizca de sal",
+      "1 cucharadita de canela en polvo",
+      "1 cucharada sopera de aceite",
+      "1 taza de agua",
+      "1 cucharadita de ralladura de limón",
+      "3 cucharadas soperas de puré de manzana",
+      "1 manzana",
+      "&#8531 taza de muesli de avena",
+      "1 cucharadita de vinagre de manzana"
+    ],
+    "steps": [
+      "En un bol mezcla la harina con el azúcar, la sal, el bicarbonato, la ralladura de limón y la canela.",
+      "Añade el aceite, el vinagre, el puré de manzana y el agua y remueve bien hasta que se integren todos los ingredientes.",
+      "Precalienta el horno a 180 grados. Forra un molde de bizcocho con papel vegetal y pincélalo con aceite.",
+      "Cubre el fondo del molde con el muesli de avena y vierte la masa del bizcocho de manzana triturada encima.",
+      "Corta la manzana en rodajas y colócala encima también.",
+      "Hornea el bizcocho de muesli y manzana durante media hora hasta que quede listo. Y si lo quieres de otro sabor, visita mi blog Vegspiration donde encontrarás muchas recetas más de bizcocho veganos."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pan-dulce-navideno-68529.html"
+  },
+  {
+    "id": "local_a4cbaee62e43",
+    "title": "Receta de Col lombarda con manzana y pasas",
+    "description": "¿Sabías que la lombarda con manzana tiene muy pocas calorías y es un potente antioxidante? La col lombarda es rica en fibra, betacarotenos y vitamina C. Además, la col lombarda con manzana y pasas que hemos preparado en RecetaasGratis también es un fantástico antiácido para el estómago, gracias a la glutamina que contiene la col.Si no sabes cómo cocinar lombarda, puedes optar por esta lombarda rehogada con pasas y manzana, que queda suave y deliciosa como acompañamiento para otros platos. Apunta los consejos que te ofrecemos para esta receta de lombarda con manzana, ¡te quedará fabulosa!",
+    "ingredients": [
+      "½ col lombarda",
+      "2 manzana",
+      "2 cucharadas soperas de uvas pasas",
+      "120 mililitros de vinagre de manzana",
+      "½ cebolleta",
+      "2 cucharadas soperas de aceite de oliva o margarina",
+      "1 pizca de sal",
+      "1 pizca de pimienta negra molida",
+      "200 mililitros de caldo vegetal o agua"
+    ],
+    "steps": [
+      "Rehogamos la cebolleta cortada en juliana con un poco de aceite de oliva o margarina. Dejamos que se cocine 4 minutos a fuego suave.",
+      "Agregamos la col lombarda cortada en tiras finas y aderezamos con sal y pimienta negra molida. Dejamos que se cocine otros 4 minutos más.",
+      "Es el momento de añadir la manzana pelada y cortada en cuadraditos. Movemos bien para que se integren los sabores.",
+      "Incorporamos el vinagre, dejamos que se evapore durante un par de minutos y añadimos el caldo de verduras o agua hasta cubrir. Cocinamos durante 20 minutos y añadimos las pasas. Dejamos cocinar 5 minutos más y retiramos del fuego.",
+      "Esta receta de col lombarda con manzana y pasas es ideal como acompañamiento para carnes, como por ejemplo el codillo de cerdo al horno."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-torta-de-manzana-casera-66979.html"
+  },
+  {
+    "id": "local_3e7851e5e702",
+    "title": "Receta de Costillas adobadas con patatas al horno",
+    "description": "Vamos a preparar unas costillas de cerdo con patatas adobadas y preparadas al horno, una receta sencilla y con mucho sabor que comparto con RecetasGratis. Un plato que gustará a todos, ya que los sabores de todas las especias hace que quede un plato de costillas adobadas con patatas al horno muy bueno, las patatas quedan deliciosas ya que cogen todo el sabor de la carne y preparado al horno, es mucho más sano y nos ahorra tiempo. Un plato ideal para preparar un día de fiesta o en una cena con amigos. ¡Seguro que os gustará!",
+    "ingredients": [
+      "1 kilogramo de costillas de cerdo",
+      "8 unidades de patatas",
+      "1 cucharada sopera de pimentón dulce",
+      "1 cucharada sopera de pimentón picante",
+      "1 cucharadita de pimienta negra",
+      "1 cucharada postre de ajo molido",
+      "1 cucharada sopera de orégano",
+      "1 cucharada postre de tomillo",
+      "1 vaso de aceite de oliva",
+      "1 vaso de vino blanco",
+      "1 cucharada sopera de sal"
+    ],
+    "steps": [
+      "En un bol pondremos un buen chorro de aceite de oliva, un poco menos de medio vaso, el vaso de vino blanco y todas las especias. La cantidad de las especias para hacer las costillas adobadas es al gusto, así que podéis quitar o poner más de la que os guste. Lo mezclamos todo bien.",
+      "Con una brocha untaremos bien las costillas de cerdo con la mezcla. Tapamos y dejamos reposar un par de horas.",
+      "Lavamos bien las patatas que han de ser de piel blanca y fina.",
+      "Las cortamos en gajos dejando la piel. También se pueden hacer sin la piel.",
+      "Las echamos al bol donde tenemos el resto de la mezcla que hemos preparado de especias. Las dejamos reposar pero iremos removiendo de vez en cuando.",
+      "Cuando vayamos a cocinarlas, ponemos las costillas y las patatas adobadas con todo el jugo que queda en una fuente para horno. Salamos un poco.",
+      "Metemos las costillas adobadas con patatas al horno a 180 ºC , y cada cierto tiempo las iremos removiendo para se dore por todo. Cuando las costillas adobadas al horno con patatas estén doradas, las sacamos y servimos. ¡A disfrutar!En mi blog Cocinando con Montse dispones de muchas más recetas tradicionales fáciles al horno para cuando no tienes tiempo de cocinar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-smoothie-de-mango-68540.html"
+  },
+  {
+    "id": "local_48e3c9c31c2c",
+    "title": "Receta de Croquetas de jamón, queso y huevo",
+    "description": "Aprende cómo se hacen las croquetas de jamón y queso con esta receta fácil paso a paso, y descubrirás el secreto de una bechamel casera extremadamente cremosa y jugosa. En esta ocasión nos hemos decidido por unir en un único plato tres de nuestros ingredientes preferidos: queso, jamón serrano y huevo. Tienes que hacerlas: probarás un sabor suave que le gustará también a los más pequeños.Revisa bien el paso a paso para hacer esta receta de croquetas de jamón, queso y huevo que te proponemos en RecetasGratis y en menos tiempo de lo que piensas, estarás saboreando unas ricas croquetas de jamón serrano y queso. ¡Manos a la masa!",
+    "ingredients": [
+      "150 gramos de Harina",
+      "100 gramos de Pan rallado",
+      "3 unidades de Huevos",
+      "¼ unidad de Cebolla",
+      "100 gramos de Jamón serrano",
+      "200 mililitros de Leche",
+      "150 gramos de Queso rallado",
+      "2 cucharadas soperas de Ajo molido",
+      "2 cucharadas de postre de Sal",
+      "2 cucharadas soperas de Aceite"
+    ],
+    "steps": [
+      "Antes de comenzar con el paso a paso para hacer unas croquetas de jamón serrano y queso, presentamos los ingredientes que necesitamos.",
+      "Pelamos y picamos la cebolla. Si en casa no gusta mucho, pícala todo lo fino que puedes y no se darán ni cuenta. En un cazo con agua pondremos a cocer dos de los huevos.",
+      "Calentamos en un cazo amplio el aceite, y cuando esté templado, pochamos la cebolla con la sal. Dejamos que la cebolla sude para que después las croquetas de jamón, queso y huevo tengan ese juguillo.",
+      "Cuando hayan clareado completamente, sumamos el ajo en polvo. Si fueran dientes de ajo habría que echarlos cuando la cebolla comenzara a blanquear. También añadimos el jamón.",
+      "Inmediatamente después comenzamos a añadir la harina y la leche, sin dejar de remover. De harina no os recomiendo más que un par de cucharadas soperas o corremos el riesgo que nos queden pastosas como las croquetas compradas. Movemos bien hasta que obtengamos una masa suave y ligera.",
+      "Ahora es el turno del queso rallado, pero con el fuego al mínimo para que no se pegue la masa de las croquetas de jamón y huevo. Verás que coge cuerpo. Cuando puedas mantener la cuchara sin que caiga, listo.",
+      "En el tiempo que tarda en estar en su punto la masa de las croquetas de jamón y queso se habrán cocido los huevos. Se pelan y se pican.",
+      "Se añade el huevo picado a la masa base y se mezcla bien. Esta se deja reposar durante un par de horas en el frigorífico tapado con film transparente.",
+      "Tras este tiempo, podemos hacer las croquetas del tamaño y la forma que queramos. Las rebozamos primero en harina, huevo batido (el tercero que no habíamos cocido) y pan rallado, y las freímos en la sartén con abundante aceite.",
+      "Al sacarlas dejamos las croquetas de jamón, queso y huevo primero sobre papel absorbente y ya después las emplatamos. Con una cama de lechuga fresca, por ejemplo."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-galletas-de-mantequilla-60304.html"
+  },
+  {
+    "id": "local_65cadc5b2a3b",
+    "title": "Receta de Espinacas con garbanzos en Thermomix",
+    "description": "Las espinacas con garbanzos son un potaje típico de otoño y de los días en los que empieza a notarse el frío. Típico en algunas regiones de España, esta receta de garbanzos apenas necesita ingredientes y es ideal para aprovechar el pan viejo que tenemos por casa.Si quieres utilizar tu Thermomix para cocinar de verdad, sigue atento a las instrucciones que te mostramos en RecetasGratis.net, porque esta receta de espinacas con garbanzos en Thermomix se volverá uno de tus platos favoritos y nadie creerá que un potaje tan rico los has podido hacer con un robot de cocina.",
+    "ingredients": [
+      "50 gramos de Aceite",
+      "5 dientes de Ajo",
+      "1 trozo de Pan asentado",
+      "1 cucharada sopera de Pimentón",
+      "1 cucharadita de Comino",
+      "1 pizca de Jengibre molido",
+      "1 bote de Garbanzos cocidos grande",
+      "2 paquetes de Espinacas congeladas de 400 g",
+      "400 gramos de Agua",
+      "1 pizca de Sal"
+    ],
+    "steps": [
+      "Enjuagar y poner a escurrir los garbanzos. Descongelar las espinacas, yo las descongelo en el microondas siguiendo las instrucciones del paquete. Yo prefiero poner un paquete de espinacas y otro de acelgas, pero si lo deseas puedes hacer la receta solo con espinacas.",
+      "Echar el aceite en el vaso de la Thermomix y programar 3 minutos a temperatura varoma, velocidad 1. Al acabar echar el pan y los ajos y programar 5 minutos más, temperatura 100ºC y velocidad 1.",
+      "Cuando pasen los 5 minutos, agregamos el pimentón, el comino, el jengibre y la sal junto con un cubilete de agua y trituramos unos segundos a velocidad 6, hasta que quede como se observa en la fotografía (cuidado con el vapor).",
+      "Seguidamente pondremos la mariposa en las cuchillas, e incorporamos los garbanzos, las espinacas y el agua.",
+      "Programar para 25 minutos a temperatura 100ºC y velocidad 1. Cuando pase el tiempo hay que probar y si los garbanzos están un poco duros se ponen otros 5 minutos más. Se ponen en un bol o en una sopera las espinacas con garbanzos y mezclamos bien antes de servir. Podemos acompañar este plato con arroz blanco y pan casero."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-torta-de-zanahoria-51609.html"
+  },
+  {
+    "id": "local_f858bda06dbf",
+    "title": "Receta de Filetes rusos con queso",
+    "description": "¿Has probado alguna vez los filetes rusos? En España se les conoce por este nombre, pero también se les llama Salisbury Steak o Hamburger Steak. Aunque no tenemos certeza de que proceda de Rusia, en España lo conocemos con este nombre y lo servimos, normalmente con salsa de tomate.En RecetasGratis hemos preparado filetes rusos con queso, cambiando algunos ingredientes como el perejil, para sustituirlo por tomillo. También hemos aderezado la carne con un toque especial, la salsa marrón para carnes. Si quieres ver a los niños y los adultos disfrutar a partes iguales, anímate a preparar este plato divertido.",
+    "ingredients": [
+      "400 gramos de Carne de cerdo picada",
+      "200 gramos de Carne de ternera picada",
+      "2 cucharadas soperas de Pan rallado",
+      "1 cucharada sopera de Salsa HP (Salsa marrón para carnes)",
+      "1 pizca de Sal",
+      "1 diente de Ajo",
+      "½ cucharadita de Tomillo",
+      "1 pizca de Pimienta negra molida",
+      "1 unidad de Huevo",
+      "250 mililitros de Aceite de oliva",
+      "50 gramos de Queso en taquitos",
+      "3 cucharadas soperas de Harina"
+    ],
+    "steps": [
+      "Reunimos todos los ingredientes para preparar los filetes rusos con queso.",
+      "Comenzamos picando el ajo muy pequeñito junto con el tomillo. La receta tradicional de filete ruso se elabora con perejil, pero hemos preferido versionarla con este ingredientes de campo.",
+      "Aderezamos la carne picada con sal, pimienta negra molida, el ajo y el tomillo. Mezclamos bien.",
+      "Incorporamos el huevo que le va a dar textura a estos filetes rusos con queso. Seguimos mezclando bien y ponemos 1 cucharada de salsa HP (salsa marrón para carnes), movemos y agregamos 2 cucharadas de pan rallado. Seguimos mezclando hasta que se incorporen todos los ingredientes.También puedes sustituir el pan rallado por miga de pan mojada en leche.",
+      "Hacemos bolitas con la carne molida y las colocamos sobre una superficie plana. Ponemos trocitos de queso dentro de las bolitas, presionando para que no se salgan, y a continuación las aplastamos con la mano hasta que queden como si fueran hamburguesas, pero con un grosor de unos 2 centímetros.",
+      "Pasamos los filetes rusos por harina y los freímos en abundante aceite de oliva a temperatura alta. Dejamos que se cocinen unos 4-5 minutos por cada lado para que la carne se cueza por dentro. Sacamos y colocamos sobre papel de cocina absorbente para que pierdan el exceso de aceite.",
+      "Puedes servir los filetes rusos con queso acompañados de salsa de tomate casera y unas papas gratinadas con bacon. ¡Esperamos que te guste!"
+    ],
+    "tags": [
+      "local",
+      "dulce",
+      "ecuador"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-torta-tres-leches-60052.html"
+  },
+  {
+    "id": "local_977a419e2f39",
+    "title": "Receta de Magdalenas saladas sin gluten",
+    "description": "Estas magdalenas saladas sin gluten son perfectas cuando no tienes mucho tiempo de cocinar y quieres preparar una comida rápida pero a la vez rica y nutritiva apta para celíacos. Como no contienen ningún tipo de harina, estos cupcakes salados son libres de gluten pero igualmente están riquísimos, ¡así que los puede comer cualquiera!",
+    "ingredients": [
+      "3 huevos",
+      "1 cucharada sopera de nata o crema de leche",
+      "100 gramos de tiras de pollo desmenuzado cocido",
+      "20 gramos de queso rallado",
+      "Sal al gusto",
+      "Hierbas aromáticas"
+    ],
+    "steps": [
+      "Bate los huevos con la nata y una pizca de sal para preparar la masa de los muffins salados sin gluten.",
+      "Coge unos moldes para magdalenas de silicona y vierte un poco de la masa en su interior. Si lo prefieres puedes verter la masa en un molde o fuente más grande y hacer un pastel salado sin gluten entero en vez de en recipientes individuales.",
+      "Sobre la masa coloca el pollo desmenuzado y el queso rallado hasta llenar los moldes. Espolvorea un puñado de hierbas aromáticas también por encima de los cupcakes salados sin gluten si quieres como orégano o perejil picado.",
+      "Termina vertiendo el resto de la masa por encima del relleno y agrega un poco más de queso rallado si te gusta.",
+      "Hornea las magdalenas saladas sin gluten a 180 ºC durante unos 25 minutos más o menos ¡et voilà! Puedes comértelas como entrantes o para desayunar por ejemplo. ¿Te ha gustado la receta?"
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-budin-de-banana-69890.html"
+  },
+  {
+    "id": "local_0116c662a833",
+    "title": "Receta de Merengues de colores al horno",
+    "description": "Esta vez os voy a contar en RecetasGratis cómo hacer unos merengues de colores al horno caseros, con todos los trucos para que nos queden unos mini merenguitos de colores perfectos, brillantes y bien secos, para que nos aguanten varios días sin problemas. En este caso yo he utilizado un colorante alimenticio de color rosa pero podéis ponerles los colores que queráis.Para hacer unos buenos suspiros de merengues de colores caseros es importante guardar estas proporciones: 1/3 de claras de huevo, 1/3 de azúcar blanca y 1/3 de azúcar glas. Respetando estas proporciones junto con un buen horneado, os aseguro que os saldrán unos merengues caseros al horno perfectos. Pero seguir leyendo, porque os cuento todo con fotos del paso a paso para que no os perdáis nada.",
+    "ingredients": [
+      "2 Claras de huevo L",
+      "1 pizca de Sal",
+      "100 gramos de Azúcar blanca",
+      "100 gramos de Azúcar glas",
+      "1 gota de Colorante alimenticio rosa u otros colores (opcional)"
+    ],
+    "steps": [
+      "Para hacer nuestros suspiros de merengue de colores caseros, primero pesaremos las claras de huevo. Este es un paso muy importante, pues esta medida nos servirá como referencia para los otros ingredientes.Mis claras de huevo han pesado 100 gr, así que utilizaré 100 gr de azúcar glas, que tamizaremos y reservaremos hasta el momento de su utilización.",
+      "En segundo lugar, batiremos las claras junto con una pizca de sal con ayuda de unas varillas eléctricas. Cuando estén casi montadas, ir añadiendo el azúcar blanca poco a poco (100 gr o la cantidad que hayan pesado vuestras claras de huevo).",
+      "Incorporar de golpe el azúcar glas tamizado y remover suavemente con una espátula pero integrando bien el azúcar.",
+      "Precalentar el horno a 100º C. Si queréis teñir parte de nuestros mini merenguitos de colores, este es el momento de retirar la mitad (o más si vais a utilizar diferentes colorantes) de la glasa resultante.Meter el merengue francés en una manga pastelera con una boquilla en forma de estrella.",
+      "Forrar con papel de horno una bandeja y formar pequeños montones de mini merenguitos con la manga pastelera.",
+      "Si queréis teñir nuestros merengues de colores, incorporar una gota de colorante rosa (u otro color), o añadir un poco más si queréis un color más intenso. Remover hasta integrar bien.",
+      "Hornear los suspiros de merengues de colores en el horno a 100 ºC con calor sólo abajo durante 1 hora y 30 minutos. Después, apagar el horno y dejarlos dentro del horno apagado unos 45 minutos más o hasta que se enfríen por completo, así nos aseguramos de que los mini merenguitos de colores queden bien secos y crujientes.",
+      "Guardar nuestros merengues de colores al horno en un bote de cristal hermético, así os durarán más de una semana en perfecto estado.Lo mejor de esta receta es lo ricos que quedan estos suspiros al horno caseros, si te animas a hacerlos en casa, me encantaría que me enviaras una foto. Además, son perfectos para regalar.Si quieres conocer más sobre mis recetas, te enlazo a mi blog Cakes para ti."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-crepes-con-dulce-de-leche-63326.html"
+  },
+  {
+    "id": "local_19d1850f70c1",
+    "title": "Receta de Mermelada de ají dulce",
+    "description": "Si de mermeladas se trata, siempre pasan por nuestra mente las típicas mermeladas dulces de fresa, durazno o moras, entre otras. Este tipo de mermeladas las asociamos a postres o meriendas apetitosas. Sin embargo, existen mermeladas de origen vegetal muy originales, ideales para acompañar carnes, guarniciones o aperitivos. Y es que, cuando dispones en el refrigerador de este tipo de mermeladas, puedes darles un giro favorable a tus comidas. Siempre es útil una carta debajo de la manga para convertir una comida rutinaria en toda una experiencia gustativa, con poco tiempo y esfuerzo. Por esta razón, te sugerimos en RecetasGratis una mermelada original y compatible con gran variedad de platillos: mermelada de ají dulce. ¡Le dará un toque tropical a tus comidas!La mermelada de ají dulce se consume mucho en Venezuela, acompañada de bollos pelones de carne o caraotas, pescados, carnes, empanadas, hallaquitas, sopas, yuca, entre otros. Su peculiar sabor dulce la convierte en excelente compañera de casi cualquier comida. ¿Preparar esta dulzura es difícil? Para nada…, pocos ingredientes y pasos sencillos. Además, esta mermelada de ají dulce puede considerarse un producto deli, o lo que otros dicen una “delicatesen” por su sutil sabor y los usos que le puedes dar. Por ello, este tipo de pimiento es muy apreciado por muchos chef a nivel mundial.Existen muchas versiones de esta mermelada, en cuanto a procedimiento e ingredientes. Hay versiones que utilizan vinagre y limón o solo uno de estos productos. Existen cociner@s que para dar brillo utilizan glucosa o mantequilla, incluso ambas alternativas. Algunas personas agregan especias como la canela y los clavos, otras ninguna de estas opciones o solo una. En cuanto a procedimientos, hay quienes hierven los ajíes antes de preparar la mermelada y en algunas recetas no es necesario. La receta de mermelada que les propongo es fácil y de sabor muy delicado, prepararla es todo un placer para los sentidos, así que sigue leyendo y descubre cómo hacer mermelada de ají dulce paso a paso.",
+    "ingredients": [
+      "200 gramos de Ají dulce (rojo)",
+      "½ taza de Azúcar",
+      "1 cucharada sopera de Mantequilla",
+      "5 Clavos de olor",
+      "3 cucharadas soperas de Zumo de limón",
+      "1 taza de Agua"
+    ],
+    "steps": [
+      "Lava y corta los ajíes dulces. Retira el tallo de cada uno y corta en dos el cuerpo. Posteriormente, retira las venas blancas y todas las semillas que encuentres en su interior. Utiliza una cacerola mediana, coloca los ajíes limpios y verte suficiente agua hasta cubrirlos.",
+      "Cocina por 5 minutos, retira del fuego y escurre el agua en el colador. Luego repite la misma operación dos veces más para continuar con la preparación de los ingredientes de esta mermelada de ají dulce. El total de veces serán tres.",
+      "Pica el ají dulce en juliana (tiras) o brunoise (cubitos). Cualquiera de las dos técnicas que elijas debe obtener como resultado trozos muy finos. Por lo demás, solo coloca las medidas necesarias de cada ingrediente. Puedes dejar de último el limón para conservar sus cualidades.",
+      "Para empezar a cocinar la mermelada de ají dulce casera, coloca dentro de una paila mantequilla y deja que se derrita.",
+      "Agrega los ajíes dulces y remueve hasta que se tornen brillantes y tiernos (suaves). Luego, reserva.",
+      "Para preparar el almíbar, utiliza una cacerola y verte el agua junto a los clavitos y el azúcar. Coloca el fuego medio-alto. Calcula entre 3 y 5 minutos para que la mezcla llegue a punto de ebullición. Verifica si el azúcar se diluyó extrayendo un poco del almíbar con la cuchara. Si ves cristales de azúcar, debes continuar cocinando.",
+      "Cuando el azúcar tenga la consistencia de almíbar, deposita los ajíes picados. Para saber si el almíbar está listo, haz la prueba del hilo: utiliza una cuchara, recoge el líquido y si cae como un hilo..., ¡es el momento para los ajíes! Remueve bien para envolver los pimientos pequeños con el almíbar. Deja que se cocine por 30 minutos a fuego bajo, pero no lo descuides y remueve de vez en cuando. Espera a que se consuma un poco y espese la mermelada de ají dulce, según sea la consistencia que desees.",
+      "Antes de finalizar la cocción, agrega el zumo de limón, así la mermelada de ají dulce se conservará mejor y por más tiempo. Deja que la mermelada casera repose a temperatura ambiente y luego refrigera. Puedes envasarla para conservarla por un tiempo más prolongado. En tal caso, recuerda esterilizar primero los tarros.",
+      "Te aseguro que esta mermelada de ají dulce te dejará enganchad@, pues sus combinaciones son casi infinitas. En una reunión, puede ser perfecto para acompañar galletas saladas con queso blanco rallado o queso crema... ¡Mmm!¿Qué opinas de esta receta? ¿Me sorprenderías con una foto de tu creación?"
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-tarta-de-duraznos-62893.html"
+  },
+  {
+    "id": "local_606f887405cc",
+    "title": "Receta de Paella de carne con habas y alcachofas",
+    "description": "La paella de carne y verduras es una de las más populares en España por su increíble sabor y contraste de texturas. Aunque son varias las recetas que existen, nuestra amiga Mariangeles_rsg1965 nos enseña a preparar una a base de costillas de cerdo, habas y alcachofas, ¡todo un manjar! Sigue leyendo y descubre en RecetasGratis cómo hacer paella de carne con habas y alcachofas, ¡prometemos que te encantará!",
+    "ingredients": [
+      "500 gramos de arroz",
+      "Costillas de cerdo troceadas (al gusto)",
+      "Habas frescas peladas (al gusto)",
+      "Alcachofas troceadas (al gusto)",
+      "1 pimiento rojo a tiras anchas",
+      "1 tomate rallado",
+      "Pimentón dulce (al gusto)",
+      "Azafrán molido (al gusto)",
+      "Romero molido o en rama (al gusto)",
+      "Aceite y sal",
+      "Agua (cantidad necesaria)"
+    ],
+    "steps": [
+      "Poner el aceite en la paellera y sofreír las costillas y el pimiento troceado.",
+      "Retirar el pimiento y reservar para adornar la paella de carne y verduras al final, y seguir sofriendo las costillas.",
+      "Añadir las alcachofas y las habas y sofreír unos minutos. Luego, añadir el tomate rallado y sofreír un poco más.",
+      "Agregar el pimentón al gusto, dar unas vueltas y añadir el agua hasta cubrir, el azafrán, el romero y la sal también al gusto para potenciar el sabor de la paella de carne con habas y alcachofas.",
+      "Dejar cocer unos 20 minutos y, entonces, añadir el arroz, repartir bien por toda la paellera y dejar cocer hasta que esté seco y melosito.",
+      "Adornar la paella de carne con habas y alcachofas con las tiras de pimiento reservados por encima y dejar reposar unos minutos fuera del fuego.",
+      "La paella de costillas con verduras está lista para comer. Acompañada con una buena rebanada de pan, queda espectacular."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pan-de-yogur-esponjoso-69011.html"
+  },
+  {
+    "id": "local_b71ba75113fc",
+    "title": "Receta de Palomitas dulces",
+    "description": "Las palomitas maíz por lo general se consumen saladas, pero las dulcesles encantas tanto a los niños como a los más adultos. Por ello, hoy te enseñaremos cómo hacer palomitas dulces caseras con caramelo directo, que personalmente es el método más fácil para mi, sin ensuciar demasiado y sin invertir mucho tiempo en la cocina.",
+    "ingredients": [
+      "125 gramos de Maíz pira",
+      "2 cucharadas soperas de Aceite de girasol",
+      "125 gramos de Azúcar"
+    ],
+    "steps": [
+      "Antes de realizar estas palomitas caramelizadas, el primer paso es alistar todos los ingredientes.",
+      "En una olla, añadir el aceite y el maíz, cocinar a fuego bajo tapado, hasta que todo el maíz reviente.",
+      "Aparte, en otra olla grande, disponer el azúcar y cocinar a fuego muy bajo sin mezclar, esto con el fin de obtener un caramelo. SI quieres más detalles consulta la receta de caramelo líquido.",
+      "Cuando falte poco para que el azúcar se derrita, añade las palomitas de maíz y de inmediato, con ayuda de una espátula, mezclar muy bien. Para saber si están bien hechas, la capa de caramelo que esta sobre las palomitas debe ser muy delgada.",
+      "Extiende una hoja de papel parafinado o papel para hornear sobre una superficie plana y esparce sobre él las palomitas de maíz caramelizadas. Deja reposar durante unos minutos para que se enfríe el caramelo, no las comas de inmediato porque el caramelo puede quemar fácilmente.",
+      "Es momento de servir y disfrutar las palomitas dulces, esta receta es ideal para compartir con los niños ya que aunque contiene azúcar, no son tan perjudiciales para la salud como algunas que se consiguen en el mercado con ingredientes artificiales y grasas poco saludables. Te recomiendo acompañarlas con un batido de batido de oreo. Si te ha gustado esta receta americana, tienes algún comentario o inquietud, danos tu opinión."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-tiramisu-casero-facil-55627.html"
+  },
+  {
+    "id": "local_48b3e5bbe6c5",
+    "title": "Receta de Paninis sin horno",
+    "description": "Si no sabes cómo hacer paninis caseros sin horno no te pierdas esta receta de paninis en sartén que te enseñamos en RecetasGratis para conseguir un entrante, aperitivo o plato principal que encanta a todo el mundo y en tan solo 15 minutos. Apúntate todos los pasos y los ingredientes d esta receta de pan pizza sin horno fácil, rápida y riquísima que te explicamos en RecetasGratis y verás cómo no queda ni uno en el plato.",
+    "ingredients": [
+      "3 rebanadas de pan redondo",
+      "3 huevos",
+      "1 y 1/2 pimientos",
+      "Mozzarela",
+      "Sal",
+      "Pimentón",
+      "Eneldo",
+      "Jamón dulce"
+    ],
+    "steps": [
+      "Cortamos por el medio de las rebanadas, dejando 1 cm de crosta como se ve en la imagen. Si lo prefieres puedes hacer tú mismo la receta de pan casero sin masa madre.",
+      "Picamos el pimiento y el jamón dulce. Ponemos a freír en un poco de aceite.En otra ocasión también puedes probar esta receta de paninis caseros de jamón y queso por ejemplo.",
+      "Batimos los 3 huevos junto con la sal, el pimentón y el eneldo.",
+      "Cuando el pimiento con el jamón dulce estén doraditos, repartimos en el mismo sartén en 3 raciones. Apartamos el sartén del fuego para que no se queme el relleno de los pan pizza sin horno y al mismo tiempo facilitar el siguiente paso. Encuadramos las raciones con la crosta de la rebanadas que hemos preparado al paso 1.",
+      "Añadamos los huevos batidos en cada ración repartiendo de manera uniforme uniforme (no pasa nada si sale fuera por debajo de la rebanada), ponemos la mozzarela en encima de cada ración y tapamos con el trozo de la rebanada de pan que habíamos cortado antes. Dejemos que los paninis sin horno se frían unos 5 minutos en sartén.",
+      "Demos la vuelta a los paninis sin horno con cuidado para que no se rompan. Dejamos 5 minutos más y... listo para servir. ¡Que aproveche!"
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-cafe-dalgona-68532.html"
+  },
+  {
+    "id": "local_d228940d4877",
+    "title": "Receta de Pastel de calabacín al horno",
+    "description": "¿Buscas una receta de pastel de calabacín al horno fácil y rica para tu menú diario? ¡Pues no te pierdas esta sugerencia que comparto en RecetasGratis! Aparte de ser muy fácil de hacer, el resultado final es muy sabroso y sin duda no decepcionará a nadie. Sigue el siguiente paso a paso y consigue un fabuloso pastel de calabacín y verduras para comer.",
+    "ingredients": [
+      "2 calabacines",
+      "4 cucharadas soperas de avena",
+      "3 huevos",
+      "½ cebolla pequeña picada",
+      "1 tomate pequeño sin piel ni semillas picado",
+      "2 cucharadas soperas de queso parmesano rallado",
+      "Sal",
+      "Pimienta negra",
+      "Chimichurri (u otras hierbas aromáticas)",
+      "1 cucharadita de cúrcuma",
+      "Perejil picado"
+    ],
+    "steps": [
+      "Empieza por lavar los calabacines, quitar las semillas y cortarlos en cubos pequeños.",
+      "En un recipiente bate los 3 huevos hasta que estén espumosos.",
+      "Agrega el resto de los ingredientes del pastel de calabacín vegetariano a los huevos batidos y por supuesto, los calabacines picados y las especias y hierbas al gusto, y mezcla todo muy bien.",
+      "Engrasa una bandeja de cristal con un poco de mantequilla y vierte la mezcla. Hornea la torta de cabalacín con queso rallado a 180 °C durante 20 minutos, o hasta que veas que se ha cuajado.",
+      "Saca el pastel de calabacín del horno cuando esté cuajado y deja que se enfríe para desmoldarlo bien."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-cheesecake-de-maracuya-68412.html"
+  },
+  {
+    "id": "local_bb99268e6c01",
+    "title": "Receta de Rollos de hojaldre con nueces y miel",
+    "description": "En esta ocasión os dejo unos rollitos de hojaldre con miel y nueces. Me encanta el hojaldre y siempre tengo para preparar en cualquier momento. Tanto si queremos un plato salado como dulce, nos saca de cualquier apuro para preparar una receta sencilla y rápida.Los rollos de hojaldre con nueces y miel son una delicia, así que si os gusta la miel quedan unos rollos muy buenos, ideales para tomar el café. Seguid leyendo y descubrid el paso a paso en RecetasGratis.",
+    "ingredients": [
+      "1 lámina de hojaldre",
+      "1 bote de miel",
+      "1 paquete de nueces peladas",
+      "1 huevo para pintar la masa"
+    ],
+    "steps": [
+      "Preparamos todos los ingredientes. La masa de hojaldre si la compráis rectangular es mejor, aunque también podéis hacerla en casa siguiendo la receta de masa de hojaldre fácil.",
+      "Abrimos la masa y la dejamos sobre el papel que lleva o la colocamos encima de una lámina de papel vegetal (para horno).",
+      "Picamos las nueces teniendo en cuenta que la cantidad será a nuestro gusto.",
+      "Cubrimos la masa con la miel sin llegar a los bordes. Si está muy dura la miel, ponemos una cantidad en un bol y la calentamos al microondas unos segundos.",
+      "Ponemos por encima de la masa las nueces picadas para seguir con el hojaldre relleno dulce.",
+      "Enrollamos la masa ejerciendo una ligera presión.",
+      "Cortamos el hojaldre en rollitos de 2 cm de grosor cada uno aproximadamente.",
+      "Ponemos los rollos de hojaldre con nueces y miel en una bandeja de horno. Batimos el huevo y pintamos los rollitos con él. Luego, metemos al horno a 180 ºC calor arriba y abajo.",
+      "Cuando estén dorados, sacamos los rollos de hojaldre con nueces y miel y dejamos que se enfríen para disgrutarlos.",
+      "Ponemos el hojaldre relleno dulce en una fuente y servimos. Son perfectos para el postre, el desayuno o la merienda, acompañados de un café o de un batido, y de otros dulces como la trenza de chocolate. Entrad en mi blog Cocinando con Montse y descubrid todas mis recetas."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-empanadas-de-membrillo-69212.html"
+  },
+  {
+    "id": "local_37d34008adf7",
+    "title": "Receta de Salsa barbacoa de guayaba",
+    "description": "La salsa barbacoa es una salsa ideal para servir tanto con carne como con tofu o seitán o utilizarla en tus barbacoas. La receta que comparto en RecetasGratis es perfecta para aquellas personas que quieren variar la receta clásica y añadirle un exquisito toque exótico a sus salsas caseras para carnes a la parrilla u otras elaboraciones bien sean o no veganas. El ingrediente secreto que vamos a utilizar es la pasta o el dulce de guayaba que aportará un rico toque dulce y frutal y el aroma inconfundible a esta salsa barbacoa de guayaba.",
+    "ingredients": [
+      "1 taza de pasta de guayaba",
+      "½ cebolla",
+      "3 dientes de ajo",
+      "½ taza de tomate natural triturado",
+      "1 cucharadita de aceite",
+      "1 cucharada sopera de azúcar",
+      "3 cucharadas soperas de vinagre de manzana",
+      "2 cucharadas soperas de salsa de soja"
+    ],
+    "steps": [
+      "Pica la cebolla y el ajo y póchalos en un cazo con aceite caliente hasta que la cebolla empiece a ponerse transparente.",
+      "Añade al cazo la salsa de soja, el azúcar, el vinagre y el tomate triturado. Cocina el tomate removiendo de vez en cuando durante unos minutos e incorpora la pasta o el dulce de guayaba aplastado con un tenedor. Remueve y cocina hasta que la pasta de guayaba se derrita a fuego bajo durante 15 minutos.",
+      "Vierte la salsa barbacoa de guayaba en un tarro de cristal y consérvala en la nevera con tapa cerrada. Es una salsa para acompañar la carne asada, vegetal o no, perfecta.Y si buscas más recetas de salsas caseras en mi blog Vegspiration encontrarás varias sugerencias a tus disposición."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-merengue-italiano-perfecto-68932.html"
+  },
+  {
+    "id": "local_33e238c87629",
+    "title": "Receta de Torrijas de chocolate blanco",
+    "description": "¿Te preguntas cómo hacer unas torrijas de chocolate blanco? ¡Pues muy fácil! Échale un vistazo a este paso a paso que te enseñamos en esta oportunidad y disfruta de una irresistibles y fabulosas torrijas rellenas de chocolate blanco sabrosas para Semana Santa, Pascua o cuando quieras darte un dulce capricho.Asimismo, en RecetasGratis te enseñamos cómo hacer torrijas de chocolate blanco. ¡Vamos allá!",
+    "ingredients": [
+      "1 tableta de chocolate blanco",
+      "8 rebanadas de pan de molde sin corteza",
+      "½ litro de leche",
+      "½ litro de nata líquida o crema de leche",
+      "150 gramos de chocolate blanco para fundir",
+      "2 huevos",
+      "1 rama de canela (trocito)",
+      "2 cucharadas soperas de azúcar",
+      "Aceite de girasol para freír",
+      "1 limón (cáscara)"
+    ],
+    "steps": [
+      "Mezcla la nata líquida, el azúcar, el trocito de canela, la cáscara de limón y la leche en una olla pequeña y colócala al fuego. Parte el chocolate para postres en trocitos y remueve a fuego lento hasta que se funda del todo y quede una mezcla homogénea.",
+      "Retira la olla del fuego y vierte la mezcla en un recipiente hondo y ancho, deja que se entibie un poco.",
+      "Corta las rebanadas de pan de molde por la mitad e introduce en el recipiente con la mezcla. Deja que se empapen un poquito, dales la vuelta por el otro lado para que se empapen también y déjalas en un plato aparte.",
+      "Parte la tableta de chocolate blanco en onzas pequeñas.",
+      "Coge una torrija de pan de molde empapada y coloca una onza de chocolate en un lado. Dóblala como si fuese un libro de manera que quede el chocolate en el medio. Y repite la misma operación quedando así las torrijas rellenas de chocolate blanco.",
+      "Bate los huevos y añade el aceite de girasol para freír en una sartén a calentar.",
+      "Cuando el aceite esté bien caliente, reboza las torrijas de chocolate blanco por el huevo batido y fríelas en la sartén por ambos lados hasta que estén bien doradas. Resérvalas en un plato con papel absorbente para quitar el exceso de aceite.",
+      "Si te gusta mezcla una pizca de canela molida con un poco de azúcar y reboza las torrijas de chocolate blanco cuando se hayan templado un poco, pero este paso es opcional. ¡Disfrútalas!"
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-donas-rellenas-de-dulce-de-leche-68451.html"
+  },
+  {
+    "id": "local_eea94e3e6885",
+    "title": "Receta de Tortillas de maíz rellenas de jamón y queso",
+    "description": "Las tortillas de maíz rellenas de jamón y queso que comparto en RecetasGratis son similares a las quesadillas mexicanas. Las quesadillas son una delicia, puesto que el relleno admite muchas variaciones aunque nunca puede faltar el queso.Estas tortitas que muestro son muy fáciles de preparar e ideales para una cena informal. Si queréis que tengan sabor a México, usad tortillas de maíz y para dorarlas en vez de aceite utilizad mantequilla. Se suele acompañar con pico de gallo, que es una ensalada fresquita en la que el chile no puede faltar, y yo haré una elaboración parecida. ¡Espero que os guste! Seguid leyendo y descubrid mi versión de la receta de tortillas de maíz rellenas de jamón y queso.",
+    "ingredients": [
+      "1 paquete de tortillas de maíz",
+      "4 lonchas de queso mozzarella",
+      "4 lonchas de queso para fundir",
+      "4 lonchas de jamón cocido",
+      "1 chorro de aceite de oliva",
+      "1 cebolla",
+      "2 tomates",
+      "1 pimiento verde",
+      "1 pepino",
+      "1 pizca de sal",
+      "1 pizca de pimienta",
+      "1 limón o lima"
+    ],
+    "steps": [
+      "Preparamos todos los ingredientes para elaborar estas deliciosas tortillas de maíz rellenas de jamón y queso.",
+      "Picamos todas las verduras del pico de gallo y, sin aliñarlas, reservamos.",
+      "Preparamos las tortillas. Podemos comprarlas ya hechas o hacerlas nosotros mismos siguiendo la receta de tortillas de maíz mexicanas. Así mismo, en su defecto podemos utilizar tortillas de trigo.",
+      "Encima de cada tortita ponemos una loncha de jamón cocido, una loncha de queso para fundir y una loncha de queso mozzarella. Tapamos con otra tortita. Aunque las quesadillas tradicionales se elaboran doblando sobre sí mismas las tortillas, en esta receta haremos una versión distinta.",
+      "Cogemos una sartén y la engrasamos ligeramente con un poco de aceite de oliva. Una vez caliente, en ella doramos las tortillas de jamón york y queso durante un par de minutos por cada lado.",
+      "Han de quedar un poco tostaditas, así que las tendremos a fuego medio para no quemarlas y hacerlas bien por dentro.",
+      "Cortamos cada tortita en cuatro partes y servimos junto a nuestra ensalada pico de gallo. Como decía, estas tortillas de maíz rellenas de jamón y queso son ideales para cenar. ¡Que aproveche! Y si queréis descubrir más recetas, entrad en mi blog Cocinando con Montse, ¡os espero!"
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-empanadas-de-batata-69428.html"
+  },
+  {
+    "id": "loc_ac037f12",
+    "title": "Rosero lojano",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_75737e78",
+    "title": "Seco de chivo",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
     ],
     "steps": [
       "Preparar y medir los ingredientes.",
@@ -2216,19 +3715,20 @@
       "Servir y disfrutar."
     ],
     "tags": [
-      "fitness",
-      "saludable"
+      "local"
     ]
   },
   {
-    "id": "fit_e812b9ee",
-    "title": "Pechuga de pollo a la plancha",
-    "description": "Opción ligera y balanceada.",
+    "id": "loc_7158accb",
+    "title": "Seco de pollo",
+    "description": "Plato típico ecuatoriano.",
     "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
     ],
     "steps": [
       "Preparar y medir los ingredientes.",
@@ -2237,19 +3737,86 @@
       "Servir y disfrutar."
     ],
     "tags": [
-      "fitness",
-      "saludable"
+      "local"
     ]
   },
   {
-    "id": "fit_0c51a598",
-    "title": "Bowl de yogur con frutas",
-    "description": "Opción ligera y balanceada.",
+    "id": "loc_3ee40ea9",
+    "title": "Suspiros (merengues)",
+    "description": "Postre o dulce típico de Ecuador.",
     "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_9231541c",
+    "title": "Tarta de maracuyá",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_1ed814da",
+    "title": "Tarta de queso al horno",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_978da941",
+    "title": "Tigrillo",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
     ],
     "steps": [
       "Preparar y medir los ingredientes.",
@@ -2258,19 +3825,152 @@
       "Servir y disfrutar."
     ],
     "tags": [
-      "fitness",
-      "saludable"
+      "local"
     ]
   },
   {
-    "id": "fit_acd59cea",
-    "title": "Avena overnight",
-    "description": "Opción ligera y balanceada.",
+    "id": "loc_b68ddfa1",
+    "title": "Torta de chocolate húmeda",
+    "description": "Postre o dulce típico de Ecuador.",
     "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_d833ec0d",
+    "title": "Torta de coco",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_459a7809",
+    "title": "Torta de naranja",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_e2c658dd",
+    "title": "Torta de zanahoria",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_bc81629c",
+    "title": "Torta selva negra",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_a657bc9d",
+    "title": "Torta tres leches",
+    "description": "Postre o dulce típico de Ecuador.",
+    "ingredients": [
+      "harina",
+      "huevos",
+      "azúcar",
+      "leche",
+      "mantequilla"
+    ],
+    "steps": [
+      "Precalentar el horno a 180 °C.",
+      "Mezclar secos y húmedos por separado e integrar.",
+      "Verter en molde engrasado y hornear 25‑45 min según tamaño.",
+      "Dejar enfriar y desmoldar."
+    ],
+    "tags": [
+      "local",
+      "dulce"
+    ]
+  },
+  {
+    "id": "loc_d238f2a1",
+    "title": "Tortilla de verde",
+    "description": "Plato típico ecuatoriano.",
+    "ingredients": [
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
     ],
     "steps": [
       "Preparar y medir los ingredientes.",
@@ -2279,19 +3979,20 @@
       "Servir y disfrutar."
     ],
     "tags": [
-      "fitness",
-      "saludable"
+      "local"
     ]
   },
   {
-    "id": "fit_c8935f5d",
-    "title": "Smoothie proteico de mora",
-    "description": "Opción ligera y balanceada.",
+    "id": "loc_798f5ed7",
+    "title": "Yahuarlocro",
+    "description": "Plato típico ecuatoriano.",
     "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
+      "cebolla",
+      "ajo",
+      "tomate",
+      "sal",
+      "pimienta",
+      "aceite"
     ],
     "steps": [
       "Preparar y medir los ingredientes.",
@@ -2300,517 +4001,12 @@
       "Servir y disfrutar."
     ],
     "tags": [
-      "fitness",
-      "saludable"
+      "local"
     ]
   },
   {
-    "id": "fit_58769cf1",
-    "title": "Tostadas integrales con palta",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_96a898d5",
-    "title": "Salmón al horno con brócoli",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_c6ecab29",
-    "title": "Frittata de claras y espinaca",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_35b10204",
-    "title": "Wrap integral de pavo",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_cbfb2c88",
-    "title": "Ensalada de garbanzos y atún",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_860d0a85",
-    "title": "Zoodles con salsa de tomate",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_f76e4220",
-    "title": "Arroz integral con verduras y pollo",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_69d81c2b",
-    "title": "Chia pudding",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_10205020",
-    "title": "Buddha bowl de garbanzos",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_42f07cc5",
-    "title": "Tilapia a la plancha con ensalada",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_e5e584cf",
-    "title": "Lomo saltado light",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_20dcf52d",
-    "title": "Tacos de lechuga con pollo",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_0b663881",
-    "title": "Guiso de lentejas light",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_fd348244",
-    "title": "Hummus casero",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_2ee33b39",
-    "title": "Barritas de avena caseras",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_b34f7da0",
-    "title": "Panqueques de avena y banana",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_08536181",
-    "title": "Ensalada de atún y palta",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_88d2d24a",
-    "title": "Pollo al curry light",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_da592362",
-    "title": "Cazuela de verduras al horno",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_4c3242be",
-    "title": "Sopa crema de calabaza light",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_69f37a73",
-    "title": "Hamburguesa de lentejas",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_00b3acea",
-    "title": "Tortilla española light",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_764b9c29",
-    "title": "Brochetas de pollo y pimiento",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_82d45667",
-    "title": "Cuscús con verduras",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_9a60d239",
-    "title": "Pescado al vapor con hierbas",
+    "id": "fit_8a6011cf",
+    "title": "Arepa integral con huevo",
     "description": "Opción ligera y balanceada.",
     "ingredients": [
       "proteína/principal",
@@ -2851,8 +4047,8 @@
     ]
   },
   {
-    "id": "fit_0d21e4fa",
-    "title": "Tofu salteado con vegetales",
+    "id": "fit_f76e4220",
+    "title": "Arroz integral con verduras y pollo",
     "description": "Opción ligera y balanceada.",
     "ingredients": [
       "proteína/principal",
@@ -2872,8 +4068,8 @@
     ]
   },
   {
-    "id": "fit_4203ae7f",
-    "title": "Sopa minestrone light",
+    "id": "fit_acd59cea",
+    "title": "Avena overnight",
     "description": "Opción ligera y balanceada.",
     "ingredients": [
       "proteína/principal",
@@ -2893,176 +4089,8 @@
     ]
   },
   {
-    "id": "fit_b4837e89",
-    "title": "Ceviche de corvina light",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_8a6011cf",
-    "title": "Arepa integral con huevo",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_a335019e",
-    "title": "Ensalada de espinaca y queso fresco",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_cd3fc65d",
-    "title": "Pasta integral con atún",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_0b45287b",
-    "title": "Croquetas de atún al horno",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_0795de82",
-    "title": "Pechuga al limón con verduras",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_b6baf475",
-    "title": "Sopa de pollo con quinoa",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_12752482",
-    "title": "Rollitos de pepino con queso",
-    "description": "Opción ligera y balanceada.",
-    "ingredients": [
-      "proteína/principal",
-      "verduras",
-      "aceite de oliva",
-      "sal y pimienta"
-    ],
-    "steps": [
-      "Preparar y medir los ingredientes.",
-      "Cocinar o mezclar según la receta.",
-      "Ajustar sal y especias al gusto.",
-      "Servir y disfrutar."
-    ],
-    "tags": [
-      "fitness",
-      "saludable"
-    ]
-  },
-  {
-    "id": "fit_122d4bc1",
-    "title": "Pizza de coliflor",
+    "id": "fit_2ee33b39",
+    "title": "Barritas de avena caseras",
     "description": "Opción ligera y balanceada.",
     "ingredients": [
       "proteína/principal",
@@ -3103,8 +4131,377 @@
     ]
   },
   {
+    "id": "fit_0c51a598",
+    "title": "Bowl de yogur con frutas",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_764b9c29",
+    "title": "Brochetas de pollo y pimiento",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_10205020",
+    "title": "Buddha bowl de garbanzos",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_da592362",
+    "title": "Cazuela de verduras al horno",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_b4837e89",
+    "title": "Ceviche de corvina light",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_69d81c2b",
+    "title": "Chia pudding",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_0b45287b",
+    "title": "Croquetas de atún al horno",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_82d45667",
+    "title": "Cuscús con verduras",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_08536181",
+    "title": "Ensalada de atún y palta",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_a335019e",
+    "title": "Ensalada de espinaca y queso fresco",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_cbfb2c88",
+    "title": "Ensalada de garbanzos y atún",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_1783718b",
+    "title": "Ensalada de quinoa y vegetales",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
     "id": "fit_3eef240d",
     "title": "Ensalada de remolacha y naranja",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_c6ecab29",
+    "title": "Frittata de claras y espinaca",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "local_eb07494c0290",
+    "title": "Golden milk fácil (leche dorada)",
+    "description": "¿Quieres saber para qué sirve la leche dorada y los beneficios de la golden milk, golden latte, cúrcuma latte, leche dorada o leche de oro? Se le conoce a esta súper bebida vegana con todos estos conceptos (si tulizas leche vegetal) que se presenta como una excelente sustituta del típico café con leche, son innumerables.La cúrcuma, el jengibre o la canela son algunos de los ingredientes de la golden milk o leche dorada, y es por eso que se le atribuyen propiedades antiinflamatorias, antibacteriales, antivirales, anticancerígenas, desintoxicantes y antioxidantes entre otros efectos terapéuticos a esta receta de leche de oro, que recibe su nombre debido a su ingrediente principal, la cúrcuma, el cual otorga a esta súper bebida su característico color dorado. El cúrcuma latte es originario de la India y se le considera una receta ayurvédica con muchos principios activos.Para facilitar la absorción de las propiedades de este ingrediente principalmente (en concreto de la curcumina, que es muy antiinflamatoria) en nuestro organismo, hay que calentar bien la súper bebida y añadir pimienta molida o cayena en polvo (o las dos) ya que ayudan a que esta se absorba mejor. Por eso, esta receta de golden milk fácil es perfecta en todos los sentidos ya que no solo es reconfortante en el sentido de que nos ayuda a entrar en calor con las bajas temperatura, sino que también nos ayuda a mejorar nuestro ambiente hormonal y a desinflamar nuestro organismo entre otras cosas.Si no sabes cómo hacer golden milk sigue leyendo este paso a paso de RecetasGratis donde te explicamos una receta fácil de leche dorada con todos los ingredientes e instrucciones a seguir. ¡Verás como te sorprende su sabor!",
+    "ingredients": [
+      "2 tazas de leche vegetal o leche animal (según la dieta que sigas)",
+      "2 granos de cardamomo verde",
+      "1 trozo de canela en rama",
+      "1 trozo de vainilla en vaina (opcional)",
+      "1 cucharadita de cúrcuma en polvo",
+      "1 cucharadita de canela molida",
+      "1 cucharadita de jengibre en polvo o rallado",
+      "¼ cucharadita de pimienta negra molida",
+      "¼ cucharadita de cayena molida",
+      "¼ cucharadita de clavo de olor molido",
+      "1 cucharadita de azúcar de coco, sirope de agave, miel u otro endulzante natural"
+    ],
+    "steps": [
+      "Reunimos todos los ingredientes de la receta de golden milk para empezar a elaborarla.",
+      "Colocamos la leche en un cazo a fuego medio junto con el trocito de rama de canela, la vaina de vainilla (si la abres dará más aroma y sabor) y los granos de cardamomo abiertos (para que liberen mejor sus propiedades), y la llevamos a ebullición pero bajamos el fuego justo antes de que llegue a hervir.Puedes hacer en casa tú mismo la leche vegetal si lo prefieres con esta receta de leche de almendras o esta otra receta de leche de coco casera con coco rallado.",
+      "Añadimos el resto de ingredientes de la golden milk o golden latte y removemos bien.El tipo de endulzante o edulcorante que utilices para azucarar esta súper bebida es totalmente al gusto. Yo he utilizado azúcar de coco que es mucho más sano que el azúcar refinado y tiene una carga glucémica baja (bajo índice glucémico), con lo cual, esta bebida vegana es apta también para diabéticos.",
+      "Entonces dejamos la leche dorada unos 5 minutos a fuego lento para que todas las propiedades de sus ingredientes se vayan transfiriendo al líquido.",
+      "Colamos la mezcla con ayuda de un colador o chino en nuestra taza favorita.",
+      "Por último, espolvorea una pizca de canela más por encima para decorarla ¡y a disfrutar! Esta receta fácil degolden milk o leche dorada ayurvédica es perfecta para tomar por las tardes o antes de dormir, sobre todo cuando las temperaturas son más bajas y empieza a hacer frío, ya que es muy reconfortante y tiene un sabor y un aroma muy especiales que te transportan a algún lugar recóndito de la India si cierras los ojos.Y si te gustan las bebidas veganas o con muchas propiedades para el organismo, no te pierdas las que te recomendamos a continuación:Té de jengibre para adelgazarBebida hidratante caseraLassi de mango veganoJugo rojo antioxidanteTé de canela para adelgazar",
+      "Si prefieres elaborar esta receta de golden milk (leche dorada) con VÍDEO, te invitamos a seguir los pasos que te enseñamos en nuestro canal de YouTube. ¡Mira el vídeo aquí!"
+    ],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-panqueques-de-avena-fit-62959.html"
+  },
+  {
+    "id": "fit_1e31bc33",
+    "title": "Granola casera",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_0b663881",
+    "title": "Guiso de lentejas light",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_69f37a73",
+    "title": "Hamburguesa de lentejas",
     "description": "Opción ligera y balanceada.",
     "ingredients": [
       "proteína/principal",
@@ -3145,6 +4542,468 @@
     ]
   },
   {
+    "id": "fit_fd348244",
+    "title": "Hummus casero",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_e5e584cf",
+    "title": "Lomo saltado light",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "local_c50c857dc01b",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-muffins-de-banana-fit-67758.html"
+  },
+  {
+    "id": "local_a07787f60095",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-galletas-de-avena-fit-68214.html"
+  },
+  {
+    "id": "local_b96a5fccb8a1",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-omelette-de-claras-fit-68197.html"
+  },
+  {
+    "id": "local_0d1d5f3d9cba",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-hot-cakes-fit-de-avena-68602.html"
+  },
+  {
+    "id": "local_4c2239b75797",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-batido-de-proteina-natural-68674.html"
+  },
+  {
+    "id": "local_810f0ffad48a",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-smoothie-verde-detox-68450.html"
+  },
+  {
+    "id": "local_4edbd7913e42",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-ensalada-de-quinoa-68972.html"
+  },
+  {
+    "id": "local_3d72f71a19ff",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-wraps-de-lechuga-con-pollo-69024.html"
+  },
+  {
+    "id": "local_72c5bad2b763",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-ensalada-de-atun-fit-69056.html"
+  },
+  {
+    "id": "local_2ce9ecdd9f08",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-yogur-natural-casero-69233.html"
+  },
+  {
+    "id": "local_c3c839d8bd60",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-barritas-de-avena-caseras-69303.html"
+  },
+  {
+    "id": "local_36557f96e00e",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-ensalada-de-pollo-fit-69340.html"
+  },
+  {
+    "id": "local_43b9a16bfed1",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-tostadas-de-avena-y-platano-69349.html"
+  },
+  {
+    "id": "local_b626f1cbb981",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-smoothie-de-espinaca-y-pina-69359.html"
+  },
+  {
+    "id": "local_fd3028353657",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-ensalada-de-lentejas-fit-69366.html"
+  },
+  {
+    "id": "local_e4a6855db6e3",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-panqueques-de-proteina-69368.html"
+  },
+  {
+    "id": "local_da78e2e7a5fc",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-batido-de-chocolate-fit-69378.html"
+  },
+  {
+    "id": "local_6fc449758e4b",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pizza-fit-con-base-de-avena-69391.html"
+  },
+  {
+    "id": "local_cd59a3b843bd",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-garbanzos-crocantes-al-horno-69406.html"
+  },
+  {
+    "id": "local_b031e7bc195b",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-papas-asadas-fit-69409.html"
+  },
+  {
+    "id": "local_402cdd78fa26",
+    "title": "No se pudo importar",
+    "description": "",
+    "ingredients": [],
+    "steps": [],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-pollo-a-la-plancha-fit-69415.html"
+  },
+  {
+    "id": "fit_b34f7da0",
+    "title": "Panqueques de avena y banana",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_cd3fc65d",
+    "title": "Pasta integral con atún",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_0795de82",
+    "title": "Pechuga al limón con verduras",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_e812b9ee",
+    "title": "Pechuga de pollo a la plancha",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_9a60d239",
+    "title": "Pescado al vapor con hierbas",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_122d4bc1",
+    "title": "Pizza de coliflor",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_88d2d24a",
+    "title": "Pollo al curry light",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
     "id": "fit_eccea10f",
     "title": "Porridge de avena",
     "description": "Opción ligera y balanceada.",
@@ -3166,8 +5025,69 @@
     ]
   },
   {
-    "id": "fit_a8bc1bf1",
-    "title": "Tostadas francesas integrales",
+    "id": "local_0ba41e3dfae2",
+    "title": "Receta de Hojaldre relleno de pollo al ajillo",
+    "description": "El pollo al ajillo es un clásico en nuestras cocina, y seguro que cada casa tiene su propia receta. En RecetasGratis vamos a elaborar una receta de siempre pero dándole una nueva presentación y una pequeña vuelta de tuerca. Es una receta fácil, con ingredientes económicos, pero con una bonita forma de presentarlo, en formato individual e incorporando el hojaldre, que normalmente gusta bastante tanto a niños como a mayores. Recién hecho y calentito está muy rico, pero en frío también podremos seguir disfrutando de su delicioso sabor.Si por casualidad no os gusta el romero, podéis sustituirlo por tomillo, por ejemplo, y disfrutar de su aroma y el buen sabor que le da también a los platos. Seguid leyendo y descubrid cómo hacer hojaldre relleno de pollo.",
+    "ingredients": [
+      "8 dientes de ajos",
+      "500 gramos de contramuslos de pollo deshuesado",
+      "4 cucharadas soperas de aceite de oliva",
+      "1 rama de romero",
+      "1 mililitro de vino tinto dulce",
+      "1 pizca de sal",
+      "1 pieza de pimienta negra recién molida",
+      "1 lámina de hojaldre",
+      "1 huevo batido"
+    ],
+    "steps": [
+      "Empezaremos aplastando ligeramente los dientes de ajo. Reservamos.",
+      "Retiramos la piel a los muslos deshuesados, quitamos las partes grasas y cortamos en tiras. Salpimentamos al gusto.",
+      "Ponemos el aceite en una sartén amplia e incorporamos la ramita de romero lavada y secada, los ajos y las tiras de pollo. Sofreímos durante 10 minutos a fuego fuerte.",
+      "Incorporamos el vino, bajamos el fuego, tapamos y dejamos cocer el pollo al ajillo durante 15 minutos removiendo de vez en cuando.",
+      "Mientras tanto, hacemos los hojaldres y precalentamos el horno a 200 ºC. Extendemos la masa de hojaldre y la cortamos por la mitad. Luego, pincelamos una de las mitades con huevo batido y ponemos la otra mitad encima.",
+      "Cortamos en cuatro partes iguales la masa y marcamos con un cuchillo un rectángulo un poco más pequeño en el centro de cada hojaldre, pero sin llegar a cortar la masa, lo justo para marcarlo. De esta forma, quedará como una especie de recipiente y podremos preparar el hojaldre relleno de pollo.",
+      "Pincelamos con más huevo batido y horneamos el hojaldre a 200 ºC con calor arriba y abajo durante 15 minutos o hasta que esté dorado. Sacamos del horno y dejamos enfriar en una rejilla.",
+      "Retiramos el rectángulo central de los hojaldres, justo por donde los habíamos marcado, para dejar un hueco y poder rellenarlos con el pollo al ajillo.",
+      "Repartimos el pollo al ajillo entre los hojaldres y servimos enseguida. Decoramos si se desea con un poquito de romero fresco. Una receta muy vistosa, rica y fácil. Si os ha gustado la receta, os invito a mi blog, Cakes para ti."
+    ],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-hummus-casero-69399.html"
+  },
+  {
+    "id": "local_c28f7f0ec091",
+    "title": "Receta de Mermelada de manzana y canela",
+    "description": "La mermelada de manzana y canela un dulce muy común en ciertos lugares de los Estados Unidos, especialmente durante el otoño. Esta exquisita mantequilla frutal resulta muy útil en la cocina, pues se caracteriza por su versatilidad, ya que la puedes degustar tanto untándola sobre pan como para relleno de innumerables postres.RecetasGratis te invita a preparar un postre magnifico, perfecto por su durabilidad, inmediata disponibilidad, versatilidad y exquisito sabor: mermelada de manzana con azúcar moreno. ¡Para untar con todo! Este dulce, además de sabroso, resulta más saludable que el industrial, pues no contiene conservantes y puedes utilizar muy poca cantidad de azúcar para elaborarlo. Además, sabe tan sabroso que lo puedes comer incluso solo. Sigue leyendo y descubre con nosotros cómo hacer mermelada de manzana y canela.",
+    "ingredients": [
+      "6 manzanas",
+      "200 gramos de azúcar moreno",
+      "1 limón (el zumo)",
+      "1 rama de canela",
+      "4 clavos de olor",
+      "½ cucharadita de nuez moscada (molida)"
+    ],
+    "steps": [
+      "Lava las manzana y córtalas en cubos. Puedes dejar o retirar la piel, esto depende de tu gusto.",
+      "Deposita los cubos de manzana dentro de una cacerola y vierte agua hasta casi cubrir los trozos de fruta. Agrega un rama grande de canela y cocina a fuego medio-bajo. Vigila la cocción y remueve de vez en cuando. Si la preparación se seca y aun le falta cocción a la mermelada de manzana y canela, agrega un poco más de agua (muy poca). Cuando las manzanas estén blandas, retira del fuego y deja refrescar. Elimina la rama de canela.",
+      "Tritura las manzanas en la licuadora o utiliza cualquier ayudante de cocina que tengas a mano (incluso un triturador de papa o un tenedor).",
+      "Incorpora dentro de un cazo el puré de manzana, el azúcar moreno y las especias. Remueve muy bien los ingrediente hasta que se integren por completo. Cocina la mermelada de manzana y canela por 7 minutos y agrega el zumo del limón. Si lo prefieres, puedes reducir la cantidad de azúcar, eliminarla o sustituir por edulcorante.",
+      "Remueve constantemente la preparación hasta lograr una consistencia cremosa. Al conseguirla, retira del fuego. Envasa la mermelada de manzana con canela en botellas de vidrio esterilizadas y refrigera, así durará mucho más tiempo. También puedes guardar la preparación dentro de un envase plástico pero se acorta el tiempo de aprovechamiento.",
+      "¡Simplemente exquisita! Esta mermelada de manzana con azúcar moreno la puedes degustar untada en pan, galletas o como relleno de tartas, pies y pasteles. También para acompañar muchos tipo de postres. ¡Una verdadera maravilla culinaria!",
+      "Te invito a una experiencia gustativa inolvidable. Esta mermelada de manzana y canela comienza por cautivarte con su aroma frutal, dulce y especiado que recuerda a la Navidad. Luego, al degustarla puedes percibir su sabor aromático y su textura muy cremosa, unidos en una sola nota..., ¡una caricia al paladar!¿Probarás su sabor? Si ya te decidiste, por favor coméntanos ese momento. ¡Nos encanta compartir contigo tu experiencia gastronómica! Y si quieres conocer otras mermeladas caseras, no te pierdas estas opciones:Mermelada de mango sin azúcarMermelada de naranja"
+    ],
+    "tags": [
+      "local",
+      "fitness",
+      "saludable"
+    ],
+    "source": "https://www.recetasgratis.net/receta-de-bowl-de-acai-69145.html"
+  },
+  {
+    "id": "fit_12752482",
+    "title": "Rollitos de pepino con queso",
     "description": "Opción ligera y balanceada.",
     "ingredients": [
       "proteína/principal",
@@ -3187,8 +5107,29 @@
     ]
   },
   {
-    "id": "fit_1e31bc33",
-    "title": "Granola casera",
+    "id": "fit_96a898d5",
+    "title": "Salmón al horno con brócoli",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_c8935f5d",
+    "title": "Smoothie proteico de mora",
     "description": "Opción ligera y balanceada.",
     "ingredients": [
       "proteína/principal",
@@ -3229,8 +5170,239 @@
     ]
   },
   {
+    "id": "fit_4c3242be",
+    "title": "Sopa crema de calabaza light",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_b6baf475",
+    "title": "Sopa de pollo con quinoa",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_4203ae7f",
+    "title": "Sopa minestrone light",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_20dcf52d",
+    "title": "Tacos de lechuga con pollo",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_42f07cc5",
+    "title": "Tilapia a la plancha con ensalada",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_0d21e4fa",
+    "title": "Tofu salteado con vegetales",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_00b3acea",
+    "title": "Tortilla española light",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_a8bc1bf1",
+    "title": "Tostadas francesas integrales",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_58769cf1",
+    "title": "Tostadas integrales con palta",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_35b10204",
+    "title": "Wrap integral de pavo",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
     "id": "fit_15874378",
     "title": "Yogur helado casero",
+    "description": "Opción ligera y balanceada.",
+    "ingredients": [
+      "proteína/principal",
+      "verduras",
+      "aceite de oliva",
+      "sal y pimienta"
+    ],
+    "steps": [
+      "Preparar y medir los ingredientes.",
+      "Cocinar o mezclar según la receta.",
+      "Ajustar sal y especias al gusto.",
+      "Servir y disfrutar."
+    ],
+    "tags": [
+      "fitness",
+      "saludable"
+    ]
+  },
+  {
+    "id": "fit_860d0a85",
+    "title": "Zoodles con salsa de tomate",
     "description": "Opción ligera y balanceada.",
     "ingredients": [
       "proteína/principal",
