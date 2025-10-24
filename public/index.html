@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recetas Mafer</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand">
+        <div class="brand-badge">M</div>
+        <div>
+          <h1>Recetas Maria Fernanda</h1>
+        </div>
+      </div>
+      <div>
+        <button id="syncBtn" class="ghost">↻ Forzar recarga</button>
+      </div>
+    </div>
+
+    <nav class="tabs" role="tablist" aria-label="Secciones">
+      <button class="tab-btn" role="tab" aria-selected="true" data-tab="buscar">Buscar</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="importadas">Importadas</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="favoritas">Favoritas</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="fitness">Fitness</button>
+    </nav>
+
+    <!-- BUSCAR -->
+    <section id="tab-buscar" class="tab-panel" role="tabpanel">
+      <div class="searchbar">
+        <input id="q" type="search" placeholder="Busca la receta que más te guste (no estoy yo por las dudas)" />
+        <button id="searchBtn" class="primary">Buscar</button>
+      </div>
+      <p class="kicker">Resultados locales</p>
+      <div id="localResults" class="grid"></div>
+
+      <div class="section-title">
+        <h2>Resultados web</h2>
+        <small class="kicker">Traídos con cariño para el amor de mi vida</small>
+      </div>
+      <div id="webResults" class="grid"></div>
+    </section>
+
+    <!-- IMPORTADAS -->
+    <section id="tab-importadas" class="tab-panel" role="tabpanel" hidden>
+      <div class="searchbar">
+        <input id="importSearch" type="search" placeholder="Buscar dentro de importadas..." />
+      </div>
+      <div id="importedList" class="grid"></div>
+    </section>
+
+    <!-- FAVORITAS -->
+    <section id="tab-favoritas" class="tab-panel" role="tabpanel" hidden>
+      <div class="searchbar">
+        <input id="favSearch" type="search" placeholder="Buscar dentro de favoritas..." />
+      </div>
+      <div id="favoriteList" class="grid"></div>
+    </section>
+
+    <!-- FITNESS -->
+    <section id="tab-fitness" class="tab-panel" role="tabpanel" hidden>
+      <p class="kicker">Recetas saludables / altas en proteína / bajas en azúcar.</p>
+      <div class="searchbar">
+        <input id="fitSearch" type="search" placeholder="Buscar dentro de fitness..." />
+      </div>
+      <div id="fitnessList" class="grid"></div>
+    </section>
+  </div>
+
+  <!-- Modal -->
+  <div id="modalBackdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <header>
+        <h3 id="modalTitle">Detalles de la receta</h3>
+        <button class="icon close" id="modalClose" aria-label="Cerrar">✕</button>
+      </header>
+      <div class="content">
+        <div class="row">
+          <strong>Descripción</strong>
+          <div id="modalDesc"></div>
+        </div>
+        <div class="row">
+          <strong>Ingredientes</strong>
+          <ul id="modalIngr"></ul>
+        </div>
+        <div class="row">
+          <strong>Pasos</strong>
+          <ol id="modalSteps"></ol>
+        </div>
+      </div>
+      <footer>
+        <button class="ghost close" id="modalClose2">Cerrar</button>
+      </footer>
+    </div>
+  </div>
+
+  <div class="toast-wrap" id="toastWrap"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
