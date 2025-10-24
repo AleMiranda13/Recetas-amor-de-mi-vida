@@ -66,14 +66,17 @@
     els.modalDesc.textContent = recipe.description || '';
     els.modalIngr.innerHTML = '';
     els.modalSteps.innerHTML = '';
+
     if (recipe.ingredients?.length){
       recipe.ingredients.forEach(i => { const li=document.createElement('li'); li.textContent=i; els.modalIngr.appendChild(li); });
     } else if (recipe.source){
       els.modalIngr.innerHTML = `<li><a href="${recipe.source}" target="_blank" rel="noopener">Ver receta completa en la web</a></li>`;
     }
+
     if (recipe.steps?.length){
       recipe.steps.forEach(s => { const li=document.createElement('li'); li.textContent=s; els.modalSteps.appendChild(li); });
     }
+
     els.modalBackdrop.style.display='flex';
     els.modalBackdrop.setAttribute('aria-hidden','false');
   }
@@ -101,17 +104,17 @@
   let LOCAL_RECIPES = [];
   async function loadLocalRecipes(){
     try{
-      const r = await fetch('/api/recipes');
+      const r = await fetch('./recipes.json');
       if(!r.ok) throw 0;
       LOCAL_RECIPES = await r.json();
-    }catch{
-      const r2 = await fetch('./recipes.json');
-      LOCAL_RECIPES = await r2.json();
+    }catch(e){
+      console.warn('No se pudo cargar recipes.json local:', e);
+      LOCAL_RECIPES = [];
     }
     if (!Array.isArray(LOCAL_RECIPES)) LOCAL_RECIPES=[];
   }
 
-  // ---------- enriquecer importadas si faltan datos
+  // ---------- enriquecer importadas si faltan datos (vía /api/import)
   async function ensureDetails(recipe){
     const has = (recipe.ingredients && recipe.ingredients.length) || (recipe.steps && recipe.steps.length);
     if (has || !recipe.source) return recipe;
@@ -141,6 +144,28 @@
     }
   }
 
+  // ---------- importar LOCAL (duplica la receta local a Importadas)
+  async function importLocal(recipe){
+    const copy = {
+      id: 'imp_'+Date.now(),
+      title: recipe.title || 'Receta',
+      description: recipe.description || '',
+      ingredients: recipe.ingredients || [],
+      steps: recipe.steps || [],
+      tags: Array.from(new Set([...(recipe.tags||[]), 'importada','manual'])),
+      source: recipe.source || ''
+    };
+    upsertImported(copy);
+    toast('Receta copiada a Importadas ✔');
+
+    // saltar a Importadas
+    els.tabs.forEach(b=>b.setAttribute('aria-selected','false'));
+    document.querySelector('.tab-btn[data-tab="importadas"]').setAttribute('aria-selected','true');
+    Object.entries(els.panels).forEach(([k,sec])=> sec.hidden = (k!=='importadas'));
+    renderImported();
+    openModal(copy);
+  }
+
   // ---------- tarjeta
   function recipeCard(recipe, opts = {}){
     const card = document.createElement('div'); card.className='card';
@@ -152,10 +177,20 @@
     const actions = document.createElement('div'); actions.className='card-actions';
 
     if (opts.mode !== 'web'){
+      // Ver
       const ver = document.createElement('button'); ver.className='ghost'; ver.textContent='Ver';
       ver.addEventListener('click', async ()=> openModal((opts.section==='importadas') ? await ensureDetails(recipe) : recipe));
       actions.append(ver);
 
+      // Importar locales -> duplica para editar
+      if (opts.mode==='local' && opts.section!=='importadas'){
+        const impL = document.createElement('button'); impL.className='ghost'; impL.textContent='Importar';
+        impL.title = 'Copiar a Importadas para poder editar';
+        impL.addEventListener('click', ()=> importLocal(recipe));
+        actions.append(impL);
+      }
+
+      // Importadas: editar / eliminar
       if (opts.section==='importadas'){
         const edt = document.createElement('button'); edt.className='ghost'; edt.textContent='Editar';
         edt.addEventListener('click', ()=> openEditImported(recipe));
@@ -166,42 +201,31 @@
         actions.append(del);
       }
 
+      // Favoritos
       const fav = document.createElement('button'); fav.className='ghost'; fav.textContent='★';
       fav.addEventListener('click', ()=> toggleFavorite(recipe));
       actions.append(fav);
+
     } else {
-  // SIEMPRE mostrar Importar (auto)
-  const imp = document.createElement('button');
-  imp.className = 'ghost';
-  imp.textContent = 'Importar';
-  imp.addEventListener('click', () => importFromUrl(opts.sourceUrl, recipe, imp));
-  actions.append(imp);
+      // Resultados web
+      const imp = document.createElement('button'); imp.className='ghost'; imp.textContent='Importar';
+      imp.addEventListener('click', ()=> importFromUrl(opts.sourceUrl, recipe, imp));
+      actions.append(imp);
 
-  // Importar MANUAL (para editar a gusto si el auto no trae datos)
-  const man = document.createElement('button');
-  man.className = 'ghost';
-  man.textContent = 'Importar (manual)';
-  man.addEventListener('click', () => importManualFromSearch(recipe, opts.sourceUrl));
-  actions.append(man);
+      const man = document.createElement('button'); man.className='ghost'; man.textContent='Importar (manual)';
+      man.addEventListener('click', ()=> importManualFromSearch(recipe, opts.sourceUrl));
+      actions.append(man);
 
-  // Fuente (siempre)
-  if (opts.sourceUrl) {
-    const a = document.createElement('a');
-    a.className = 'ghost';
-    a.textContent = 'Fuente';
-    a.href = opts.sourceUrl;
-    a.target = '_blank';
-    a.rel = 'noopener';
-    actions.append(a);
-  }
+      if (opts.sourceUrl){
+        const a = document.createElement('a'); a.className='ghost'; a.textContent='Fuente';
+        a.href=opts.sourceUrl; a.target='_blank'; a.rel='noopener';
+        actions.append(a);
+      }
 
-  // Favoritos
-  const fav = document.createElement('button');
-  fav.className = 'ghost';
-  fav.textContent = '★';
-  fav.addEventListener('click', () => toggleFavorite(recipe));
-  actions.append(fav);
-}
+      const fav = document.createElement('button'); fav.className='ghost'; fav.textContent='★';
+      fav.addEventListener('click', ()=> toggleFavorite(recipe));
+      actions.append(fav);
+    }
 
     card.append(actions);
     return card;
@@ -216,7 +240,7 @@
     renderFavorites();
   }
 
-  // ---------- importar desde web (auto)
+  // ---------- importar desde web
   async function importFromUrl(url, meta = {}, button){
     try{
       button && (button.disabled=true, button.textContent='Importando…');
@@ -241,7 +265,6 @@
       upsertImported(recipe);
       toast('Receta importada ✔');
 
-      // saltar a Importadas
       els.tabs.forEach(b=>b.setAttribute('aria-selected','false'));
       document.querySelector('.tab-btn[data-tab="importadas"]').setAttribute('aria-selected','true');
       Object.entries(els.panels).forEach(([k,sec])=> sec.hidden = (k!=='importadas'));
@@ -255,22 +278,21 @@
     }
   }
 
-  // ---------- importar desde web (MANUAL)  ⬅️ NUEVO
-  function importManualFromSearch(meta = {}, url = '') {
+  // Importar MANUAL desde resultados web (arranca editor con título/desc)
+  function importManualFromSearch(meta = {}, url = ''){
     const recipe = {
-      id: 'imp_' + Date.now(),
+      id: 'imp_'+Date.now(),
       title: meta.title || 'Receta importada',
       description: meta.description || '',
       ingredients: [],
       steps: [],
-      tags: Array.from(new Set([...(meta.tags || []), 'importada', 'manual'])),
+      tags: Array.from(new Set([...(meta.tags||[]), 'importada','manual'])),
       source: url || meta.source || ''
     };
     upsertImported(recipe);
     renderImported();
     toast('Creada en importadas (manual) ✔');
-    // Abrir editor para completar ingredientes y pasos
-    openEditImported(recipe, { create: false });
+    openEditImported(recipe, { create:true });
   }
 
   // ---------- búsquedas
@@ -286,7 +308,7 @@
     );
   }
 
-  // front: intenta base, luego “receta/recetas”
+  // web: intenta base, luego “receta/recetas”
   async function searchWeb(q){
     const tryFetch = async (term)=>{
       try{
@@ -387,7 +409,11 @@
     localMoreWrap = document.createElement('div');
     localMoreWrap.style.display='flex'; localMoreWrap.style.justifyContent='center'; localMoreWrap.style.margin='10px 0 4px';
     localMoreBtn = document.createElement('button'); localMoreBtn.className='ghost'; localMoreBtn.textContent='Ver más';
-    localMoreBtn.addEventListener('click', ()=>{ showAllLocal=!showAllLocal; renderLocalInitial(); localMoreBtn.textContent = showAllLocal ? 'Ver menos' : 'Ver más'; });
+    localMoreBtn.addEventListener('click', ()=>{
+      showAllLocal=!showAllLocal;
+      renderLocalInitial();
+      localMoreBtn.textContent = showAllLocal ? 'Ver menos' : 'Ver más';
+    });
     els.webResults.parentNode.insertBefore(localMoreWrap, els.webResults);
     localMoreWrap.appendChild(localMoreBtn);
   }
@@ -462,7 +488,7 @@
     const m=document.createElement('div'); m.className='modal-backdrop'; m.style.display='flex';
     const ing=(recipe.ingredients||[]).join('\n'), stp=(recipe.steps||[]).join('\n');
     m.innerHTML = `
-      <div class="modal">
+      <div class="modal" style="max-width:760px">
         <header style="display:flex;justify-content:space-between;align-items:center">
           <h3>${create?'Crear receta':'Editar receta'}</h3><button class="ghost" id="x">✕</button>
         </header>
