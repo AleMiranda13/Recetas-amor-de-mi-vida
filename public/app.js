@@ -101,18 +101,32 @@
   });
 
   // ---------- recetas locales
-  let LOCAL_RECIPES = [];
-  async function loadLocalRecipes(){
-    try{
-      const r = await fetch('./recipes.json');
-      if(!r.ok) throw 0;
-      LOCAL_RECIPES = await r.json();
-    }catch(e){
-      console.warn('No se pudo cargar recipes.json local:', e);
-      LOCAL_RECIPES = [];
-    }
-    if (!Array.isArray(LOCAL_RECIPES)) LOCAL_RECIPES=[];
+let LOCAL_RECIPES = [];
+
+// helper para filtrar recetas inválidas o con errores
+function isRenderable(r){
+  if (!r) return false;
+  if (!r.title) return false;
+  if (/^no se pudo importar/i.test(r.title)) return false; // oculta placeholders
+  return true;
+}
+
+async function loadLocalRecipes(){
+  try{
+    const r = await fetch('./recipes.json');
+    if(!r.ok) throw 0;
+    LOCAL_RECIPES = await r.json();
+  }catch(e){
+    console.warn('No se pudo cargar recipes.json local:', e);
+    LOCAL_RECIPES = [];
   }
+
+  if (!Array.isArray(LOCAL_RECIPES)) LOCAL_RECIPES=[];
+
+  // ⬇️ filtra recetas que no sirven
+  LOCAL_RECIPES = LOCAL_RECIPES.filter(isRenderable);
+}
+
 
   // ---------- enriquecer importadas si faltan datos (vía /api/import)
   async function ensureDetails(recipe){
